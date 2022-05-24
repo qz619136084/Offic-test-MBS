@@ -1,0 +1,15 @@
+.dy-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+.dy-modal-backdrop.fade {
+  opacity: 0;
+}
+.dy-modal-backdrop.show {
+  opacity: 0.5;
+}

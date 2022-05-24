@@ -1,0 +1,24 @@
+.dy-search-box button {
+  background: url(/static/marinabaysands/headlibs/images/bg-pattern-button-hover.png);
+  width: 44px;
+  height: 100%;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px;
+}
+.dy-search-box .list-inline-item {
+  position: relative;
+}
+.dy-search-box {
+  padding: 0 15px;
+}
+@media (min-width: 768px) {
+  .dy-search-box button {
+    width: 50px;
+  }
+  .search-filters {
+    width: 700px !important;
+  }
+}

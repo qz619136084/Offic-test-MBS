@@ -1,0 +1,21 @@
+.dy-srl-component .title {
+  margin-top: 20px;
+}
+.dy-srl-component .content-detail {
+  display: flex;
+}
+.dy-srl-component .content-detail p {
+  position: relative;
+  padding-left: 40px;
+  flex: 1 0 50%;
+}
+.dy-srl-component .content-detail p img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@media (max-width: 500px) {
+  .dy-srl-component .content-detail {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,17 @@
+@media screen and (max-width: 501px) {
+  .room_bed_Box .row {
+    width: 100% !important;
+  }
+  .room_bed_Box
+    .row
+    > div:not(.radio_div):not(.radio_div_head):not(.radio_div_beds):not(.multiroom_book) {
+    width: 50% !important;
+  }
+  .room_bed_Box .row .radio_div {
+    width: 95% !important;
+    height: 85% !important;
+  }
+  .room_bed_Box .txt-lg-lb {
+    line-height: 1 !important;
+  }
+}

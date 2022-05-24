@@ -1,0 +1,128 @@
+.marina4383v1 .imageLoading {
+  display: none;
+}
+.marina4383v1 .time-field .dropdown-list span {
+  position: relative;
+  text-align: left;
+  padding: 0 5px 0 5px;
+}
+.marina4383v1 .dropdown-field.time-field span.displayed-text {
+  padding-left: 5px;
+}
+.marina4383v1
+  .time-field
+  .dropdown-list
+  span.item[data-bookedtext="Available"]:after {
+  content: "";
+  position: absolute;
+  color: #00aa6c;
+  margin-left: 5px;
+  font-size: 0.95rem;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  background: #00aa6c;
+  height: 6px;
+  width: 6px;
+  border-radius: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.marina4383v1 .time-field .dropdown-list span.item.slotBooked {
+  color: #b1b1b1;
+}
+.marina4383v1 .time-field .dropdown-list span.item.slotBooked:hover {
+  color: #fff;
+}
+.marina4383v1 .dropdown-container.processing {
+  position: relative;
+}
+.marina4383v1 .dropdown-container.processing:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.25);
+  left: 0;
+  top: 0;
+  z-index: 9;
+}
+.marina4383v1 .dropdown-container.processing:after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  background: url(https://useruploads.visualwebsiteoptimizer.com/useruploads/176372/images/06d41ac4dff347ac8c07809505287e6f_loading-img2.gif)
+    no-repeat center;
+  background-size: contain;
+  z-index: 10;
+}
+.marina4383v1
+  .dropdown-field.time-field
+  span.displayed-text[slot-data="Available"]:after {
+  content: "";
+  float: right;
+  margin-right: 25px;
+  color: #00aa6c;
+  font-size: 0.95rem;
+  background: #00aa6c;
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 5px;
+}
+.marina4383v1 .time-field .dropdown-list span.item.slotBooked:after {
+  display: none;
+}
+.marina4383v1 .time-field .dropdown-list span.item:hover:after {
+  color: #026502;
+}
+.marina4383v1
+  .dropdown-field.time-field
+  span.displayed-text[slot-data="Slot unavailable"]:after {
+  display: none;
+}
+.marina4383v1
+  .table-widget-container
+  .dropdown-field.time-field:not(.hasCompleted) {
+  /*opacity: 0.65;*/
+}
+.marina4383v1
+  .table-widget-container
+  .dropdown-field.time-field:not(.hasCompleted)
+  span.displayed-text:after {
+  display: none;
+}
+@media only screen and (max-width: 360px) {
+  .marina4383v1 .sidebar-block .table_widget.section .table-widget-container {
+    padding: 15px;
+  }
+}
+@media only screen and (max-width: 359px) {
+  .marina4383v1 .sidebar-block .table_widget.section .table-widget-container {
+    padding: 10px;
+  }
+  .marina4383v1 .dropdown-field.time-field span.displayed-text,
+  .marina4383v1 .time-field .dropdown-list span,
+  .marina4383v1 .time-field .dropdown-list span.item:after,
+  .marina4383v1 .dropdown-field.time-field span.displayed-text:after {
+    font-size: 0.925rem;
+  }
+}
+.v_viewotherctaArea {
+  border-top: 1px solid #d5d5d5;
+  padding-top: 10px;
+  margin-top: 15px;
+}
+.v_viewotherctaArea a {
+  font-weight: 700;
+}

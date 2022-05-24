@@ -1,0 +1,27 @@
+* {
+  -webkit-tap-highlight-color: #fff;
+  -webkit-tap-highlight-color: transparent;
+}
+.running4277v1 .main-nav .nav-button:not(.bookATableBTN) {
+  display: none !important;
+}
+.running4277v1 .btn-sticky-bottom {
+  display: none !important;
+}
+.running4277v1 .table_widget.section {
+  display: block !important;
+  position: relative;
+  top: auto;
+  left: auto;
+  padding: 0px;
+  z-index: 1;
+  overflow: inherit;
+}
+.running4277v1 .table_widget.section button.close {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .running4277v1 .table_widget.section .table-widget-container {
+    padding: 20px;
+  }
+}

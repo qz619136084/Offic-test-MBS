@@ -1,0 +1,6 @@
+.dy-asm-link {
+  cursor: pointer;
+}
+.dy-asm-link:hover {
+  color: #7b7b7b;
+}

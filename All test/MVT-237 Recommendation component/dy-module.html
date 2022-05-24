@@ -1,0 +1,12 @@
+<div class="title_${dyVariationId}">${Title}</div>
+<div class="recs_${dyVariationId}">
+  ${#Recommendation}
+  <a href="${url}" class="rec_item_${dyVariationId}">
+    <img src="${Image_url}" />
+    <div class="rec_price">
+      ${Currency Symbol}<span class="rec_price_num">${price}</span>
+    </div>
+    <div class="rec_name">${Name}</div>
+  </a>
+  ${/Recommendation}
+</div>

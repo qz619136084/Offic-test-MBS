@@ -1,0 +1,30 @@
+<script>
+  if (
+    window.location.pathname.indexOf(
+      "/restaurants/bread-street-kitchen.html"
+    ) >= 0 ||
+    window.location.pathname.indexOf("/booking/payment.html") >= 0
+  ) {
+    var head = document.getElementsByTagName("head")[0];
+    var linkTag1 = document.createElement("link");
+    linkTag1.rel = "stylesheet";
+    linkTag1.href = "https://app.vouch.sg/widget3/css/app.css";
+    head.appendChild(linkTag1);
+    var body = document.getElementsByTagName("body")[0];
+    var div = document.createElement("div");
+    div.setAttribute("id", "app");
+    div.setAttribute("apikey", "2xg6gjl.2eb5sCty_pmtQJCMKi9_sKv94knkibqxCwr");
+    var script = document.createElement("script");
+    script.setAttribute("src", "https://app.vouch.sg/widget3/js/app.js");
+    body.appendChild(div);
+    body.appendChild(script);
+  }
+  if (
+    window.location.pathname.indexOf(
+      "/restaurants/bread-street-kitchen.html"
+    ) >= 0
+  ) {
+    document.getElementsByClassName("main-nav")[0].style.zIndex = "998";
+    document.getElementsByClassName("back-to-top")[0].style.zIndex = "998";
+  }
+</script>

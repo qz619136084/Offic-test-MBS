@@ -1,0 +1,19 @@
+.gr-upgraded-text {
+  font-size: 16px;
+}
+.upgraded-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 15px;
+  background: #1c7a46;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+}
+.upgraded-tip {
+  padding: 5px 10px;
+  background: green;
+  color: white;
+  display: inline-block;
+  font-family: "Josefin Sans", sans-serif;
+}

@@ -1,0 +1,214 @@
+@media screen and (max-width: 600px) {
+  #buyMultipleTickets .l-btn-box .btn {
+    font-size: 13px !important;
+    padding: 0 5px !important;
+  }
+  #buyMultipleTickets .lightbox-container .gallery-lightbox li.selected,
+  #buyMultipleTickets .lightbox-container .select-lightbox.selected {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  #buyMultipleTickets .lightbox-container .light-box-bg {
+    padding: 40px 40px !important;
+    height: initial !important;
+  }
+}
+@media screen and (max-width: 1641px) {
+  #buyMultipleTickets .l-btn-box .btn {
+    margin-bottom: 20px;
+  }
+}
+.mask_layer {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  z-index: 10001;
+  background-color: #333;
+  opacity: 0.6;
+}
+
+.mask_layer_content {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  z-index: 10001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ngx_foreground_spinner {
+  width: 60px;
+  height: 60px;
+  margin: 0;
+  color: rgb(210, 173, 73);
+}
+
+.sk_ball_spin_clockwise_fade_rotating {
+  font-size: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: 6s linear infinite ball_spin_clockwise_fade_rotating_rotate;
+  animation: 6s linear infinite ball_spin_clockwise_fade_rotating_rotate;
+  position: relative;
+}
+
+.sk_ball_spin_clockwise_fade_rotating > div {
+  display: inline-block;
+  float: none;
+  background-color: currentColor;
+  border: 0 solid currentColor;
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  margin-top: -12.5%;
+  margin-left: -12.5%;
+  border-radius: 100%;
+  -webkit-animation: 1s linear infinite ball_spin_clockwise_fade_rotating;
+  animation: 1s linear infinite ball_spin_clockwise_fade_rotating;
+  box-sizing: border-box;
+}
+
+.fade_rotating_1 {
+  top: 5%;
+  left: 50%;
+  -webkit-animation-delay: -0.875s !important;
+  animation-delay: -0.875s !important;
+}
+
+.fade_rotating_2 {
+  top: 18.1801948466%;
+  left: 81.8198051534%;
+  -webkit-animation-delay: -0.75s !important;
+  animation-delay: -0.75s !important;
+}
+
+.fade_rotating_3 {
+  top: 50%;
+  left: 95%;
+  -webkit-animation-delay: -0.625s !important;
+  animation-delay: -0.625s !important;
+}
+
+.fade_rotating_4 {
+  top: 81.8198051534%;
+  left: 81.8198051534%;
+  -webkit-animation-delay: -0.5s !important;
+  animation-delay: -0.5s !important;
+}
+
+.fade_rotating_5 {
+  top: 94.9999999966%;
+  left: 50.0000000005%;
+  -webkit-animation-delay: -0.375s !important;
+  animation-delay: -0.375s !important;
+}
+
+.fade_rotating_6 {
+  top: 81.8198046966%;
+  left: 18.1801949248%;
+  -webkit-animation-delay: -0.25s !important;
+  animation-delay: -0.25s !important;
+}
+
+.fade_rotating_7 {
+  top: 49.9999750815%;
+  left: 5.0000051215%;
+  -webkit-animation-delay: -0.125s !important;
+  animation-delay: -0.125s !important;
+}
+
+.fade_rotating_8 {
+  top: 18.179464974%;
+  left: 18.1803700518%;
+  -webkit-animation-delay: 0s !important;
+  animation-delay: 0s !important;
+}
+
+@-webkit-keyframes ball_spin_clockwise_fade_rotating_rotate {
+  to {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@-moz-keyframes ball_spin_clockwise_fade_rotating_rotate {
+  to {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@-o-keyframes ball_spin_clockwise_fade_rotating_rotate {
+  to {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes ball_spin_clockwise_fade_rotating_rotate {
+  to {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes ball_spin_clockwise_fade_rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    opacity: 0.25;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@-moz-keyframes ball_spin_clockwise_fade_rotating {
+  from {
+    opacity: 0.25;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@-o-keyframes ball_spin_clockwise_fade_rotating {
+  from {
+    opacity: 0.25;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes ball_spin_clockwise_fade_rotating {
+  from {
+    opacity: 0.25;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}

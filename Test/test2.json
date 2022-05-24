@@ -1,0 +1,2827 @@
+[
+  {
+    "name": "Deluxe Room Lower Floor",
+    "code": "DKN,DTN",
+    "shortDescription": "Deluxe King Lower Floor",
+    "maxAdultOccupancy": 3,
+    "maxChildOccupancy": 2,
+    "maxTotalOccupancy": 3,
+    "occupancyDescription": "Up to 3 guests",
+    "roomType": "Deluxe Room",
+    "roomView": "Lower Floor",
+    "valueOrder": 1,
+    "defaultBedType": "KB",
+    "bedTypes": [
+      {
+        "bedTypeCode": "KB",
+        "bedTypeName": "King Bed",
+        "bedTypeImageURL": "/content/dam/booking/bedtype/KB.png",
+        "roomCode": "DKN",
+        "availableRooms": 8
+      },
+      {
+        "bedTypeCode": "TSB",
+        "bedTypeName": "Twin Beds",
+        "bedTypeImageURL": "/content/dam/booking/bedtype/TSB.png",
+        "roomCode": "DTN",
+        "availableRooms": 78
+      }
+    ],
+    "averagePriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 3349.1734
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 65398.6918
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 674
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 4010.0978
+      },
+      {
+        "currencyCode": "VND",
+        "price": 11741298.2412
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 711.8788
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 776.6502
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 406.085
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 2226.0872
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 480.8316
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 26691.9502
+      },
+      {
+        "currencyCode": "INR",
+        "price": 39158.9282
+      },
+      {
+        "currencyCode": "THB",
+        "price": 17559.5198
+      },
+      {
+        "currencyCode": "USD",
+        "price": 511.0268
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 646612.0774
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 15014.0914
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 7366738.3112
+      },
+      {
+        "currencyCode": "AED",
+        "price": 1876.8878
+      }
+    ],
+    "discountedAveragePriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 3249.7914
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 63458.0778
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 654
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 3891.1038
+      },
+      {
+        "currencyCode": "VND",
+        "price": 11392891.7652
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 690.7548
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 753.6042
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 394.035
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 2160.0312
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 466.5636
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 25899.9042
+      },
+      {
+        "currencyCode": "INR",
+        "price": 37996.9422
+      },
+      {
+        "currencyCode": "THB",
+        "price": 17038.4658
+      },
+      {
+        "currencyCode": "USD",
+        "price": 495.8628
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 627424.7754
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 14568.5694
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 7148140.7352
+      },
+      {
+        "currencyCode": "AED",
+        "price": 1821.1938
+      }
+    ],
+    "totalPriceByCurrencies": [],
+    "totalDiscountedPriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 6499.5828
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 126916.1556
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 1308
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 7782.2076
+      },
+      {
+        "currencyCode": "VND",
+        "price": 22785783.5304
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 1381.5096
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 1507.2084
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 788.07
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 4320.0624
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 933.1272
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 51799.8084
+      },
+      {
+        "currencyCode": "INR",
+        "price": 75993.8844
+      },
+      {
+        "currencyCode": "THB",
+        "price": 34076.9316
+      },
+      {
+        "currencyCode": "USD",
+        "price": 991.7256
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 1254849.5508
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 29137.1388
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 14296281.4704
+      },
+      {
+        "currencyCode": "AED",
+        "price": 3642.3876
+      }
+    ],
+    "lowestUnitAddOnPrice": [],
+    "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41378_9_mbs_thumb_medium.jpg",
+    "thumbnailJumboImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41378_9_mbs_thumb_jumbo.jpg",
+    "largeImageUrl": "/content/dam/booking/room-image/deluxe-room-lower-floor/thumbnail.jpg",
+    "amenities": [
+      {
+        "name": "30 sqm",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/sqm.png"
+      },
+      {
+        "name": "Glass-enclosed shower",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/shower.png"
+      },
+      {
+        "name": "Lower Floor (L2 to L9)",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/eye.png"
+      }
+    ],
+    "isBaseRoom": true,
+    "priceByDefaultCurrency": 654,
+    "totalBooked": 35,
+    "timeSpan": "24",
+    "roomDetail": {
+      "images": [
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-lower-floor/1_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-lower-floor/1_large.jpg",
+          "alt": "Deluxe Room Lower FLoor"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-lower-floor/2_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-lower-floor/2_large.jpg",
+          "alt": "Deluxe Room Lower FLoor"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-lower-floor/3_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-lower-floor/3_large.jpg",
+          "alt": "Deluxe Room Lower FLoor"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-lower-floor/4_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-lower-floor/4_large.jpg",
+          "alt": "Deluxe Room Lower FLoor"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-lower-floor/5_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-lower-floor/5_large.jpg",
+          "alt": "Deluxe Room Lower FLoor"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-lower-floor/6_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-lower-floor/6_large.jpg",
+          "alt": "Deluxe Room Lower FLoor"
+        }
+      ],
+      "features": [
+        {
+          "title": "Key Features",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": true,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "30 sqm",
+              "icon": "/content/dam/booking/feature-icon/sqm.png"
+            },
+            {
+              "name": "Glass-enclosed shower",
+              "icon": "/content/dam/booking/feature-icon/shower.png"
+            },
+            {
+              "name": "Lower Floor (L2 to L9)",
+              "icon": "/content/dam/booking/feature-icon/eye.png"
+            }
+          ],
+          "contentList": [
+            "30 sqm",
+            "Glass-enclosed shower",
+            "Lower Floor (L2 to L9)"
+          ]
+        },
+        {
+          "title": "Room Features",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Interactive flatscreen TV with cable channels",
+              "icon": ""
+            },
+            {
+              "name": "Executive work desk",
+              "icon": ""
+            },
+            {
+              "name": "In-room safe",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary high-speed Wi-Fi",
+              "icon": ""
+            },
+            {
+              "name": "Iron and ironing board",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary selections of minibar items",
+              "icon": ""
+            },
+            {
+              "name": "Breakfast is not included for this room type unless the Bed and Breakfast offer has been selected",
+              "icon": ""
+            },
+            {
+              "name": "30 sqm",
+              "icon": "/content/dam/revamp/hotel/hotel-rooms/room.svg"
+            },
+            {
+              "name": "Lower Floor (L2 to L9)",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Interactive flatscreen TV with cable channels",
+            "Executive work desk",
+            "In-room safe",
+            "Complimentary high-speed Wi-Fi",
+            "Iron and ironing board",
+            "Complimentary selections of minibar items",
+            "Breakfast is not included for this room type unless the Bed and Breakfast offer has been selected",
+            "30 sqm",
+            "Lower Floor (L2 to L9)"
+          ]
+        },
+        {
+          "title": "Bath Amenities",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Luxury bathroom amenities",
+              "icon": ""
+            },
+            {
+              "name": "Waffle bathrobes",
+              "icon": ""
+            },
+            {
+              "name": "Hair dryer",
+              "icon": ""
+            },
+            {
+              "name": "Glass-enclosed shower",
+              "icon": "/content/dam/revamp/hotel/hotel-rooms/jacuzzi.svg"
+            }
+          ],
+          "contentList": [
+            "Luxury bathroom amenities",
+            "Waffle bathrobes",
+            "Hair dryer",
+            "Glass-enclosed shower"
+          ]
+        },
+        {
+          "title": "Exclusive Privileges",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Access to Sands SkyPark Observation Deck and Infinity Pool",
+              "icon": "/content/dam/revamp/hotel/hotel-rooms/access.svg"
+            },
+            {
+              "name": "Entry to award-winning Banyan Tree Fitness Club",
+              "icon": ""
+            },
+            {
+              "name": "24 hour in-room dining service",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Access to Sands SkyPark Observation Deck and Infinity Pool",
+            "Entry to award-winning Banyan Tree Fitness Club",
+            "24 hour in-room dining service"
+          ]
+        }
+      ],
+      "video360": {
+        "image": "/content/dam/booking/room-image/deluxe-room-lower-floor/1_large.jpg",
+        "alt": "Deluxe Room Lower Floor",
+        "comp360IframeUrl": "https://assets.sands.com/MBS/Wistia/360_VirtualTourVideo_BookingEngine/Deluxe_Room/Deluxe_Lowerfloorcity/Deluxe_Lowerfloorcity_EN/deluxelowerfloorcity.html",
+        "comp360IconText": null
+      }
+    }
+  },
+  {
+    "name": "Deluxe Room Garden View",
+    "code": "DKG,DTG",
+    "shortDescription": "",
+    "maxAdultOccupancy": 3,
+    "maxChildOccupancy": 2,
+    "maxTotalOccupancy": 3,
+    "occupancyDescription": "Up to 3 guests",
+    "roomType": "Deluxe Room",
+    "roomView": "Garden View",
+    "valueOrder": 3,
+    "defaultBedType": "KB",
+    "bedTypes": [
+      {
+        "bedTypeCode": "KB",
+        "bedTypeName": "King Bed",
+        "bedTypeImageURL": "/content/dam/booking/bedtype/KB.png",
+        "roomCode": "DKG",
+        "availableRooms": 35
+      },
+      {
+        "bedTypeCode": "TSB",
+        "bedTypeName": "Twin Beds",
+        "bedTypeImageURL": "/content/dam/booking/bedtype/TSB.png",
+        "roomCode": "DTG",
+        "availableRooms": 54
+      }
+    ],
+    "averagePriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 3498.2464
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 68309.6128
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 704
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 4188.5888
+      },
+      {
+        "currencyCode": "VND",
+        "price": 12263907.9552
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 743.5648
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 811.2192
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 424.16
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 2325.1712
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 502.2336
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 27880.0192
+      },
+      {
+        "currencyCode": "INR",
+        "price": 40901.9072
+      },
+      {
+        "currencyCode": "THB",
+        "price": 18341.1008
+      },
+      {
+        "currencyCode": "USD",
+        "price": 533.7728
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 675393.0304
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 15682.3744
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 7694634.6752
+      },
+      {
+        "currencyCode": "AED",
+        "price": 1960.4288
+      }
+    ],
+    "discountedAveragePriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 3398.8644
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 66368.9988
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 684
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 4069.5948
+      },
+      {
+        "currencyCode": "VND",
+        "price": 11915501.4792
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 722.4408
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 788.1732
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 412.11
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 2259.1152
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 487.9656
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 27087.9732
+      },
+      {
+        "currencyCode": "INR",
+        "price": 39739.9212
+      },
+      {
+        "currencyCode": "THB",
+        "price": 17820.0468
+      },
+      {
+        "currencyCode": "USD",
+        "price": 518.6088
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 656205.7284
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 15236.8524
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 7476037.0992
+      },
+      {
+        "currencyCode": "AED",
+        "price": 1904.7348
+      }
+    ],
+    "totalPriceByCurrencies": [],
+    "totalDiscountedPriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 6797.7288
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 132737.9976
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 1368
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 8139.1896
+      },
+      {
+        "currencyCode": "VND",
+        "price": 23831002.9584
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 1444.8816
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 1576.3464
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 824.22
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 4518.2304
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 975.9312
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 54175.9464
+      },
+      {
+        "currencyCode": "INR",
+        "price": 79479.8424
+      },
+      {
+        "currencyCode": "THB",
+        "price": 35640.0936
+      },
+      {
+        "currencyCode": "USD",
+        "price": 1037.2176
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 1312411.4568
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 30473.7048
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 14952074.1984
+      },
+      {
+        "currencyCode": "AED",
+        "price": 3809.4696
+      }
+    ],
+    "lowestUnitAddOnPrice": [],
+    "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41257_14_mbs_thumb_medium.jpg",
+    "thumbnailJumboImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41257_14_mbs_thumb_jumbo.jpg",
+    "largeImageUrl": "/content/dam/booking/room-image/deluxe-room-garden-view/thumbnail.jpg",
+    "amenities": [
+      {
+        "name": "35 sqm",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/sqm.png"
+      },
+      {
+        "name": "Glass-enclosed shower",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/shower.png"
+      },
+      {
+        "name": "Located on L10 to L39, facing gardens",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/eye.png"
+      }
+    ],
+    "isBaseRoom": true,
+    "priceByDefaultCurrency": 684,
+    "totalBooked": 32,
+    "timeSpan": "24",
+    "roomDetail": {
+      "images": [
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-garden-view/1_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-garden-view/1_large.jpg",
+          "alt": "Deluxe Room Garden View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-garden-view/2_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-garden-view/2_large.jpg",
+          "alt": "Deluxe Room Garden View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-garden-view/3_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-garden-view/3_large.jpg",
+          "alt": "Deluxe Room Garden View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-garden-view/4_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-garden-view/4_large.jpg",
+          "alt": "Deluxe Room Garden View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-garden-view/5_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-garden-view/5_large.jpg",
+          "alt": "Deluxe Room Garden View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-garden-view/6_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-garden-view/6_large.jpg",
+          "alt": "Deluxe Room Garden View"
+        }
+      ],
+      "features": [
+        {
+          "title": " Key Features",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": true,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "35 sqm",
+              "icon": "/content/dam/booking/feature-icon/sqm.png"
+            },
+            {
+              "name": "Glass-enclosed shower",
+              "icon": "/content/dam/booking/feature-icon/shower.png"
+            },
+            {
+              "name": "Located on L10 to L39, facing gardens",
+              "icon": "/content/dam/booking/feature-icon/eye.png"
+            }
+          ],
+          "contentList": [
+            "35 sqm",
+            "Glass-enclosed shower",
+            "Located on L10 to L39, facing gardens"
+          ]
+        },
+        {
+          "title": "Room Features",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Interactive flatscreen TV with cable channels",
+              "icon": ""
+            },
+            {
+              "name": "Executive work desk",
+              "icon": ""
+            },
+            {
+              "name": "In-room safe",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary high-speed Wi-Fi",
+              "icon": ""
+            },
+            {
+              "name": "Iron and ironing board",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary selections of minibar items",
+              "icon": ""
+            },
+            {
+              "name": "Breakfast is not included for this room type unless the Bed and Breakfast offer has been selected",
+              "icon": ""
+            },
+            {
+              "name": "35 sqm",
+              "icon": ""
+            },
+            {
+              "name": "Located on L10 to L39, facing gardens",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Interactive flatscreen TV with cable channels",
+            "Executive work desk",
+            "In-room safe",
+            "Complimentary high-speed Wi-Fi",
+            "Iron and ironing board",
+            "Complimentary selections of minibar items",
+            "Breakfast is not included for this room type unless the Bed and Breakfast offer has been selected",
+            "35 sqm",
+            "Located on L10 to L39, facing gardens"
+          ]
+        },
+        {
+          "title": "Bath Amenities",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Luxury bathroom amenities",
+              "icon": ""
+            },
+            {
+              "name": "Waffle bathrobes",
+              "icon": ""
+            },
+            {
+              "name": "Hair dryer",
+              "icon": ""
+            },
+            {
+              "name": "Glass-enclosed shower",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Luxury bathroom amenities",
+            "Waffle bathrobes",
+            "Hair dryer",
+            "Glass-enclosed shower"
+          ]
+        },
+        {
+          "title": "Exclusive Privileges",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Access to Sands SkyPark Observation Deck and Infinity Pool",
+              "icon": ""
+            },
+            {
+              "name": "Entry to award-winning Banyan Tree Fitness Club",
+              "icon": ""
+            },
+            {
+              "name": "24 hour in-room dining service",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Access to Sands SkyPark Observation Deck and Infinity Pool",
+            "Entry to award-winning Banyan Tree Fitness Club",
+            "24 hour in-room dining service"
+          ]
+        }
+      ],
+      "video360": {
+        "image": "/content/dam/booking/room-image/deluxe-room-garden-view/1_large.jpg",
+        "alt": "Deluxe Room Garden View",
+        "comp360IframeUrl": "https://assets.sands.com/MBS/Wistia/360_VirtualTourVideo_BookingEngine/Deluxe_Room/Deluxe_Gardenview/Deluxe_Gardenview_EN/deluxegardenview.html",
+        "comp360IconText": null
+      }
+    }
+  },
+  {
+    "name": "Deluxe Room Harbour View",
+    "code": "DKH",
+    "shortDescription": "Deluxe King Harbour View",
+    "maxAdultOccupancy": 3,
+    "maxChildOccupancy": 2,
+    "maxTotalOccupancy": 3,
+    "occupancyDescription": "Up to 3 guests",
+    "roomType": "Deluxe Room",
+    "roomView": "Harbour View",
+    "valueOrder": 8,
+    "defaultBedType": "KB",
+    "bedTypes": [
+      {
+        "bedTypeCode": "KB",
+        "bedTypeName": "King Bed",
+        "bedTypeImageURL": "/content/dam/booking/bedtype/KB.png",
+        "roomCode": "DKH",
+        "availableRooms": 28
+      }
+    ],
+    "averagePriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 3697.0104
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 72190.8408
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 744
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 4426.5768
+      },
+      {
+        "currencyCode": "VND",
+        "price": 12960720.9072
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 785.8128
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 857.3112
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 448.26
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 2457.2832
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 530.7696
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 29464.1112
+      },
+      {
+        "currencyCode": "INR",
+        "price": 43225.8792
+      },
+      {
+        "currencyCode": "THB",
+        "price": 19383.2088
+      },
+      {
+        "currencyCode": "USD",
+        "price": 564.1008
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 713767.6344
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 16573.4184
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 8131829.8272
+      },
+      {
+        "currencyCode": "AED",
+        "price": 2071.8168
+      }
+    ],
+    "discountedAveragePriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 3597.6284
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 70250.2268
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 724
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 4307.5828
+      },
+      {
+        "currencyCode": "VND",
+        "price": 12612314.4312
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 764.6888
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 834.2652
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 436.21
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 2391.2272
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 516.5016
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 28672.0652
+      },
+      {
+        "currencyCode": "INR",
+        "price": 42063.8932
+      },
+      {
+        "currencyCode": "THB",
+        "price": 18862.1548
+      },
+      {
+        "currencyCode": "USD",
+        "price": 548.9368
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 694580.3324
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 16127.8964
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 7913232.2512
+      },
+      {
+        "currencyCode": "AED",
+        "price": 2016.1228
+      }
+    ],
+    "totalPriceByCurrencies": [],
+    "totalDiscountedPriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 7195.2568
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 140500.4536
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 1448
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 8615.1656
+      },
+      {
+        "currencyCode": "VND",
+        "price": 25224628.8624
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 1529.3776
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 1668.5304
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 872.42
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 4782.4544
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 1033.0032
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 57344.1304
+      },
+      {
+        "currencyCode": "INR",
+        "price": 84127.7864
+      },
+      {
+        "currencyCode": "THB",
+        "price": 37724.3096
+      },
+      {
+        "currencyCode": "USD",
+        "price": 1097.8736
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 1389160.6648
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 32255.7928
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 15826464.5024
+      },
+      {
+        "currencyCode": "AED",
+        "price": 4032.2456
+      }
+    ],
+    "lowestUnitAddOnPrice": [],
+    "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41386_4_mbs_thumb_medium.jpg",
+    "thumbnailJumboImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41386_4_mbs_thumb_jumbo.jpg",
+    "largeImageUrl": "/content/dam/booking/room-image/deluxe-room-harbour-view/thumbnail.jpg",
+    "amenities": [
+      {
+        "name": "39 sqm",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/sqm.png"
+      },
+      {
+        "name": "Glass-enclosed shower",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/shower.png"
+      },
+      {
+        "name": "Located on L40 and above, facing sea",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/eye.png"
+      }
+    ],
+    "isBaseRoom": true,
+    "priceByDefaultCurrency": 724,
+    "totalBooked": 30,
+    "timeSpan": "24",
+    "roomDetail": {
+      "images": [
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-harbour-view/1_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-harbour-view/1_large.jpg",
+          "alt": "Deluxe Room Harbour View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-harbour-view/2_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-harbour-view/2_large.jpg",
+          "alt": "Deluxe Room Harbour View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-harbour-view/3_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-harbour-view/3_large.jpg",
+          "alt": "Deluxe Room Harbour View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-harbour-view/4_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-harbour-view/4_large.jpg",
+          "alt": "Deluxe Room Harbour View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-harbour-view/5_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-harbour-view/5_large.jpg",
+          "alt": "Deluxe Room Harbour View"
+        }
+      ],
+      "features": [
+        {
+          "title": "Key Features",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": true,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "39 sqm",
+              "icon": "/content/dam/booking/feature-icon/sqm.png"
+            },
+            {
+              "name": "Glass-enclosed shower",
+              "icon": "/content/dam/booking/feature-icon/shower.png"
+            },
+            {
+              "name": "Located on L40 and above, facing sea",
+              "icon": "/content/dam/booking/feature-icon/eye.png"
+            }
+          ],
+          "contentList": [
+            "39 sqm",
+            "Glass-enclosed shower",
+            "Located on L40 and above, facing sea"
+          ]
+        },
+        {
+          "title": "Room Features",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Interactive flatscreen TV with cable channels",
+              "icon": ""
+            },
+            {
+              "name": "Executive work desk",
+              "icon": ""
+            },
+            {
+              "name": "In-room safe",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary high-speed Wi-Fi",
+              "icon": ""
+            },
+            {
+              "name": "Iron and ironing board",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary selections of minibar items",
+              "icon": ""
+            },
+            {
+              "name": "Breakfast is not included for this room type unless the Bed and Breakfast offer has been selected",
+              "icon": ""
+            },
+            {
+              "name": "39 sqm",
+              "icon": ""
+            },
+            {
+              "name": "Located on L40 and above, facing sea",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Interactive flatscreen TV with cable channels",
+            "Executive work desk",
+            "In-room safe",
+            "Complimentary high-speed Wi-Fi",
+            "Iron and ironing board",
+            "Complimentary selections of minibar items",
+            "Breakfast is not included for this room type unless the Bed and Breakfast offer has been selected",
+            "39 sqm",
+            "Located on L40 and above, facing sea"
+          ]
+        },
+        {
+          "title": "Bath Amenities",
+          "desktopImage": "",
+          "mobileImage": "Glass-enclosed shower",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Luxury bathroom amenities",
+              "icon": ""
+            },
+            {
+              "name": "Waffle bathrobes",
+              "icon": ""
+            },
+            {
+              "name": "Hair dryer",
+              "icon": ""
+            },
+            {
+              "name": "Glass-enclosed shower",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Luxury bathroom amenities",
+            "Waffle bathrobes",
+            "Hair dryer",
+            "Glass-enclosed shower"
+          ]
+        },
+        {
+          "title": "Exclusive Privileges",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Access to Sands SkyPark Observation Deck and Infinity Pool",
+              "icon": ""
+            },
+            {
+              "name": "Entry to award-winning Banyan Tree Fitness Club",
+              "icon": ""
+            },
+            {
+              "name": "24 hour in-room dining service",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Access to Sands SkyPark Observation Deck and Infinity Pool",
+            "Entry to award-winning Banyan Tree Fitness Club",
+            "24 hour in-room dining service"
+          ]
+        }
+      ],
+      "video360": {
+        "image": "/content/dam/booking/room-image/deluxe-room-harbour-view/1_large.jpg",
+        "alt": "Deluxe Room Harbour View",
+        "comp360IframeUrl": "https://assets.sands.com/MBS/Wistia/360_VirtualTourVideo_BookingEngine/Deluxe_Room/Deluxe_Harbourview/Deluxe_Harbourview_EN/deluxeharbourview.html",
+        "comp360IconText": null
+      }
+    }
+  },
+  {
+    "name": "Deluxe Room City View",
+    "code": "DKV,DTV",
+    "shortDescription": "Deluxe King City View",
+    "maxAdultOccupancy": 3,
+    "maxChildOccupancy": 2,
+    "maxTotalOccupancy": 3,
+    "occupancyDescription": "Up to 3 guests",
+    "roomType": "Deluxe Room",
+    "roomView": "City View",
+    "valueOrder": 5,
+    "defaultBedType": "KB",
+    "bedTypes": [
+      {
+        "bedTypeCode": "KB",
+        "bedTypeName": "King Bed",
+        "bedTypeImageURL": "/content/dam/booking/bedtype/KB.png",
+        "roomCode": "DKV",
+        "availableRooms": 16
+      },
+      {
+        "bedTypeCode": "TSB",
+        "bedTypeName": "Twin Beds",
+        "bedTypeImageURL": "/content/dam/booking/bedtype/TSB.png",
+        "roomCode": "DTV",
+        "availableRooms": 12
+      }
+    ],
+    "averagePriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 3697.0104
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 72190.8408
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 744
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 4426.5768
+      },
+      {
+        "currencyCode": "VND",
+        "price": 12960720.9072
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 785.8128
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 857.3112
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 448.26
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 2457.2832
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 530.7696
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 29464.1112
+      },
+      {
+        "currencyCode": "INR",
+        "price": 43225.8792
+      },
+      {
+        "currencyCode": "THB",
+        "price": 19383.2088
+      },
+      {
+        "currencyCode": "USD",
+        "price": 564.1008
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 713767.6344
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 16573.4184
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 8131829.8272
+      },
+      {
+        "currencyCode": "AED",
+        "price": 2071.8168
+      }
+    ],
+    "discountedAveragePriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 3597.6284
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 70250.2268
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 724
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 4307.5828
+      },
+      {
+        "currencyCode": "VND",
+        "price": 12612314.4312
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 764.6888
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 834.2652
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 436.21
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 2391.2272
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 516.5016
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 28672.0652
+      },
+      {
+        "currencyCode": "INR",
+        "price": 42063.8932
+      },
+      {
+        "currencyCode": "THB",
+        "price": 18862.1548
+      },
+      {
+        "currencyCode": "USD",
+        "price": 548.9368
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 694580.3324
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 16127.8964
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 7913232.2512
+      },
+      {
+        "currencyCode": "AED",
+        "price": 2016.1228
+      }
+    ],
+    "totalPriceByCurrencies": [],
+    "totalDiscountedPriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 7195.2568
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 140500.4536
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 1448
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 8615.1656
+      },
+      {
+        "currencyCode": "VND",
+        "price": 25224628.8624
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 1529.3776
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 1668.5304
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 872.42
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 4782.4544
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 1033.0032
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 57344.1304
+      },
+      {
+        "currencyCode": "INR",
+        "price": 84127.7864
+      },
+      {
+        "currencyCode": "THB",
+        "price": 37724.3096
+      },
+      {
+        "currencyCode": "USD",
+        "price": 1097.8736
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 1389160.6648
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 32255.7928
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 15826464.5024
+      },
+      {
+        "currencyCode": "AED",
+        "price": 4032.2456
+      }
+    ],
+    "lowestUnitAddOnPrice": [],
+    "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41664_2_mbs_thumb_medium.jpg",
+    "thumbnailJumboImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41664_2_mbs_thumb_jumbo.jpg",
+    "largeImageUrl": "/content/dam/booking/room-image/deluxe-room-city-view/thumbnail.jpg",
+    "amenities": [
+      {
+        "name": "35 sqm",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/sqm.png"
+      },
+      {
+        "name": "Glass-enclosed shower",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/shower.png"
+      },
+      {
+        "name": "Located on L19 to L39, facing city",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/eye.png"
+      }
+    ],
+    "isBaseRoom": true,
+    "priceByDefaultCurrency": 724,
+    "totalBooked": 24,
+    "timeSpan": "24",
+    "roomDetail": {
+      "images": [
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-city-view/1_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-city-view/1_large.jpg",
+          "alt": "Deluxe Room City View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-city-view/2_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-city-view/2_large.jpg",
+          "alt": "Deluxe Room City View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-city-view/3_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-city-view/3_large.jpg",
+          "alt": "Deluxe Room City View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-city-view/4_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-city-view/4_large.jpg",
+          "alt": "Deluxe Room City View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-city-view/5_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-city-view/5_large.jpg",
+          "alt": "Deluxe Room City View"
+        }
+      ],
+      "features": [
+        {
+          "title": "Key Features",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": true,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "35 sqm",
+              "icon": "/content/dam/booking/feature-icon/sqm.png"
+            },
+            {
+              "name": "Glass-enclosed shower",
+              "icon": "/content/dam/booking/feature-icon/shower.png"
+            },
+            {
+              "name": "Located on L19 to L39, facing city",
+              "icon": "/content/dam/booking/feature-icon/eye.png"
+            }
+          ],
+          "contentList": [
+            "35 sqm",
+            "Glass-enclosed shower",
+            "Located on L19 to L39, facing city"
+          ]
+        },
+        {
+          "title": "Room Features",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Interactive flatscreen TV with cable channels",
+              "icon": ""
+            },
+            {
+              "name": "Executive work desk",
+              "icon": ""
+            },
+            {
+              "name": "In-room safe",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary high-speed Wi-Fi",
+              "icon": ""
+            },
+            {
+              "name": "Iron and ironing board",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary selections of minibar items",
+              "icon": ""
+            },
+            {
+              "name": "Breakfast is not included for this room type unless the Bed and Breakfast offer has been selected",
+              "icon": ""
+            },
+            {
+              "name": "35 sqm",
+              "icon": ""
+            },
+            {
+              "name": "Located on L19 to L39, facing city",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Interactive flatscreen TV with cable channels",
+            "Executive work desk",
+            "In-room safe",
+            "Complimentary high-speed Wi-Fi",
+            "Iron and ironing board",
+            "Complimentary selections of minibar items",
+            "Breakfast is not included for this room type unless the Bed and Breakfast offer has been selected",
+            "35 sqm",
+            "Located on L19 to L39, facing city"
+          ]
+        },
+        {
+          "title": "Bath Amenities",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Luxury bathroom amenities",
+              "icon": ""
+            },
+            {
+              "name": "Waffle bathrobes",
+              "icon": ""
+            },
+            {
+              "name": "Hair dryer",
+              "icon": ""
+            },
+            {
+              "name": "Glass-enclosed shower",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Luxury bathroom amenities",
+            "Waffle bathrobes",
+            "Hair dryer",
+            "Glass-enclosed shower"
+          ]
+        },
+        {
+          "title": "Exclusive Privileges",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Access to Sands SkyPark Observation Deck and Infinity Pool",
+              "icon": ""
+            },
+            {
+              "name": "Entry to award-winning Banyan Tree Fitness Club",
+              "icon": ""
+            },
+            {
+              "name": "24 hour in-room dining service",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Access to Sands SkyPark Observation Deck and Infinity Pool",
+            "Entry to award-winning Banyan Tree Fitness Club",
+            "24 hour in-room dining service"
+          ]
+        }
+      ],
+      "video360": {
+        "image": "/content/dam/booking/room-image/deluxe-room-city-view/1_large.jpg",
+        "alt": "Deluxe Room City View",
+        "comp360IframeUrl": "https://assets.sands.com/MBS/Wistia/360_VirtualTourVideo_BookingEngine/Deluxe_Room/Deluxe_Cityview/Deluxe_Cityview_EN/deluxecityview.html",
+        "comp360IconText": null
+      }
+    }
+  },
+  {
+    "name": "Deluxe Room Sky View",
+    "code": "DKS",
+    "shortDescription": "Deluxe King Sky View",
+    "maxAdultOccupancy": 3,
+    "maxChildOccupancy": 2,
+    "maxTotalOccupancy": 3,
+    "occupancyDescription": "Up to 3 guests",
+    "roomType": "Deluxe Room",
+    "roomView": "Sky View",
+    "valueOrder": 7,
+    "defaultBedType": "KB",
+    "bedTypes": [
+      {
+        "bedTypeCode": "KB",
+        "bedTypeName": "King Bed",
+        "bedTypeImageURL": "/content/dam/booking/bedtype/KB.png",
+        "roomCode": "DKS",
+        "availableRooms": 20
+      }
+    ],
+    "averagePriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 3846.0834
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 75101.7618
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 774
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 4605.0678
+      },
+      {
+        "currencyCode": "VND",
+        "price": 13483330.6212
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 817.4988
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 891.8802
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 466.335
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 2556.3672
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 552.1716
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 30652.1802
+      },
+      {
+        "currencyCode": "INR",
+        "price": 44968.8582
+      },
+      {
+        "currencyCode": "THB",
+        "price": 20164.7898
+      },
+      {
+        "currencyCode": "USD",
+        "price": 586.8468
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 742548.5874
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 17241.7014
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 8459726.1912
+      },
+      {
+        "currencyCode": "AED",
+        "price": 2155.3578
+      }
+    ],
+    "discountedAveragePriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 3746.7014
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 73161.1478
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 754
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 4486.0738
+      },
+      {
+        "currencyCode": "VND",
+        "price": 13134924.1452
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 796.3748
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 868.8342
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 454.285
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 2490.3112
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 537.9036
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 29860.1342
+      },
+      {
+        "currencyCode": "INR",
+        "price": 43806.8722
+      },
+      {
+        "currencyCode": "THB",
+        "price": 19643.7358
+      },
+      {
+        "currencyCode": "USD",
+        "price": 571.6828
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 723361.2854
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 16796.1794
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 8241128.6152
+      },
+      {
+        "currencyCode": "AED",
+        "price": 2099.6638
+      }
+    ],
+    "totalPriceByCurrencies": [],
+    "totalDiscountedPriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 7493.4028
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 146322.2956
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 1508
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 8972.1476
+      },
+      {
+        "currencyCode": "VND",
+        "price": 26269848.2904
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 1592.7496
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 1737.6684
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 908.57
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 4980.6224
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 1075.8072
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 59720.2684
+      },
+      {
+        "currencyCode": "INR",
+        "price": 87613.7444
+      },
+      {
+        "currencyCode": "THB",
+        "price": 39287.4716
+      },
+      {
+        "currencyCode": "USD",
+        "price": 1143.3656
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 1446722.5708
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 33592.3588
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 16482257.2304
+      },
+      {
+        "currencyCode": "AED",
+        "price": 4199.3276
+      }
+    ],
+    "lowestUnitAddOnPrice": [],
+    "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41385_3_mbs_thumb_medium.jpg",
+    "thumbnailJumboImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41385_3_mbs_thumb_jumbo.jpg",
+    "largeImageUrl": "/content/dam/booking/room-image/deluxe-room-sky-view/thumbnail.jpg",
+    "amenities": [
+      {
+        "name": "39 sqm",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/sqm.png"
+      },
+      {
+        "name": "Glass-enclosed shower",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/shower.png"
+      },
+      {
+        "name": "Located on L40 and above, facing city",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/eye.png"
+      }
+    ],
+    "isBaseRoom": true,
+    "priceByDefaultCurrency": 754,
+    "totalBooked": 15,
+    "timeSpan": "24",
+    "roomDetail": {
+      "images": [
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-sky-view/1_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-sky-view/1_large.jpg",
+          "alt": "Deluxe Room Sky View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-sky-view/2_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-sky-view/2_large.jpg",
+          "alt": "Deluxe Room Sky View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-sky-view/3_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-sky-view/3_large.jpg",
+          "alt": "Deluxe Room Sky View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-sky-view/4_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-sky-view/4_large.jpg",
+          "alt": "Deluxe Room Sky View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/deluxe-room-sky-view/5_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/deluxe-room-sky-view/5_large.jpg",
+          "alt": "Deluxe Room Sky View"
+        }
+      ],
+      "features": [
+        {
+          "title": "Key Features",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": true,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "39 sqm",
+              "icon": "/content/dam/booking/feature-icon/sqm.png"
+            },
+            {
+              "name": "Glass-enclosed shower",
+              "icon": "/content/dam/booking/feature-icon/shower.png"
+            },
+            {
+              "name": "Located on L40 and above, facing city",
+              "icon": "/content/dam/booking/feature-icon/eye.png"
+            }
+          ],
+          "contentList": [
+            "39 sqm",
+            "Glass-enclosed shower",
+            "Located on L40 and above, facing city"
+          ]
+        },
+        {
+          "title": "Room Features",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": true,
+          "featureList": [
+            {
+              "name": "Interactive flatscreen TV with cable channels",
+              "icon": ""
+            },
+            {
+              "name": "Executive work desk",
+              "icon": ""
+            },
+            {
+              "name": "In-room safe",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary high-speed Wi-Fi",
+              "icon": ""
+            },
+            {
+              "name": "Iron and ironing board",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary selections of minibar items",
+              "icon": ""
+            },
+            {
+              "name": "Breakfast is not included for this room type unless the Bed and Breakfast offer has been selected",
+              "icon": ""
+            },
+            {
+              "name": "39 sqm",
+              "icon": ""
+            },
+            {
+              "name": "Located on L40 and above, facing city",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Interactive flatscreen TV with cable channels",
+            "Executive work desk",
+            "In-room safe",
+            "Complimentary high-speed Wi-Fi",
+            "Iron and ironing board",
+            "Complimentary selections of minibar items",
+            "Breakfast is not included for this room type unless the Bed and Breakfast offer has been selected",
+            "39 sqm",
+            "Located on L40 and above, facing city"
+          ]
+        },
+        {
+          "title": "Bath Amenities",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": true,
+          "featureList": [
+            {
+              "name": "Luxury bathroom amenities",
+              "icon": ""
+            },
+            {
+              "name": "Waffle bathrobes",
+              "icon": ""
+            },
+            {
+              "name": "Hair dryer",
+              "icon": ""
+            },
+            {
+              "name": "Glass-enclosed shower",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Luxury bathroom amenities",
+            "Waffle bathrobes",
+            "Hair dryer",
+            "Glass-enclosed shower"
+          ]
+        },
+        {
+          "title": "Exclusive Privileges",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Access to Sands SkyPark Observation Deck and Infinity Pool",
+              "icon": ""
+            },
+            {
+              "name": "Entry to award-winning Banyan Tree Fitness Club",
+              "icon": ""
+            },
+            {
+              "name": "24 hour in-room dining service",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Access to Sands SkyPark Observation Deck and Infinity Pool",
+            "Entry to award-winning Banyan Tree Fitness Club",
+            "24 hour in-room dining service"
+          ]
+        }
+      ],
+      "video360": {
+        "image": "/content/dam/booking/room-image/deluxe-room-sky-view/1_large.jpg",
+        "alt": "Deluxe Room Sky View",
+        "comp360IframeUrl": "https://assets.sands.com/MBS/Wistia/360_VirtualTourVideo_BookingEngine/Deluxe_Room/Deluxe_Skyview/Deluxe_Skyview_EN/deluxeskyview.html",
+        "comp360IconText": null
+      }
+    }
+  },
+  {
+    "name": "Orchid Suite Garden View",
+    "code": "ORG",
+    "shortDescription": "",
+    "maxAdultOccupancy": 3,
+    "maxChildOccupancy": 2,
+    "maxTotalOccupancy": 3,
+    "occupancyDescription": "Up to 3 guests",
+    "roomType": "Orchid Suite",
+    "roomView": "Garden View",
+    "valueOrder": 25,
+    "defaultBedType": "KB",
+    "bedTypes": [
+      {
+        "bedTypeCode": "KB",
+        "bedTypeName": "King Bed",
+        "bedTypeImageURL": "/content/dam/booking/bedtype/KB.png",
+        "roomCode": "ORG",
+        "availableRooms": 12
+      }
+    ],
+    "averagePriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 5734.3414
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 111973.4278
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 1154
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 6865.9538
+      },
+      {
+        "currencyCode": "VND",
+        "price": 20103053.6652
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 1218.8548
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 1329.7542
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 695.285
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 3811.4312
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 823.2636
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 45701.0542
+      },
+      {
+        "currencyCode": "INR",
+        "price": 67046.5922
+      },
+      {
+        "currencyCode": "THB",
+        "price": 30064.8158
+      },
+      {
+        "currencyCode": "USD",
+        "price": 874.9628
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 1107107.3254
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 25706.6194
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 12613080.1352
+      },
+      {
+        "currencyCode": "AED",
+        "price": 3213.5438
+      }
+    ],
+    "discountedAveragePriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 5634.9594
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 110032.8138
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 1134
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 6746.9598
+      },
+      {
+        "currencyCode": "VND",
+        "price": 19754647.1892
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 1197.7308
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 1306.7082
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 683.235
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 3745.3752
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 808.9956
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 44909.0082
+      },
+      {
+        "currencyCode": "INR",
+        "price": 65884.6062
+      },
+      {
+        "currencyCode": "THB",
+        "price": 29543.7618
+      },
+      {
+        "currencyCode": "USD",
+        "price": 859.7988
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 1087920.0234
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 25261.0974
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 12394482.5592
+      },
+      {
+        "currencyCode": "AED",
+        "price": 3157.8498
+      }
+    ],
+    "totalPriceByCurrencies": [],
+    "totalDiscountedPriceByCurrency": [
+      {
+        "currencyCode": "CNY",
+        "price": 11269.9188
+      },
+      {
+        "currencyCode": "JPY",
+        "price": 220065.6276
+      },
+      {
+        "currencyCode": "SGD",
+        "price": 2268
+      },
+      {
+        "currencyCode": "HKD",
+        "price": 13493.9196
+      },
+      {
+        "currencyCode": "VND",
+        "price": 39509294.3784
+      },
+      {
+        "currencyCode": "AUD",
+        "price": 2395.4616
+      },
+      {
+        "currencyCode": "NZD",
+        "price": 2613.4164
+      },
+      {
+        "currencyCode": "GBP",
+        "price": 1366.47
+      },
+      {
+        "currencyCode": "MYR",
+        "price": 7490.7504
+      },
+      {
+        "currencyCode": "EUR",
+        "price": 1617.9912
+      },
+      {
+        "currencyCode": "PHP",
+        "price": 89818.0164
+      },
+      {
+        "currencyCode": "INR",
+        "price": 131769.2124
+      },
+      {
+        "currencyCode": "THB",
+        "price": 59087.5236
+      },
+      {
+        "currencyCode": "USD",
+        "price": 1719.5976
+      },
+      {
+        "currencyCode": "KRW",
+        "price": 2175840.0468
+      },
+      {
+        "currencyCode": "TWD",
+        "price": 50522.1948
+      },
+      {
+        "currencyCode": "IDR",
+        "price": 24788965.1184
+      },
+      {
+        "currencyCode": "AED",
+        "price": 6315.6996
+      }
+    ],
+    "lowestUnitAddOnPrice": [],
+    "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41555_2_mbs_thumb_medium.jpg",
+    "thumbnailJumboImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41555_2_mbs_thumb_jumbo.jpg",
+    "largeImageUrl": "/content/dam/booking/room-image/orchid-suite-garden-view/thumbnail.jpg",
+    "amenities": [
+      {
+        "name": "71 sqm",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/bathtub.png"
+      },
+      {
+        "name": "Exclusive access to Club55 & complimentary breakfast",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/key.png"
+      },
+      {
+        "name": "Located on L10 to L53, facing gardens",
+        "thumbnailImageUrl": "/content/dam/booking/feature-icon/eye.png"
+      }
+    ],
+    "isBaseRoom": false,
+    "priceByDefaultCurrency": 1134,
+    "roomDetail": {
+      "images": [
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/orchid-suite-garden-view/1_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/orchid-suite-garden-view/1_large.jpg",
+          "alt": "Orchid Suite Garden View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/orchid-suite-garden-view/2_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/orchid-suite-garden-view/2_large.jpg",
+          "alt": "Orchid Suite Garden View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/orchid-suite-garden-view/3_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/orchid-suite-garden-view/3_large.jpg",
+          "alt": "Orchid Suite Garden View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/orchid-suite-garden-view/4_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/orchid-suite-garden-view/4_large.jpg",
+          "alt": "Orchid Suite Garden View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/orchid-suite-garden-view/5_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/orchid-suite-garden-view/5_large.jpg",
+          "alt": "Orchid Suite Garden View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/orchid-suite-garden-view/6_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/orchid-suite-garden-view/6_large.jpg",
+          "alt": "Orchid Suite Garden View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/orchid-suite-garden-view/7_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/orchid-suite-garden-view/7_large.jpg",
+          "alt": "Orchid Suite Garden View"
+        },
+        {
+          "thumbnailImage": "/content/dam/booking/room-image/orchid-suite-garden-view/8_thumb.jpg",
+          "largeImage": "/content/dam/booking/room-image/orchid-suite-garden-view/8_large.jpg",
+          "alt": "Orchid Suite Garden View"
+        }
+      ],
+      "features": [
+        {
+          "title": "Key Features",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": true,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "71 sqm",
+              "icon": "/content/dam/booking/feature-icon/bathtub.png"
+            },
+            {
+              "name": "Exclusive access to Club55 & complimentary breakfast",
+              "icon": "/content/dam/booking/feature-icon/key.png"
+            },
+            {
+              "name": "Located on L10 to L53, facing gardens",
+              "icon": "/content/dam/booking/feature-icon/eye.png"
+            }
+          ],
+          "contentList": [
+            "71 sqm",
+            "Exclusive access to Club55 & complimentary breakfast",
+            "Located on L10 to L53, facing gardens"
+          ]
+        },
+        {
+          "title": "Room Features",
+          "desktopImage": "/content/dam/revamp/hotel/hotel-rooms/room.svg",
+          "mobileImage": "/content/dam/revamp/hotel/hotel-rooms/room.svg",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Separate living room",
+              "icon": "/content/dam/revamp/hotel/hotel-rooms/room.svg"
+            },
+            {
+              "name": "1 king size bed",
+              "icon": ""
+            },
+            {
+              "name": "Flatscreen TVs with cable channels in bedroom and living room",
+              "icon": ""
+            },
+            {
+              "name": "Executive work desk",
+              "icon": ""
+            },
+            {
+              "name": "In-suite safe",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary high-speed Wi-Fi",
+              "icon": ""
+            },
+            {
+              "name": "iPod/iPhone docking station with alarm and radio",
+              "icon": ""
+            },
+            {
+              "name": "Iron and ironing board",
+              "icon": ""
+            },
+            {
+              "name": "Shoe brush and shoe horn",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary selections of minibar items",
+              "icon": ""
+            },
+            {
+              "name": "Gourmet tea selections",
+              "icon": ""
+            },
+            {
+              "name": "71 sqm",
+              "icon": ""
+            },
+            {
+              "name": "Located on L10 to L53, facing gardens",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Separate living room",
+            "1 king size bed",
+            "Flatscreen TVs with cable channels in bedroom and living room",
+            "Executive work desk",
+            "In-suite safe",
+            "Complimentary high-speed Wi-Fi",
+            "iPod/iPhone docking station with alarm and radio",
+            "Iron and ironing board",
+            "Shoe brush and shoe horn",
+            "Complimentary selections of minibar items",
+            "Gourmet tea selections",
+            "71 sqm",
+            "Located on L10 to L53, facing gardens"
+          ]
+        },
+        {
+          "title": "Bath Amenities",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Waffle bathrobes",
+              "icon": ""
+            },
+            {
+              "name": "Hair dryer",
+              "icon": ""
+            },
+            {
+              "name": "Glass-enclosed shower",
+              "icon": "/content/dam/revamp/hotel/hotel-rooms/jacuzzi.svg"
+            }
+          ],
+          "contentList": [
+            "Waffle bathrobes",
+            "Hair dryer",
+            "Glass-enclosed shower"
+          ]
+        },
+        {
+          "title": "Exclusive Privileges",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Access to Sands SkyPark Observation Deck and Infinity Pool",
+              "icon": "/content/dam/revamp/hotel/hotel-rooms/access.svg"
+            },
+            {
+              "name": "Entry to award-winning Banyan Tree Fitness Club",
+              "icon": ""
+            },
+            {
+              "name": "24 hour in-room dining service",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary breakfast options at Spago, RISE or Club55",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary afternoon tea, and evening drinks and canapés at Club55",
+              "icon": ""
+            },
+            {
+              "name": "Complimentary laundry, dry cleaning or pressing of 1 pieces/day (accumulative)",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Access to Sands SkyPark Observation Deck and Infinity Pool",
+            "Entry to award-winning Banyan Tree Fitness Club",
+            "24 hour in-room dining service",
+            "Complimentary breakfast options at Spago, RISE or Club55",
+            "Complimentary afternoon tea, and evening drinks and canapés at Club55",
+            "Complimentary laundry, dry cleaning or pressing of 1 pieces/day (accumulative)"
+          ]
+        },
+        {
+          "title": "Club Access",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Club55 is open exclusively for Club Room, Grand Club Room, and Suites guests daily from 6.30am – 7pm",
+              "icon": ""
+            },
+            {
+              "name": "Club55 access has been personalised for 2 guests per room/suite; additional guests are welcome to use all of our offerings at a supplementary fee. Children below 6years enjoy complimentary access",
+              "icon": ""
+            },
+            {
+              "name": "Guests enjoy complimentary daily beverages & canapés from 5pm – 7pm, as well as complimentary daily afternoon tea and non-alcoholic beverages till closing",
+              "icon": ""
+            },
+            {
+              "name": "Use complimentary Wi-Fi and make local calls",
+              "icon": ""
+            },
+            {
+              "name": "International newspapers & magazines are provided for use",
+              "icon": ""
+            },
+            {
+              "name": "Use of Laptops, MacBooks and iPads are subject to availability",
+              "icon": ""
+            },
+            {
+              "name": "Exclusive access to Club55 & complimentary breakfast",
+              "icon": "/content/dam/revamp/hotel/hotel-rooms/lounge.svg"
+            }
+          ],
+          "contentList": [
+            "Club55 is open exclusively for Club Room, Grand Club Room, and Suites guests daily from 6.30am – 7pm",
+            "Club55 access has been personalised for 2 guests per room/suite; additional guests are welcome to use all of our offerings at a supplementary fee. Children below 6years enjoy complimentary access",
+            "Guests enjoy complimentary daily beverages & canapés from 5pm – 7pm, as well as complimentary daily afternoon tea and non-alcoholic beverages till closing",
+            "Use complimentary Wi-Fi and make local calls",
+            "International newspapers & magazines are provided for use",
+            "Use of Laptops, MacBooks and iPads are subject to availability",
+            "Exclusive access to Club55 & complimentary breakfast"
+          ]
+        },
+        {
+          "title": "Luxe Suite Benefits",
+          "desktopImage": "",
+          "mobileImage": "",
+          "keyFeature": false,
+          "showOnBe": true,
+          "showOnMa": false,
+          "featureList": [
+            {
+              "name": "Refrigerator stocked with complimentary non-alcoholic refreshments and snacks",
+              "icon": ""
+            },
+            {
+              "name": "Luxury bathroom amenities from Roberto Cavalli",
+              "icon": ""
+            }
+          ],
+          "contentList": [
+            "Refrigerator stocked with complimentary non-alcoholic refreshments and snacks",
+            "Luxury bathroom amenities from Roberto Cavalli"
+          ]
+        }
+      ],
+      "video360": {
+        "image": "/content/dam/booking/room-image/orchid-suite-garden-view/1_large.jpg",
+        "alt": "Orchid Suite Garden View",
+        "comp360IframeUrl": "https://assets.sands.com/MBS/Wistia/360_VirtualTourVideo_BookingEngine/Orchid_Suite/Orchid_Suite_Gardenview/Orchid_Suite_Gardenview_EN/orchidsuitegardenview.html",
+        "comp360IconText": null
+      }
+    }
+  }
+]

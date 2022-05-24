@@ -1,0 +1,6 @@
+@media (max-width: 501px) {
+    .component-section .btn-primary {
+      display: none !important;
+    }
+  }
+  

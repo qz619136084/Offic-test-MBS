@@ -1,0 +1,8 @@
+.dy-hlLabel {
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 992px) {
+  .dy-hlLabel {
+    margin-bottom: 1rem;
+  }
+}
