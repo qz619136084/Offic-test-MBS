@@ -1,8 +1,5 @@
-let a = 1;
-a = await f_1();
-console.log(a);
-async function f_1() {
-  setTimeout(() => {
-    return 2;
-  }, 1000);
-}
+var a = 123;
+Number.prototype.test = function () {
+  console.log("testing", this);
+};
+console.log(a.test())
