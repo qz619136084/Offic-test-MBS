@@ -7,7 +7,6 @@
   background: url(/content/dam/singapore/marinabaysands/master/main/images/Smart-App-Banner-test/logo-bg.png);
   justify-content: space-between;
   box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
-  margin-bottom: 1rem;
 }
 .dy-smart-app-banner .close-button {
   border: none;
@@ -45,7 +44,6 @@
   border-radius: 3px;
   padding: 3px;
   cursor: pointer;
-  text-decoration: none;
 }
 .dy-smart-app-banner .content-wrap {
   flex: 0 0 50%;
@@ -54,13 +52,11 @@
 .dy-smart-app-banner .content-wrap .title {
   font-weight: 700;
   font-size: 0.9rem;
-  margin: 0;
 }
 .dy-smart-app-banner .content-wrap .sub-title {
   font-size: 0.8rem;
   color: #999999;
   opacity: 1;
-  margin: 0;
 }
 @media (max-width: 450px) {
   .dy-smart-app-banner {
@@ -81,13 +77,5 @@
     width: 15px;
     height: 15px;
     background-size: 11px;
-  }
-}
-@media (max-width: 376px) {
-  .dy-smart-app-banner .content-wrap .title {
-    font-size: 0.7rem;
-  }
-  .dy-smart-app-banner .content-wrap .sub-title {
-    font-size: 0.6rem;
   }
 }
