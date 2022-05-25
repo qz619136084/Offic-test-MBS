@@ -83,3 +83,11 @@
     background-size: 11px;
   }
 }
+@media (max-width: 376px) {
+  .dy-smart-app-banner .content-wrap .title {
+    font-size: 0.7rem;
+  }
+  .dy-smart-app-banner .content-wrap .sub-title {
+    font-size: 0.6rem;
+  }
+}
