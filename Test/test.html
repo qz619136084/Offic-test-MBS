@@ -1,22 +1,75 @@
-<style>
-  .dy-smart-app-banner {
-    margin-bottom: 1rem;
-  }
-  .dy-smart-app-banner .download-button {
-    text-decoration: none;
-  }
-  .dy-smart-app-banner .content-wrap .title {
-    margin: 0;
-  }
-  .dy-smart-app-banner .content-wrap .sub-title {
-    margin: 0;
-  }
-  @media (max-width: 376px) {
-    .dy-smart-app-banner .content-wrap .title {
-      font-size: 0.7rem;
-    }
-    .dy-smart-app-banner .content-wrap .sub-title {
-      font-size: 0.6rem;
-    }
-  }
-</style>
+<section
+  class="dy-component column-content offers section IPControl_column_content_1" style="margin-top: 4.5rem;"
+>
+  <div id="offersandpackages" class="section-content">
+    <div class="section-content-title">
+      <div class="container">
+        <h2>${title}</h2>
+        <p class="lead">
+          <em>
+            ${subtitle}
+          </em>
+        </p>
+      </div>
+    </div>
+    <div class="section-content-body">
+      <div class="offer-slider active">
+        <div class="swiper-nav-buttons">
+          <div class="swiper-button-prev swiper-button-disabled"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <div class="container">
+          <div
+            class="swiper-container swiper-desktop swiper-container-initialized swiper-container-horizontal"
+          >
+            <div class="swiper-wrapper">
+              ${#Recommendation}
+              <div end_date="${end_date}" categories="${categories}"
+                class="swiper-slide swiper-slide-active"
+                style="width: 370px; margin-right: 30px"
+              >
+                <div class="card bg-transparent h-100" href="${url}">
+                  <div class="card-image">
+                    <img
+                      src="${Image_url}"
+                      data-src="${Image_url}"
+                      class="card-img-top lazyloaded"
+                      width="600"
+                      height="450"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">${card_title}</h5>
+                    <div class="card-text">
+                     ${card_content}
+                    </div>
+                  </div>
+                  <div class="card-footer"><p><a href="${Link}">View details</a></p></div>
+                </div>
+              </div>
+              ${/Recommendation}
+            
+          </div>
+          <!-- pagination -->
+          <div
+          class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+        ></div>
+        <span class="swiper-notification"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="component-section section">
+  <div class="section-content">
+   <div class="section-content-footer">
+     <div class="container">
+         <div class="text-center">
+           <p class="lead">
+         <a href="/entertainment/shows.html" target="_self">View more shows</a>
+           </p>
+         </div>
+       </div>
+     </div>
+   </div>
+</section>
