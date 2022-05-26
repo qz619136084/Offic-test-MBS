@@ -7,7 +7,9 @@ $(function () {
       $(this).next(".dy-filter-outer").show();
     });
     $(".search-filters").blur(function () {
-      $(this).next(".dy-filter-outer").hide();
+      setTimeout(() => {
+        $(this).next(".dy-filter-outer").hide();
+      }, 100);
     });
   }, 500);
 });
