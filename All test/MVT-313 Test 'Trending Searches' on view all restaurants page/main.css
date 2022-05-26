@@ -81,5 +81,6 @@
   }
   .dy-filter-list::after {
     right: 50%;
+    left: unset;
   }
 }
