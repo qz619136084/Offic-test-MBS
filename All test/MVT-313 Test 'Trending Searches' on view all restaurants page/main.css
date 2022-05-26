@@ -65,14 +65,21 @@
 }
 @media (max-width: 768px) {
   .listing-tools .list-inline-item:nth-child(2) {
-    position: relative;
+    position: unset;
   }
   .dy-filter-outer {
     width: 100%;
     top: 44px;
+    left: 0;
   }
   .dy-tips-list {
     height: auto;
     padding: 10px 15px;
+  }
+  .listing-tools ul.list-inline {
+    position: relative;
+  }
+  .dy-filter-list::after {
+    right: 50%;
   }
 }
