@@ -124,7 +124,7 @@ $(function () {
             $(".filter_box").after(priceFilterHtml);
             $("#sort_by").remove();
             $(".filter_box_right .seperator").before(
-              "<div class='room_filters_dropdown dy-bath-filter'> <a id='dy-bath-amenities-a' class='dy-dropdown_a txt_md_lb dropdown_toggle' >Bath Amenities</a > <ul class='dy-bath-dropdown-menu' style='display: none'> <li class='dropdown_menu_item'> <label class='checkbox'> <input type='checkbox' /><span></span>Glass-enclosed shower</label > </li> <li class='dropdown_menu_item'> <label class='checkbox'> <input type='checkbox' /><span></span> Deep-soaking bathtub</label > </li> <li class='dropdown_menu_item'> <label class='checkbox'> <input type='checkbox' /><span></span>Jacuzzi</label > </li> </ul> </div>"
+              "<div class='room_filters_dropdown dy-bath-filter'> <a id='dy-bath-amenities-a' class='dropdown_a dy-dropdown_a txt_md_lb dropdown_toggle' >Bath Amenities</a > <ul class='dy-bath-dropdown-menu' style='display: none'> <li class='dropdown_menu_item'> <label class='checkbox'> <input type='checkbox' /><span></span>Glass-enclosed shower</label > </li> <li class='dropdown_menu_item'> <label class='checkbox'> <input type='checkbox' /><span></span> Deep-soaking bathtub</label > </li> <li class='dropdown_menu_item'> <label class='checkbox'> <input type='checkbox' /><span></span>Jacuzzi</label > </li> </ul> </div>"
             );
             //Bind bathFilter function when click other filters;
             bindOriginFilterClick();
