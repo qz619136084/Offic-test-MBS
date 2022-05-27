@@ -1,11 +1,13 @@
-div.room_filters_dropdown.dy-updated-filter {
-  min-width: 265px !important;
-}
-.room_filters_dropdown.dy-updated-filter .dropdown_a {
-  padding: 0.75rem 2rem 0.75rem 1.5rem;
-}
-.room_filters_dropdown.dy-updated-filter .dropdown_menu_item {
-  padding: 0.25rem 0.5rem;
+@media (min-width: 768px) {
+  div.room_filters_dropdown.dy-updated-filter {
+    min-width: 265px !important;
+  }
+  .room_filters_dropdown.dy-updated-filter .dropdown_a {
+    padding: 0.75rem 2rem 0.75rem 1.5rem;
+  }
+  .room_filters_dropdown.dy-updated-filter .dropdown_menu_item {
+    padding: 0.25rem 0.5rem;
+  }
 }
 .dy-filter-checkbox {
   display: inline-block;

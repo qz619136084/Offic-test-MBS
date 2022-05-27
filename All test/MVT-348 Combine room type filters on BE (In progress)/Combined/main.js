@@ -1,4 +1,5 @@
 $(function () {
+  console.log("inside $(function())");
   //Mark the test;
   $("body").addClass("dy-sticky-filter");
   var windowWidth = $(window).width();
@@ -93,16 +94,23 @@ $(function () {
                   $(".filter_moible_box:first-child").after(
                     "<div class='dy-bath-filter filter_moible_box'> <div class='dy-title filter_box_right_title'><b>Bath Amenities</b></div> <ul> <li id='glass-enclosed-shower'> <label class='checkbox'> <input type='checkbox' /><span></span>Glass-enclosed shower</label > </li> <li id='deep-soaking-bathtub'> <label class='checkbox'> <input type='checkbox' /><span></span> Deep-soaking bathtub</label > </li> <li id='jacuzzi'> <label class='checkbox'> <input type='checkbox' /><span></span>Jacuzzi</label > </li> </ul> </div>"
                   );
+                  //update filter
+                  update_filter();
                   //Adding the checked options in last round;
-                  $(".dy-bath-filter .dy-title+ul li").each(function () {
-                    var title = $(this).attr("id");
-                    if ($("body." + title).length) {
-                      $(this).find("input").prop("checked", true);
-                    } else {
-                      $(this).find("input").prop("checked", false);
-                    }
-                  });
-
+                  if ($("body.clearOption").length) {
+                    console.log("clearing options");
+                    $(".filter_moible_box input").prop("checked", false);
+                    $("body").removeClass("clearOption");
+                  } else {
+                    $(".filter_moible_box li").each(function () {
+                      var title = $(this).attr("id");
+                      if ($("body." + title).length) {
+                        $(this).find("input").prop("checked", true);
+                      } else {
+                        $(this).find("input").prop("checked", false);
+                      }
+                    });
+                  }
                   //Binding "Done" button;
                   bindDoneBtn();
                   clearInterval(waitEl);
@@ -130,55 +138,7 @@ $(function () {
             bindOriginFilterClick();
             //Update filter
             update_filter();
-            //Re-bind filters clicking after click edit button on calendar;
-            var bindEditClick1717 = setInterval(function () {
-              if ($("#booking_information_edit").length) {
-                $("#booking_information_edit").click(function () {
-                  var currentDate = f_getSessionStorage().checkindate;
-                  var currentLos = f_getSessionStorage().los;
-                  var currentRooms = f_getSessionStorage().rooms;
-                  var bindSelectClick = setInterval(function () {
-                    if ($("#s_btn_view_rooms").length) {
-                      $("#s_btn_view_rooms").click(function () {
-                        var waitUpdatedSession = setInterval(function () {
-                          if (
-                            f_getSessionStorage() != undefined &&
-                            $("#loading").css("display") == "none"
-                          ) {
-                            var calendarDate = $(".calendar_date_select")
-                              .eq(0)
-                              .attr("data-daydata");
-                            var calendarLos =
-                              $(".calendar_date_select_range").length + 1;
-                            var calendarRooms = $(
-                              "#rate_container_box .rate_item"
-                            ).length;
-                            if (
-                              !(
-                                currentDate == calendarDate &&
-                                currentLos == calendarLos &&
-                                currentRooms == calendarRooms
-                              )
-                            ) {
-                              bindOriginFilterClick();
-                              //Reset the checkbox;
-                              $(".dy-bath-filter input:checked").trigger(
-                                "click"
-                              );
-                              //Update filter
-                              update_filter();
-                            }
-                            clearInterval(waitUpdatedSession);
-                          }
-                        }, 100);
-                      });
-                      clearInterval(bindSelectClick);
-                    }
-                  }, 10);
-                });
-                clearInterval(bindEditClick1717);
-              }
-            }, 10);
+
             //Bind dropdown function for bath filter;
             $("#dy-bath-amenities-a").click(function () {
               if ($(this).attr("dropdown") == "yes") {
@@ -196,7 +156,7 @@ $(function () {
               }
             });
             $(".dy-bath-dropdown-menu li input").click(function () {
-              bathfilter();
+              update_list_with_filter();
             });
             $(document).click(function (e) {
               var target = $(e.target);
@@ -213,13 +173,63 @@ $(function () {
             });
             fixTop();
           }
+          //Re-bind filters clicking after click edit button on calendar;
+          var bindEditClick1717 = setInterval(function () {
+            if ($("#booking_information_edit").length) {
+              $("#booking_information_edit").click(function () {
+                var currentDate = f_getSessionStorage().checkindate;
+                var currentLos = f_getSessionStorage().los;
+                var currentRooms = f_getSessionStorage().rooms;
+                var bindSelectClick = setInterval(function () {
+                  if ($("#s_btn_view_rooms").length) {
+                    $("#s_btn_view_rooms").click(function () {
+                      console.log("click");
+                      var waitUpdatedSession = setInterval(function () {
+                        if (
+                          f_getSessionStorage() != undefined &&
+                          $("#loading").css("display") == "none"
+                        ) {
+                          var calendarDate = $(".calendar_date_select")
+                            .eq(0)
+                            .attr("data-daydata");
+                          var calendarLos =
+                            $(".calendar_date_select_range").length + 1;
+                          var calendarRooms = $(
+                            "#rate_container_box .rate_item"
+                          ).length;
+                          if (
+                            !(
+                              currentDate == calendarDate &&
+                              currentLos == calendarLos &&
+                              currentRooms == calendarRooms
+                            )
+                          ) {
+                            bindOriginFilterClick();
+                            //Reset the checkbox;
+                            $(".dy-bath-filter input:checked").trigger("click");
+                            //Update filter
+                            update_filter();
+                            //Add mark to clear option record;
+                            $("body").addClass("clearOption");
+                          }
+                          clearInterval(waitUpdatedSession);
+                        }
+                      }, 100);
+                    });
+                    clearInterval(bindSelectClick);
+                  }
+                }, 10);
+              });
+              clearInterval(bindEditClick1717);
+            }
+          }, 10);
           clearInterval(getData);
         }
       }, 50);
       clearInterval(waitComponentShow);
     }
   }, 50);
-  
+
   function fixTop() {
     //FixTop function;
     var waitEl = setInterval(function () {
@@ -340,51 +350,60 @@ $(function () {
       }
     }, 100);
   }
-  function bathfilter() {
+  function update_list_with_filter() {
     $(".room_card").closest("li").show();
-    var checkedArr = [];
-    var roomArr = [];
-    //Reset body class;
-    $(".dy-bath-filter .dy-title+ul li").each(function () {
-      var title = $(this).attr("id");
-      $("body").removeClass(title);
-    });
+    var checkedBathArr = [];
+    var bath_roomArr = [];
+    var type_roomArr = [];
     $(".dy-bath-filter input:checked").each(function () {
-      var id = $(this).closest("li").attr("id");
       var title = $(this).closest("li").text().trim();
-      checkedArr.push(title);
-      //Updated the checked option to class name;
-      $("body").addClass(id);
+      checkedBathArr.push(title);
     });
-    if (checkedArr.length > 0) {
-      for (let i = 0; i < checkedArr.length; i++) {
-        var checkedType = checkedArr[i];
+    $(".dy-updated-filter li:has(input:checked)").each(function () {
+      var selectedRoomType = $(this).text().trim();
+      type_roomArr.push(selectedRoomType);
+    });
+    console.log("bathArr:", checkedBathArr);
+    console.log("roomArr:", type_roomArr);
+    if (checkedBathArr.length > 0 || type_roomArr.length > 0) {
+      for (let i = 0; i < checkedBathArr.length; i++) {
+        var checkedType = checkedBathArr[i];
         if (i == 0) {
           $.each(bathData, function (i, val) {
             if (checkedType == i) {
-              roomArr = val;
+              bath_roomArr = val;
             }
           });
         } else if (i > 0) {
           $.each(bathData, function (i, val) {
             if (checkedType == i) {
               var newRoomArr = val;
-              roomArr = compareArr(roomArr, newRoomArr);
+              bath_roomArr = compareArr(bath_roomArr, newRoomArr);
             }
           });
         }
       }
-      $(".txt-x-lg-lb.txt-black-five.ls-1.lh-30:not(.modal_title)").each(
-        function () {
-          var title = $(this)
-            .html()
-            .replace(/<span>.*<\/span>/gim, "")
-            .trim();
-          if ($.inArray(title, roomArr) == -1) {
-            $(this).closest(".room_card").closest("li").hide();
-          }
+      console.log("bathArr_latest:", bath_roomArr);
+      $("#rooms_list .room_card").each(function () {
+        var card = $(this);
+        var bath_roomName = card
+          .find(".txt-x-lg-lb.txt-black-five.ls-1.lh-30:not(.modal_title)")
+          .html()
+          .replace(/<span>.*<\/span>/gim, "")
+          .trim();
+        var type_roomName = card
+          .find(".txt-black-five")
+          .text()
+          .trim()
+          .replace(/<span>.*<\/span>/gim, "")
+          .replace("  ", " ");
+        if (
+          $.inArray(type_roomName, type_roomArr) == -1 &&
+          $.inArray(bath_roomName, bath_roomArr) == -1
+        ) {
+          card.hide();
         }
-      );
+      });
     }
   }
   function compareArr(a, b) {
@@ -407,7 +426,19 @@ $(function () {
     var waitEl = setInterval(function () {
       if ($(".modal_footer button").length) {
         $(".modal_footer button").click(function () {
-          bathfilter();
+          update_list_with_filter();
+
+          //Record selected options;
+          //Reset
+          $(".filter_moible_box li:has(input)").each(function () {
+            var title = $(this).attr("id");
+            $("body").removeClass(title);
+          });
+          //Updated the checked option to class name;
+          $(".filter_moible_box input:checked").each(function () {
+            var id = $(this).closest("li").attr("id");
+            $("body").addClass(id);
+          });
         });
         clearInterval(waitEl);
       }
@@ -420,7 +451,7 @@ $(function () {
         $("#loading").css("display") == "none"
       ) {
         $(".room_views.dropdown_menu li").click(function () {
-          bathfilter();
+          update_list_with_filter();
         });
         clearInterval(bindRoomViewFilterClick);
       }
@@ -431,7 +462,7 @@ $(function () {
         $("#loading").css("display") == "none"
       ) {
         $(".room_types.dropdown_menu li").click(function () {
-          bathfilter();
+          update_list_with_filter();
         });
         clearInterval(bindRoomTypesFilterClick);
       }
@@ -446,19 +477,32 @@ $(function () {
     $(
       ".room_filters_dropdown:not(.dy-bath-filter):not(.dy-updated-filter)+.seperator"
     ).hide();
-    $(".room_filters_dropdown:has(.room_types_a)").after(
-      "<div class='room_filters_dropdown dy-updated-filter'> <a class='room_views_a dropdown_a txt_md_lb dropdown_toggle'>All Room Types</a> <ul class='dropdown_menu' style='display: none'></ul> </div> <div class='seperator'></div>"
+    //Mobile
+    $(
+      ".filter_moible_box .room_filters_dropdown:not(.dy-bath-filter):not(.dy-updated-filter)"
+    )
+      .prev(".filter_box_right_title")
+      .hide();
+    //Common
+    //common-desktop
+    $("#main_container .room_filters_dropdown:has(.room_types_a)").after(
+      "<div class='room_filters_dropdown dy-updated-filter'> <a class='room_types_a dropdown_a txt_md_lb dropdown_toggle'>All Room Types</a> <ul class='dropdown_menu' style='display: none'></ul> </div> <div class='seperator'></div>"
     );
+    //common-mobile
+    $(".filter_moible_box .room_filters_dropdown:has(.room_types_a)").after(
+      "<div class='filter_box_right_title currency_label'>All Room Types</div> <div class='room_filters_dropdown dy-updated-filter'> <a class='room_types_a dropdown_toggle dropdown_a txt_md_lb border_normal' onclick='f_dropdown_toggle(this)' >All room types</a > <ul class='room_types dropdown_menu' style='display: none; padding-left:1rem;'></ul> </div>"
+    );
+
     var viewsArr = [];
     var typesArr = [];
     $(
-      ".room_filters_dropdown:not(.dy-updated-filter) .room_views li:gt(0)"
+      ".room_filters_dropdown:not(.dy-updated-filter) .room_views:eq(0) li:gt(0)"
     ).each(function () {
       var view = $(this).text().trim();
       viewsArr.push(view);
     });
     $(
-      ".room_filters_dropdown:not(.dy-updated-filter) .room_types li:gt(0)"
+      ".room_filters_dropdown:not(.dy-updated-filter) .room_types:eq(0) li:gt(0)"
     ).each(function () {
       var type = $(this).text().trim();
       typesArr.push(type);
@@ -467,8 +511,12 @@ $(function () {
       var type = typesArr[i];
       for (let x in viewsArr) {
         var view = viewsArr[x];
-        $(".room_filters_dropdown.dy-updated-filter .room_views_a+ul").append(
-          "<li class='dropdown_menu_item'> <label class='dy-filter-checkbox checkbox'> <input type='checkbox' /><span></span>" +
+        $(".room_filters_dropdown.dy-updated-filter .room_types_a+ul").append(
+          "<li id='" +
+            type.replace(" ", "-") +
+            "-" +
+            view.replace(" ", "-") +
+            "' class='dropdown_menu_item'> <label class='dy-filter-checkbox checkbox'> <input type='checkbox' /><span></span>" +
             type +
             " - " +
             view +
@@ -488,37 +536,12 @@ $(function () {
     });
     bind_filter_click();
   }
-  function update_list_with_filter() {
-    $("#rooms_list .room_card").show();
-    var titleArr = [];
-    $(".dy-updated-filter li:has(input:checked)").each(function () {
-      var selectedRoomType = $(this).text().trim();
-      titleArr.push(selectedRoomType);
-    });
-    if (titleArr.length) {
-      $("#rooms_list .room_card").each(function () {
-        var card = $(this);
-        var thisRoomName = card
-          .find(".txt-black-five")
-          .text()
-          .trim()
-          .replace(/<span>.*<\/span>/gim, "")
-          .replace("  ", " ");
-        if ($.inArray(thisRoomName, titleArr) == -1) {
-          card.hide();
-        }
-      });
-    } else {
-      $("#rooms_list .room_card").show();
-    }
-  }
   function bind_filter_click() {
     $(".dy-updated-filter li").click(function (e) {
       e.stopPropagation();
     });
     $(".dy-updated-filter li input").click(function (e) {
       e.stopPropagation();
-      update_list_with_filter();
     });
   }
 });
