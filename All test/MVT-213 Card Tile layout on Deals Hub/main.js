@@ -151,6 +151,10 @@ $(function () {
         name: "Stay Longer and Save",
         filter: ["Free cancellation & pay later*"],
       },
+      {
+        name: "Sands Wellness Retreat",
+        filter: ["Free cancellation & pay later*", "Free credit"],
+      },
     ];
     var icon_data = [
       {

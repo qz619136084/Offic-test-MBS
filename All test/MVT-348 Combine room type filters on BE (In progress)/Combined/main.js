@@ -1,5 +1,4 @@
 $(function () {
-  console.log("inside $(function())");
   //Mark the test;
   $("body").addClass("dy-sticky-filter");
   var windowWidth = $(window).width();
@@ -98,7 +97,6 @@ $(function () {
                   update_filter();
                   //Adding the checked options in last round;
                   if ($("body.clearOption").length) {
-                    console.log("clearing options");
                     $(".filter_moible_box input").prop("checked", false);
                     $("body").removeClass("clearOption");
                   } else {
@@ -183,7 +181,6 @@ $(function () {
                 var bindSelectClick = setInterval(function () {
                   if ($("#s_btn_view_rooms").length) {
                     $("#s_btn_view_rooms").click(function () {
-                      console.log("click");
                       var waitUpdatedSession = setInterval(function () {
                         if (
                           f_getSessionStorage() != undefined &&
@@ -351,7 +348,7 @@ $(function () {
     }, 100);
   }
   function update_list_with_filter() {
-    $(".room_card").closest("li").show();
+    $(".room_card").show();
     var checkedBathArr = [];
     var bath_roomArr = [];
     var type_roomArr = [];
@@ -363,9 +360,8 @@ $(function () {
       var selectedRoomType = $(this).text().trim();
       type_roomArr.push(selectedRoomType);
     });
-    console.log("bathArr:", checkedBathArr);
-    console.log("roomArr:", type_roomArr);
     if (checkedBathArr.length > 0 || type_roomArr.length > 0) {
+      //Get bath_roomArr
       for (let i = 0; i < checkedBathArr.length; i++) {
         var checkedType = checkedBathArr[i];
         if (i == 0) {
@@ -383,7 +379,6 @@ $(function () {
           });
         }
       }
-      console.log("bathArr_latest:", bath_roomArr);
       $("#rooms_list .room_card").each(function () {
         var card = $(this);
         var bath_roomName = card
@@ -397,13 +392,31 @@ $(function () {
           .trim()
           .replace(/<span>.*<\/span>/gim, "")
           .replace("  ", " ");
-        if (
-          $.inArray(type_roomName, type_roomArr) == -1 &&
-          $.inArray(bath_roomName, bath_roomArr) == -1
-        ) {
-          card.hide();
+        if (checkedBathArr.length > 0 && type_roomArr.length > 0) {
+          console.log("condition 1");
+          if (
+            $.inArray(type_roomName, type_roomArr) == -1 ||
+            $.inArray(bath_roomName, bath_roomArr) == -1
+          ) {
+            card.hide();
+          }
+        } else if (checkedBathArr.length > 0 && type_roomArr.length == 0) {
+          console.log("condition 2");
+          console.log("bath_roomName:", bath_roomName);
+          console.log("bath_roomArr:", bath_roomArr);
+          console.log($.inArray(bath_roomName, bath_roomArr));
+          if ($.inArray(bath_roomName, bath_roomArr) == -1) {
+            card.hide();
+          }
+        } else if (checkedBathArr.length == 0 && type_roomArr.length > 0) {
+          console.log("condition 3");
+          if ($.inArray(type_roomName, type_roomArr) == -1) {
+            card.hide();
+          }
         }
       });
+    } else {
+      $("#rooms_list .room_card").show();
     }
   }
   function compareArr(a, b) {
@@ -524,7 +537,7 @@ $(function () {
         );
       }
     }
-    $(".dy-updated-filter .room_views_a").click(function (e) {
+    $("#main_container .dy-updated-filter .room_types_a").click(function (e) {
       e.stopPropagation();
       if (!$(this).is($(".dropdown_toggle_up"))) {
         $(this).removeClass("dropdown_toggle").addClass("dropdown_toggle_up");
@@ -542,6 +555,7 @@ $(function () {
     });
     $(".dy-updated-filter li input").click(function (e) {
       e.stopPropagation();
+      update_list_with_filter();
     });
   }
 });
