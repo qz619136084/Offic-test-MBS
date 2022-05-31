@@ -12,8 +12,8 @@ function ajaxRequest() {
     });
   });
 }
-async function getDate() {
+async function getData() {
   var a = await ajaxRequest();
   console.log(a);
 }
-getDate();
+getData();
