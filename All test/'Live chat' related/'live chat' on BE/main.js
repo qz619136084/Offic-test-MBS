@@ -1,5 +1,6 @@
 $(function () {
   console.log("error-->live chat");
+  var url = window.location.href;
   //check error
   //trigger live chat
   var errorVal = getCookie("BE-error");
@@ -40,11 +41,24 @@ $(function () {
     "3005",
     "3004",
     "3006",
+    //"3000",
   ];
   if (errorVal == "yes") {
-    console.log("Error occurs!!");
+    setTimeout(() => {
+      console.log("Error occurs!!");
+      addLivechat();
+      setCookie("BE-error", "done");
+    }, 300);
+  }
+  if (url.indexOf("/error.html") > -1) {
     addLivechat();
     setCookie("BE-error", "done");
+  }
+  if (url.indexOf("/rooms.html") > -1) {
+    DYO.waitForElementAsync("#Bummer", 1, 300, 100).then(() => {
+      console.log("Bummer show");
+      addLivechat();
+    });
   }
   $(document).ajaxComplete(function (e, testXHR, settings) {
     if (settings.url.indexOf("availableRooms") > -1) {
