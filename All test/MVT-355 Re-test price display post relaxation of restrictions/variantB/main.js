@@ -22,16 +22,28 @@ $(function () {
   } else if (url.indexOf("booking/rooms") > -1) {
   }
 
-  async function handleElSync(textTarget, priceTarget, updatedText) {
+  async function handleElSync(
+    textTarget,
+    priceTarget,
+    updatedText,
+    be = false
+  ) {
     var targetEl = await DYO.waitForElementAsync(textTarget);
     $(targetEl).text(updatedText);
     $(priceTarget).each(function () {
+      var priceWithTax = null;
+      var currency = null;
+      var priceWithoutTax = null;
       console.log($(this));
-      //"+" is in order to change String to Number;
-      var currency = $(this).text().slice(0, 2);
-      var priceWithoutTax = +$(this).text().slice(2).replace(/,/g, "");
-      console.log(priceWithoutTax);
-      var priceWithTax = toMoney(priceWithoutTax * 1.177);
+      if (!be) {
+        //"+" is in order to change String to Number;
+        currency = $(this).text().slice(0, 2);
+        priceWithoutTax = +$(this).text().slice(2).replace(/,/g, "");
+      } else {
+          currency = f_getCurrencyInfo().symbol;
+          priceWithoutTax = 
+      }
+      priceWithTax = toMoney(priceWithoutTax * 1.177);
       $(this).text(currency + priceWithTax);
     });
   }
