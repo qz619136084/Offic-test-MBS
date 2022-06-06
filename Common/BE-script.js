@@ -48,18 +48,18 @@ $(function () {
                       });
                       clearInterval(bindSelectClick);
                     }
-                  }, 10);
+                  }, 100);
                 });
                 clearInterval(bindEditClick1717);
               }
-            }, 10);
+            }, 100);
           }
           clearInterval(getData);
         }
-      }, 50);
+      }, 100);
       clearInterval(waitComponentShow);
     }
-  }, 50);
+  }, 100);
   function bindClickToAddText() {
     clearT();
     var url = window.location.href;
@@ -77,7 +77,7 @@ $(function () {
           });
           clearInterval(bindRoomViewFilterClick1541);
         }
-      }, 50);
+      }, 100);
       var bindRoomTypesFilterClick1541 = setInterval(function () {
         if (
           $(".room_types.dropdown_menu li").length &&
@@ -89,7 +89,7 @@ $(function () {
           });
           clearInterval(bindRoomTypesFilterClick1541);
         }
-      }, 50);
+      }, 100);
       if ($("#select_room_container").length) {
         bindRadioButton();
       }
@@ -98,7 +98,7 @@ $(function () {
         if ($(".card_title").length && $("#loading").css("display") == "none") {
           clearInterval(window.checkMultiRoomTip12221128);
         }
-      }, 10);
+      }, 100);
     }
   }
   function bindMainButton() {
@@ -118,7 +118,7 @@ $(function () {
         }
         clearInterval(bindMainButtonClick1553);
       }
-    }, 10);
+    }, 100);
   }
   function bindRadioButton() {
     var checkRadio = setInterval(function () {
@@ -144,7 +144,7 @@ $(function () {
       ) {
         clearInterval(window.addTip12221128);
       }
-    }, 10);
+    }, 100);
   }
   function clearT() {
     $(".room_card .btn.mbs_button_primary").each(function () {
