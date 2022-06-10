@@ -2,8 +2,8 @@ $(function () {
   var updatedText = "Inclusive of GST and charges";
   var url = window.location.href;
   if (url.indexOf("deals/rooms.html") > -1) {
-    var textTarget = ".dy-new-layout .big~br+small";
-    var priceTarget = ".dy-new-layout .big strong";
+    var textTarget = ".bottomFix .big~br+small";
+    var priceTarget = ".bottomFix .big strong";
     handleElSync(textTarget, priceTarget, updatedText);
     $(".dropdown-menu-filter .checkbox input").click(() => {
       setTimeout(() => {
@@ -19,6 +19,13 @@ $(function () {
     var textTarget = ".big~br+small";
     var priceTarget = ".big strong";
     handleElSync(textTarget, priceTarget, updatedText);
+  } else if (url.indexOf("booking/search") > -1) {
+    delayUpdate().then(() => {
+      updateCalendar();
+      var calendar = document.querySelectorAll("#calendar")[0];
+      calendar.onscroll = throttle(updateCalendar, 50);
+      calendar.onclick = throttle(updateCalendar, 50);
+    });
   } else if (url.indexOf("booking/rooms") > -1) {
     var waitComponentShow = setInterval(() => {
       var stepSelected = $(".inner_circle_step.shapeborder_selected_in");
@@ -28,7 +35,7 @@ $(function () {
             f_getSessionStorage() != undefined &&
             $("#loading").css("display") == "none"
           ) {
-            updateInRoomList();
+            autoUpdate();
             bindMainClick();
             bindFilterClick();
             observe_multiRoomBanner();
@@ -61,8 +68,7 @@ $(function () {
                                 currentRooms == calendarRooms
                               )
                             ) {
-                              updateInRoomList();
-                              updateInSingleRoomCard();
+                              autoUpdate();
                               bindMainClick();
                               bindFilterClick();
                               observe_multiRoomBanner();
@@ -85,7 +91,7 @@ $(function () {
       }
     }, 100);
   } else if (url.indexOf("booking/multirooms") > -1) {
-    updateInMultiRoomCard();
+    autoUpdate();
   }
 
   async function handleElSync(textTarget, priceTarget, updatedText, be) {
@@ -318,21 +324,20 @@ $(function () {
     $(".room_card .close_button").unbind("click.taxes");
     DYO.waitForElementAsync(".mbs_button_primary").then(() => {
       $(".mbs_button_primary").bind("click.taxes", () => {
-        updateInSingleRoomCard();
+        autoUpdate();
       });
     });
     DYO.waitForElementAsync(".room_card .close_button").then(() => {
       $(".room_card .close_button").bind("click.taxes", () => {
-        updateInRoomList();
+        autoUpdate();
       });
     });
   }
   function updateInRoomList() {
-    //add class name Mark so that DY api could select easier, cause DY api use JS so that it can't use complex selector
-    $(".d-sm-block:has(.room_price)+div small").addClass("tax-tip");
-    var textTarget = ".tax-tip";
+    var textTarget = ".pricePanel small";
     var priceTarget = ".room_price";
     handleElSync(textTarget, priceTarget, updatedText, true);
+    bindMainClick();
   }
   function updateInSingleRoomCard() {
     delayUpdate().then(() => {
@@ -344,19 +349,30 @@ $(function () {
       }
     });
   }
-  function bindBedtypeRadioClick() {
-    $(".radio_div").unbind("click.taxes").removeClass("binded");
-    DYO.waitForElementAsync(".radio_div").then(() => {
-      $(".radio_div").bind("click.taxes", () => {
-        updateInSingleRoomCard();
-      });
-      $(".radio_div").addClass("binded");
-    });
-  }
   function updateInMultiRoomCard() {
     var textTarget = ".room_card .multi_avg~div small";
     var priceTarget = ".multi_number";
     handleElSync(textTarget, priceTarget, updatedText, true);
+  }
+  function autoUpdate() {
+    delayUpdate().then(() => {
+      if ($("#select_room_container").length) {
+        updateInSingleRoomCard();
+      } else if ($("#multiroom_list").length) {
+        updateInMultiRoomCard();
+      } else {
+        updateInRoomList();
+      }
+    });
+  }
+  function bindBedtypeRadioClick() {
+    $(".radio_div").unbind("click.taxes").removeClass("binded");
+    DYO.waitForElementAsync(".radio_div").then(() => {
+      $(".radio_div").bind("click.taxes", () => {
+        autoUpdate();
+      });
+      $(".radio_div").addClass("binded");
+    });
   }
   function bindFilterClick() {
     $(".room_filters_dropdown:not(.dy-bath-filter) a+ul li").unbind(
@@ -367,23 +383,35 @@ $(function () {
     );
     $(".currency_dropdown a+ul li").unbind("click.taxes");
     $("#sort_by").unbind("click.taxes");
-    $(".room_filters_dropdown:not(.dy-bath-filter) a+ul li").bind(
-      "click.taxes",
-      () => {
-        updateInRoomList();
-      }
-    );
-    $(".room_filters_dropdown.dy-bath-filter a+ul li input").bind(
-      "click.taxes",
-      () => {
-        updateInRoomList();
-      }
-    );
-    $(".currency_dropdown a+ul li").bind("click.taxes", () => {
-      updateInRoomList();
+    DYO.waitForElementAsync(
+      ".room_filters_dropdown:not(.dy-bath-filter) a+ul li"
+    ).then(() => {
+      $(".room_filters_dropdown:not(.dy-bath-filter) a+ul li").bind(
+        "click.taxes",
+        () => {
+          autoUpdate();
+        }
+      );
     });
-    $("#sort_by").bind("click.taxes", () => {
-      updateInRoomList();
+    DYO.waitForElementAsync(
+      ".room_filters_dropdown.dy-bath-filter a+ul li input"
+    ).then(() => {
+      $(".room_filters_dropdown.dy-bath-filter a+ul li input").bind(
+        "click.taxes",
+        () => {
+          autoUpdate();
+        }
+      );
+    });
+    DYO.waitForElementAsync(".currency_dropdown a+ul li").then(() => {
+      $(".currency_dropdown a+ul li").bind("click.taxes", () => {
+        autoUpdate();
+      });
+    });
+    DYO.waitForElementAsync("#sort_by").then(() => {
+      $("#sort_by").bind("click.taxes", () => {
+        autoUpdate();
+      });
     });
   }
   function observe_multiRoomBanner() {
@@ -401,7 +429,7 @@ $(function () {
               $.inArray($(".banner_card_outlet")[0], removedNodes) > -1
             ) {
               setTimeout(() => {
-                updateInRoomList();
+                autoUpdate();
                 bindFilterClick();
                 bindMainClick();
               }, 300);
@@ -432,5 +460,30 @@ $(function () {
         }
       }, 100);
     });
+  }
+  function updateCalendar() {
+    if ($(".calendar_date_select").length == 1) {
+      $(".isCheckOutDate .housePrice").removeClass("updated");
+    }
+    $(".housePrice").each(function () {
+      if (!$(this).hasClass("updated")) {
+        var currency = $(this).text().trim().slice(0, 2);
+        var oldPrice = $(this).text().trim().slice(2);
+        if (oldPrice.length && /[0-9]+/.test($(this).text().trim())) {
+          var newPrice = (oldPrice * 1.177).toFixed();
+          $(this).text(currency + newPrice);
+          $(this).addClass("updated");
+        }
+      }
+    });
+  }
+  function throttle(fn, delay) {
+    var timer = null;
+    return function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        fn();
+      }, delay);
+    };
   }
 });
