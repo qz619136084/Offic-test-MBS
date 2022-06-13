@@ -1,6 +1,6 @@
 $(function () {
   //Mark the test;
-  $("body").addClass("dy-sticky-filter");
+  $("body").addClass("dy-sticky-filter dy-combined-filter");
   var windowWidth = $(window).width();
   //Data;
   var bathData = {
@@ -90,8 +90,8 @@ $(function () {
                       "<div class='filter_box_right_title currency_label'>Room Views</div>"
                     );
                   //Adding bath amenities;
-                  $(".filter_moible_box:first-child").after(
-                    "<div class='dy-bath-filter filter_moible_box'> <div class='dy-title filter_box_right_title'><b>Bath Amenities</b></div> <ul> <li id='glass-enclosed-shower'> <label class='checkbox'> <input type='checkbox' /><span></span>Glass-enclosed shower</label > </li> <li id='deep-soaking-bathtub'> <label class='checkbox'> <input type='checkbox' /><span></span> Deep-soaking bathtub</label > </li> <li id='jacuzzi'> <label class='checkbox'> <input type='checkbox' /><span></span>Jacuzzi</label > </li> </ul> </div>"
+                  $(".filter_moible_box:first-child").before(
+                    "<div class='dy-checkbox-filter dy-bath-filter filter_moible_box'> <div class='dy-title filter_box_right_title'><b>Bath Amenities</b></div> <ul> <li id='glass-enclosed-shower'> <label class='checkbox'> <input type='checkbox' /><span></span>Glass-enclosed shower</label > </li> <li id='deep-soaking-bathtub'> <label class='checkbox'> <input type='checkbox' /><span></span> Deep-soaking bathtub</label > </li> <li id='jacuzzi'> <label class='checkbox'> <input type='checkbox' /><span></span>Jacuzzi</label > </li> </ul> </div>"
                   );
                   //update filter
                   update_filter();
@@ -102,7 +102,7 @@ $(function () {
                   } else {
                     $(".filter_moible_box li").each(function () {
                       var title = $(this).attr("id");
-                      if ($("body." + title).length) {
+                      if ($("body." + "filter-" + title).length) {
                         $(this).find("input").prop("checked", true);
                       } else {
                         $(this).find("input").prop("checked", false);
@@ -130,7 +130,7 @@ $(function () {
             $(".filter_box").after(priceFilterHtml);
             $("#sort_by").remove();
             $(".filter_box_right .seperator").before(
-              "<div class='room_filters_dropdown dy-bath-filter'> <a id='dy-bath-amenities-a' class='dropdown_a dy-dropdown_a txt_md_lb dropdown_toggle' >Bath Amenities</a > <ul class='dy-bath-dropdown-menu' style='display: none'> <li class='dropdown_menu_item'> <label class='checkbox'> <input type='checkbox' /><span></span>Glass-enclosed shower</label > </li> <li class='dropdown_menu_item'> <label class='checkbox'> <input type='checkbox' /><span></span> Deep-soaking bathtub</label > </li> <li class='dropdown_menu_item'> <label class='checkbox'> <input type='checkbox' /><span></span>Jacuzzi</label > </li> </ul> </div>"
+              "<div class='room_filters_dropdown dy-bath-filter dy-checkbox-filter'> <a id='dy-bath-amenities-a' class='dropdown_a dy-dropdown_a txt_md_lb dropdown_toggle' >Bath Amenities</a > <ul class='dy-bath-dropdown-menu' style='display: none'> <li class='dropdown_menu_item'> <label class='checkbox'> <input type='checkbox' /><span></span>Glass-enclosed shower</label > </li> <li class='dropdown_menu_item'> <label class='checkbox'> <input type='checkbox' /><span></span> Deep-soaking bathtub</label > </li> <li class='dropdown_menu_item'> <label class='checkbox'> <input type='checkbox' /><span></span>Jacuzzi</label > </li> </ul> </div>"
             );
             //Bind bathFilter function when click other filters;
             bindOriginFilterClick();
@@ -208,6 +208,7 @@ $(function () {
                             update_filter();
                             //Add mark to clear option record;
                             $("body").addClass("clearOption");
+                            clear_body_option_class("filter-");
                           }
                           clearInterval(waitUpdatedSession);
                         }
@@ -445,12 +446,12 @@ $(function () {
           //Reset
           $(".filter_moible_box li:has(input)").each(function () {
             var title = $(this).attr("id");
-            $("body").removeClass(title);
+            $("body").removeClass("filter-" + title);
           });
           //Updated the checked option to class name;
           $(".filter_moible_box input:checked").each(function () {
             var id = $(this).closest("li").attr("id");
-            $("body").addClass(id);
+            $("body").addClass("filter-" + id);
           });
         });
         clearInterval(waitEl);
@@ -502,8 +503,8 @@ $(function () {
       "<div class='room_filters_dropdown dy-updated-filter'> <a class='room_types_a dropdown_a txt_md_lb dropdown_toggle'>All Room Types</a> <ul class='dropdown_menu' style='display: none'></ul> </div> <div class='seperator'></div>"
     );
     //common-mobile
-    $(".filter_moible_box .room_filters_dropdown:has(.room_types_a)").after(
-      "<div class='filter_box_right_title currency_label'>All Room Types</div> <div class='room_filters_dropdown dy-updated-filter'> <a class='room_types_a dropdown_toggle dropdown_a txt_md_lb border_normal' onclick='f_dropdown_toggle(this)' >All room types</a > <ul class='room_types dropdown_menu' style='display: none; padding-left:1rem;'></ul> </div>"
+    $("#filter_moible .dy-bath-filter").before(
+      "<div class='dy-checkbox-filter dy-roomType-filter dy-updated-filter filter_moible_box'> <div class='dy-title filter_box_right_title'><b>All Room Types</b></div> <ul> </ul> </div>"
     );
 
     var viewsArr = [];
@@ -524,6 +525,7 @@ $(function () {
       var type = typesArr[i];
       for (let x in viewsArr) {
         var view = viewsArr[x];
+        //desktop
         $(".room_filters_dropdown.dy-updated-filter .room_types_a+ul").append(
           "<li id='" +
             type.replace(" ", "-") +
@@ -534,6 +536,18 @@ $(function () {
             " - " +
             view +
             "</label ></li>"
+        );
+        //mobile
+        $(".dy-roomType-filter ul").append(
+          "<li id='" +
+            type.replace(" ", "-") +
+            "-" +
+            view.replace(" ", "-") +
+            "'> <label class='checkbox'> <input type='checkbox' /><span></span>" +
+            type +
+            " - " +
+            view +
+            "</label > </li>"
         );
       }
     }
@@ -547,6 +561,31 @@ $(function () {
         $(this).next("ul").hide();
       }
     });
+    //hide non-available bath filter options;
+    var optionDisplaySetting = {
+      "Glass-enclosed shower": 0,
+      "Deep-soaking bathtub": 0,
+      Jacuzzi: 0,
+    };
+    $("#rooms_list .room_card").each(function () {
+      var card = $(this);
+      var roomName = card
+        .find(".txt-x-lg-lb.txt-black-five.ls-1.lh-30:not(.modal_title)")
+        .html()
+        .replace(/<span>.*<\/span>/gim, "")
+        .trim();
+      for (let i in bathData) {
+        if ($.inArray(roomName, bathData[i]) > -1) {
+          optionDisplaySetting[i] = 1;
+        }
+      }
+      $(".dy-bath-filter li").each(function () {
+        var option = $(this).text().trim();
+        if (!optionDisplaySetting[option]) {
+          $(this).hide();
+        }
+      });
+    });
     bind_filter_click();
   }
   function bind_filter_click() {
@@ -556,6 +595,18 @@ $(function () {
     $(".dy-updated-filter li input").click(function (e) {
       e.stopPropagation();
       update_list_with_filter();
+    });
+  }
+  function clear_body_option_class(keyword) {
+    var arr = [];
+    $("body")[0].classList.forEach(function (v, i) {
+      if (v.indexOf(keyword) > -1) {
+        arr.push(v);
+      }
+    });
+    console.log("filter arr:", arr);
+    arr.forEach((v) => {
+      $("body").removeClass(v);
     });
   }
 });
