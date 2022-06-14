@@ -1,46 +1,106 @@
-<div class="div-table-cell">
-  <div
-    class="table-swiper-container table-slider swiper-container-initialized swiper-container-horizontal"
-  >
-    <div class="swiper-wrapper">
-      <div
-        class="swiper-slide swiper-slide-active"
-        style="width: 195px; margin-right: 30px"
-      >
-        <p>10%</p>
-      </div>
-      <div
-        class="swiper-slide swiper-slide-next"
-        style="width: 195px; margin-right: 30px"
-      >
-        <p>10%</p>
-      </div>
-      <div class="swiper-slide" style="width: 195px; margin-right: 30px">
-        <p>10%</p>
-      </div>
+<div
+  style="margin-bottom: 2rem; cursor: pointer"
+  class="dy-new-layout col-md-6 col-lg-4 ng-scope"
+  ng-repeat="offerItem in filteredOfferItems = (offerItems | checkFilters:offerItemFilters:this | filter: dateFilter | limitTo: limit)"
+>
+  <div class="card card-box h-100" ng-click="f_footerLastLink($event)">
+    <!-- ngIf: offerItem.promotion -->
+    <div class="card-label ng-binding ng-scope" ng-if="offerItem.promotion">
+      Lowest Price
     </div>
+    <!-- end ngIf: offerItem.promotion -->
+    <!-- ngIf: offerItem.mainLink && !offerItem.hideViewmoreText -->
     <div
-      class="swiper-button-next swiper-btn-next-small swiper-button-disabled"
-      tabindex="0"
-      role="button"
-      aria-label="Next slide"
-      aria-disabled="true"
+      class="card-image ng-scope"
+      ng-if="offerItem.mainLink &amp;&amp; !offerItem.hideViewmoreText"
     >
-      &nbsp;
+      <img
+        ng-src="/content/dam/revamp/offers/stay-longer-and-save/Stay-Longer-and-Save-Offer-Page-Masthead-600x450.jpg"
+        class="card-img-top"
+        width="600"
+        height="450"
+        alt="Stay Longer and Save"
+        src="/content/dam/revamp/offers/stay-longer-and-save/Stay-Longer-and-Save-Offer-Page-Masthead-600x450.jpg"
+      />
     </div>
-    <div
-      class="swiper-button-prev swiper-btn-prev-small swiper-button-disabled"
-      tabindex="0"
-      role="button"
-      aria-label="Previous slide"
-      aria-disabled="true"
-    >
-      &nbsp;
+    <!-- end ngIf: offerItem.mainLink && !offerItem.hideViewmoreText -->
+    <!-- ngIf: !offerItem.mainLink || offerItem.hideViewmoreText -->
+    <div class="card-body">
+      <h5 class="card-title ng-binding">Stay Longer and Save</h5>
+      <!-- ngIf: offerItem.description -->
+      <p
+        ng-if="offerItem.description"
+        ng-bind-html="offerItem.description"
+        class="ng-binding ng-scope"
+      >
+        Extend your stay to 3 nights or more to enjoy greater value, paired with
+        access to a few of our most sought-after attractions.
+      </p>
+      <!-- end ngIf: offerItem.description -->
+      <!-- ngIf: offerItem.offers -->
     </div>
-    <span
-      class="swiper-notification"
-      aria-live="assertive"
-      aria-atomic="true"
-    ></span>
+    <div class="card-footer" style="min-height: 202.383px">
+      <div class="bottomFix">
+        <!-- ngIf: offerItem.price -->
+        <p class="card-text ng-scope" ng-if="offerItem.price">
+          From
+          <br />
+          <span class="big"><strong class="ng-binding">S$551.08</strong></span>
+          <small>/night</small>
+          <br />
+          <small class="ng-binding">Subject to GST and charges</small>
+        </p>
+        <!-- end ngIf: offerItem.price -->
+        <div
+          class="type-list"
+          style="
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+          "
+        >
+          <!-- ngRepeat: tag in offerItem.tags --><!-- ngIf: offerItem.tags!='' -->
+          <div
+            class="vwo-icon-part ng-scope"
+            ng-repeat="tag in offerItem.tags"
+            ng-if="offerItem.tags!=''"
+            style="position: relative"
+          >
+            <div
+              onclick="showtips(this)"
+              class="type-tag"
+              val="Stay Longer and SaveFree cancellation &amp;amp; pay later*"
+            >
+              <img
+                src="/content/dam/revamp/offers/vwoicontest/Free Cancellation And Pay Later.svg"
+              />
+            </div>
+            <div
+              class="type-tooltips"
+              id="Stay Longer and SaveFree cancellation &amp;amp; pay later*"
+              style="display: none"
+            >
+              <div class="type-tooltips-arrow"></div>
+              <div class="tag-tooltip ng-binding" ng-bind-html="tag.tooltip">
+                Free cancellation &amp; pay later*
+              </div>
+            </div>
+          </div>
+          <!-- end ngIf: offerItem.tags!='' --><!-- end ngRepeat: tag in offerItem.tags -->
+        </div>
+        <!-- ngRepeat: linkItem in offerItem.linkList -->
+        <!-- ngIf: !offerItem.hideViewmoreText -->
+        <p ng-if="!offerItem.hideViewmoreText" class="card-link ng-scope">
+          <a
+            ng-href="/deals/rooms/stay-longer-and-save.html"
+            href="/deals/rooms/stay-longer-and-save.html"
+          >
+            View details
+          </a>
+        </p>
+        <!-- end ngIf: !offerItem.hideViewmoreText -->
+      </div>
+    </div>
   </div>
 </div>
