@@ -97,15 +97,17 @@ $(function () {
   }
 
   async function handleElSync(textTarget, priceTarget, updatedText, be) {
-    //text target;
-    var targetEl = await DYO.waitForElementAsync(textTarget);
-    $(targetEl).text(updatedText);
+    var [textEl, priceEl] = await Promise.all([
+      DYO.waitForElementAsync(textTarget),
+      DYO.waitForElementAsync(priceTarget),
+    ]);
+    $(textEl).text(updatedText);
     //price target;
-    $(priceTarget).each(function () {
+    priceEl.forEach(function (v, i) {
       var priceWithTax = null;
       var currencySymbol = null;
       var priceWithoutTax = null;
-      var _this = $(this);
+      var _this = $(v);
       if (!be) {
         //For Non-BE
         //"+" is in order to change String to Number;

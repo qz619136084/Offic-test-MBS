@@ -6,3 +6,11 @@
     margin-bottom: 8.21429rem;
   }
 }
+#奖品 {
+  margin-bottom: 4.5rem;
+}
+@media (min-width: 992px) {
+  #奖品 {
+    margin-bottom: 8.21429rem;
+  }
+}

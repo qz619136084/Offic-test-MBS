@@ -91,14 +91,17 @@ $(function () {
   }
 
   async function handleElSync(textTarget, priceTarget, be) {
-    var targetEl = await DYO.waitForElementAsync(textTarget);
+    var [textEl, priceEl] = await Promise.all([
+      DYO.waitForElementAsync(textTarget),
+      DYO.waitForElementAsync(priceTarget),
+    ]);
     var taxArr = [];
     //price target;
-    $(priceTarget).each(function () {
+    priceEl.forEach(function (v, i) {
       var tax = null;
       var currencySymbol = null;
       var priceWithoutTax = null;
-      var _this = $(this);
+      var _this = $(v);
       if (!be) {
         //For Non-BE
         //"+" is in order to change String to Number;
@@ -238,7 +241,7 @@ $(function () {
       taxArr.push(currencySymbol + tax);
     });
     console.log("taxArr:", taxArr);
-    targetEl.forEach((v, i) => {
+    textEl.forEach((v, i) => {
       $(v).text("+" + taxArr[i] + " avg. taxes & fees/night");
     });
   }
