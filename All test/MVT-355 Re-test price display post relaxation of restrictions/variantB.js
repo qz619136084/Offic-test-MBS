@@ -20,12 +20,7 @@ $(function () {
     var priceTarget = ".big strong";
     handleElSync(textTarget, priceTarget, updatedText);
   } else if (url.indexOf("booking/search") > -1) {
-    delayUpdate().then(() => {
-      updateCalendar();
-      var calendar = document.querySelectorAll("#calendar")[0];
-      calendar.onscroll = throttle(updateCalendar, 50);
-      calendar.onclick = throttle(updateCalendar, 50);
-    });
+    updateAndBindCalendar();
   } else if (url.indexOf("booking/rooms") > -1) {
     var waitComponentShow = setInterval(() => {
       var stepSelected = $(".inner_circle_step.shapeborder_selected_in");
@@ -42,6 +37,7 @@ $(function () {
             var bindEditClick1717 = setInterval(() => {
               if ($("#booking_information_edit").length) {
                 $("#booking_information_edit").click(() => {
+                  updateAndBindCalendar();
                   var currentDate = f_getSessionStorage().checkindate;
                   var currentLos = f_getSessionStorage().los;
                   var currentRooms = f_getSessionStorage().rooms;
@@ -92,6 +88,12 @@ $(function () {
     }, 100);
   } else if (url.indexOf("booking/multirooms") > -1) {
     autoUpdate();
+  } else if (url.indexOf("booking/payment.html") > -1) {
+    DYO.waitForElementAsync("#room_info .edit_txt").then(() => {
+      $("#room_info .edit_txt").click(() => {
+        updateAndBindCalendar();
+      });
+    });
   }
 
   async function handleElSync(textTarget, priceTarget, updatedText, be) {
@@ -454,9 +456,10 @@ $(function () {
   }
   function delayUpdate() {
     return new Promise((resolve, reject) => {
-      setInterval(() => {
+      var check = setInterval(() => {
         if ($("#loading").css("display") == "none") {
           resolve();
+          clearInterval(check);
         }
       }, 100);
     });
@@ -482,9 +485,16 @@ $(function () {
     return function () {
       clearTimeout(timer);
       timer = setTimeout(function () {
-        console.log('calling function')
         fn();
       }, delay);
     };
+  }
+  function updateAndBindCalendar() {
+    delayUpdate().then(() => {
+      updateCalendar();
+      var calendar = document.querySelectorAll("#calendar")[0];
+      calendar.onscroll = throttle(updateCalendar, 50);
+      calendar.onclick = throttle(updateCalendar, 50);
+    });
   }
 });
