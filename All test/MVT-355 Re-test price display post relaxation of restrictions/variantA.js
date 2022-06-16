@@ -19,9 +19,7 @@ $(function () {
     var priceTarget = ".big strong";
     handleElSync(textTarget, priceTarget);
   } else if (url.indexOf("booking/search") > -1) {
-    DYO.waitForElementAsync(".calendar_box_tips span").then(() => {
-      $(".calendar_box_tips span").text("Rates are subject to GST and charges");
-    });
+    updateCalendar();
   } else if (url.indexOf("booking/rooms") > -1) {
     var waitComponentShow = setInterval(() => {
       var stepSelected = $(".inner_circle_step.shapeborder_selected_in");
@@ -38,6 +36,7 @@ $(function () {
             var bindEditClick1717 = setInterval(() => {
               if ($("#booking_information_edit").length) {
                 $("#booking_information_edit").click(() => {
+                  updateCalendar();
                   var currentDate = f_getSessionStorage().checkindate;
                   var currentLos = f_getSessionStorage().los;
                   var currentRooms = f_getSessionStorage().rooms;
@@ -88,6 +87,12 @@ $(function () {
     }, 100);
   } else if (url.indexOf("booking/multirooms") > -1) {
     autoUpdate();
+  } else if (url.indexOf("booking/payment.html") > -1) {
+    DYO.waitForElementAsync("#room_info .edit_txt").then(() => {
+      $("#room_info .edit_txt").click(() => {
+        updateCalendar();
+      });
+    });
   }
 
   async function handleElSync(textTarget, priceTarget, be) {
@@ -419,6 +424,11 @@ $(function () {
           resolve();
         }
       }, 100);
+    });
+  }
+  function updateCalendar() {
+    DYO.waitForElementAsync(".calendar_box_tips span").then(() => {
+      $(".calendar_box_tips span").text("Rates are subject to GST and charges");
     });
   }
 });

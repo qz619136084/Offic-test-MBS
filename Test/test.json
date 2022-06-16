@@ -1,750 +1,713 @@
 {
-  "roomCode": "DKN",
-  "offerList": [
-    {
-      "code": "TDBOOK",
-      "name": "Book Direct and Save S$20",
-      "dprCode": "TDBOOK",
-      "description": "<ul><li class=\"circle-bullet\">Save S$20 per night and enjoy a host of other exclusive privileges.</li></ul>",
-      "marketingConsent": "I consent to MBS Authorised Parties (Marina Bay Sands Pte. Ltd. (\"MBS\"), its affiliates and other parties listed in the prevailing MBS Privacy Policy) processing my data (whether in the possession of or as provided from time to time to any MBS Authorised Party) to send me information on promotions, events, news, advertisements, etc. relating to MBS via any means of communication including email, text messaging, MBS devices, MBS applications, MBS websites, and other third party websites that I visit. My data will also be processed to: (1) Understand my preferences and my activities at MBS; (2) Provide me with personalised services and customised marketing content; and (3) Conduct data analytics and profiling.\r\n\r\nPlease visit MBS Data Protection Office for details on how to access or correct your data or to withdraw your consent. For more information on MBS’ processing activities and data transfer, please visit MBS Privacy Policy",
-      "termsAndConditions": "<ul><li>Free cancellation or amendment of booking must be made at least 2 days before your arrival date.</li><li class=\"circle-bullet\">Reservations made over&nbsp;8 – 10 Aug 2022, 27 Sep – 2 Oct 2022, 28 – 31 Dec 2022, 1 – 4 Jan 2023, 8 – 10 Aug 2023, 19 – 24 Sep 2023, 26 Sep – 1 Oct 2023, 28 – 31 Dec 2023 and 1 – 4 Jan 2024 require full pre-payment and are non-cancellable, non-amendable and non-refundable.</li><li class=\"circle-bullet\">Child breakfast charge is applicable for any child between 6-12 years old. Breakfast for children 5 years and under is free. Child breakfast is chargeable to guest account at walk-in price upon consumption.</li></ul><p><b>You consent to MBS, its related companies, its service providers and your selected payment service provider collecting, using or disclosing your personal data to process your hotel booking form and requests, provide customer service, comply with laws, and the purposes in the prevailing MBS privacy policy. </b><br><br>See this offer’s full <a href=\"/content/singapore/marinabaysands/en/main/index/hotel/terms-and-conditions.html\" target=\"_blank\">Terms &amp; Conditions</a>.<br></p><p><b>In compliance with the Government’s safe management measures:</b><br></p><ul><li class=\"circle-bullet\">all check in guests must provide health declarations and government mandated information for contact tracing purposes;</li><li class=\"circle-bullet\">the gathering of more than 5 guests and visitors (not from the same household) will not be permitted in any hotel room; and</li><li class=\"circle-bullet\">all guests who feel unwell during their stay will be required to comply with our isolation and other Covid-19 response procedures.</li></ul>",
-      "alipayAlertText": "CNY rates may differ on Alipay payment page.",
-      "mpgsAlertText": "Your payment card will be pre-authorized with S$1.00. Please note that this is not an actual charge on your payment card, and debit/prepaid card is not acceptable for pre-authorization purpose.",
-      "guaranteePercentage": 0,
-      "isPastCancellationDate": true,
-      "noCancellationDate": "",
-      "rateplanComments": [""],
-      "lowestUnitAddOnPrice": [],
-      "addonInfo": [],
-      "rooms": [
-        {
-          "searchTransactionId": "c322a08e-6b8f-4954-88ca-9cbc4ba535fb",
-          "roomCode": "DKN",
-          "roomName": "Deluxe Room-Lower Floor",
-          "roomSeqNo": 1,
-          "bedTypeCode": "KB",
-          "bedTypeName": "King Bed",
-          "bedTypeImageUrl": "/content/dam/booking/bedtype/KB.png",
-          "priceByDefaultCurrency": 880,
-          "discountedAveragePriceByCurrency": [
-            {
-              "currencyCode": "CNY",
-              "price": 4463.008
-            },
-            {
-              "currencyCode": "JPY",
-              "price": 87127.656
-            },
-            {
-              "currencyCode": "SGD",
-              "price": 880
-            },
-            {
-              "currencyCode": "HKD",
-              "price": 5257.032
-            },
-            {
-              "currencyCode": "VND",
-              "price": 15537683.48
-            },
-            {
-              "currencyCode": "AUD",
-              "price": 924.176
-            },
-            {
-              "currencyCode": "NZD",
-              "price": 1022.384
-            },
-            {
-              "currencyCode": "GBP",
-              "price": 533.368
-            },
-            {
-              "currencyCode": "MYR",
-              "price": 2938.672
-            },
-            {
-              "currencyCode": "EUR",
-              "price": 623.392
-            },
-            {
-              "currencyCode": "PHP",
-              "price": 35377.76
-            },
-            {
-              "currencyCode": "INR",
-              "price": 52016.184
-            },
-            {
-              "currencyCode": "THB",
-              "price": 22932.888
-            },
-            {
-              "currencyCode": "USD",
-              "price": 670.12
-            },
-            {
-              "currencyCode": "KRW",
-              "price": 832594.576
-            },
-            {
-              "currencyCode": "TWD",
-              "price": 19571.376
-            },
-            {
-              "currencyCode": "IDR",
-              "price": 9675114.768
-            },
-            {
-              "currencyCode": "AED",
-              "price": 2461.272
-            }
-          ],
-          "averagePriceByCurrency": [
-            {
-              "currencyCode": "CNY",
-              "price": 4564.44
-            },
-            {
-              "currencyCode": "JPY",
-              "price": 89107.83
-            },
-            {
-              "currencyCode": "SGD",
-              "price": 900
-            },
-            {
-              "currencyCode": "HKD",
-              "price": 5376.51
-            },
-            {
-              "currencyCode": "VND",
-              "price": 15890812.65
-            },
-            {
-              "currencyCode": "AUD",
-              "price": 945.18
-            },
-            {
-              "currencyCode": "NZD",
-              "price": 1045.62
-            },
-            {
-              "currencyCode": "GBP",
-              "price": 545.49
-            },
-            {
-              "currencyCode": "MYR",
-              "price": 3005.46
-            },
-            {
-              "currencyCode": "EUR",
-              "price": 637.56
-            },
-            {
-              "currencyCode": "PHP",
-              "price": 36181.8
-            },
-            {
-              "currencyCode": "INR",
-              "price": 53198.37
-            },
-            {
-              "currencyCode": "THB",
-              "price": 23454.09
-            },
-            {
-              "currencyCode": "USD",
-              "price": 685.35
-            },
-            {
-              "currencyCode": "KRW",
-              "price": 851517.18
-            },
-            {
-              "currencyCode": "TWD",
-              "price": 20016.18
-            },
-            {
-              "currencyCode": "IDR",
-              "price": 9895003.74
-            },
-            {
-              "currencyCode": "AED",
-              "price": 2517.21
-            }
-          ],
-          "nightlyPrices": [
-            {
-              "effectiveDate": "2022-06-05",
-              "discountedPriceByCurrency": [
-                {
-                  "currencyCode": "CNY",
-                  "price": 4463.008
-                },
-                {
-                  "currencyCode": "JPY",
-                  "price": 87127.656
-                },
-                {
-                  "currencyCode": "SGD",
-                  "price": 880
-                },
-                {
-                  "currencyCode": "HKD",
-                  "price": 5257.032
-                },
-                {
-                  "currencyCode": "VND",
-                  "price": 15537683.48
-                },
-                {
-                  "currencyCode": "AUD",
-                  "price": 924.176
-                },
-                {
-                  "currencyCode": "NZD",
-                  "price": 1022.384
-                },
-                {
-                  "currencyCode": "GBP",
-                  "price": 533.368
-                },
-                {
-                  "currencyCode": "MYR",
-                  "price": 2938.672
-                },
-                {
-                  "currencyCode": "EUR",
-                  "price": 623.392
-                },
-                {
-                  "currencyCode": "PHP",
-                  "price": 35377.76
-                },
-                {
-                  "currencyCode": "INR",
-                  "price": 52016.184
-                },
-                {
-                  "currencyCode": "THB",
-                  "price": 22932.888
-                },
-                {
-                  "currencyCode": "USD",
-                  "price": 670.12
-                },
-                {
-                  "currencyCode": "KRW",
-                  "price": 832594.576
-                },
-                {
-                  "currencyCode": "TWD",
-                  "price": 19571.376
-                },
-                {
-                  "currencyCode": "IDR",
-                  "price": 9675114.768
-                },
-                {
-                  "currencyCode": "AED",
-                  "price": 2461.272
-                }
-              ],
-              "priceByCurrency": [
-                {
-                  "currencyCode": "CNY",
-                  "price": 4564.44
-                },
-                {
-                  "currencyCode": "JPY",
-                  "price": 89107.83
-                },
-                {
-                  "currencyCode": "SGD",
-                  "price": 900
-                },
-                {
-                  "currencyCode": "HKD",
-                  "price": 5376.51
-                },
-                {
-                  "currencyCode": "VND",
-                  "price": 15890812.65
-                },
-                {
-                  "currencyCode": "AUD",
-                  "price": 945.18
-                },
-                {
-                  "currencyCode": "NZD",
-                  "price": 1045.62
-                },
-                {
-                  "currencyCode": "GBP",
-                  "price": 545.49
-                },
-                {
-                  "currencyCode": "MYR",
-                  "price": 3005.46
-                },
-                {
-                  "currencyCode": "EUR",
-                  "price": 637.56
-                },
-                {
-                  "currencyCode": "PHP",
-                  "price": 36181.8
-                },
-                {
-                  "currencyCode": "INR",
-                  "price": 53198.37
-                },
-                {
-                  "currencyCode": "THB",
-                  "price": 23454.09
-                },
-                {
-                  "currencyCode": "USD",
-                  "price": 685.35
-                },
-                {
-                  "currencyCode": "KRW",
-                  "price": 851517.18
-                },
-                {
-                  "currencyCode": "TWD",
-                  "price": 20016.18
-                },
-                {
-                  "currencyCode": "IDR",
-                  "price": 9895003.74
-                },
-                {
-                  "currencyCode": "AED",
-                  "price": 2517.21
-                }
-              ]
-            }
-          ],
-          "taxesAndServiceChargesByCurrency": [
-            {
-              "currencyCode": "CNY",
-              "price": 789.95245
-            },
-            {
-              "currencyCode": "JPY",
-              "price": 15421.595777
-            },
-            {
-              "currencyCode": "SGD",
-              "price": 155.760007
-            },
-            {
-              "currencyCode": "HKD",
-              "price": 930.494704
-            },
-            {
-              "currencyCode": "VND",
-              "price": 2750170.094503
-            },
-            {
-              "currencyCode": "AUD",
-              "price": 163.579159
-            },
-            {
-              "currencyCode": "NZD",
-              "price": 180.961976
-            },
-            {
-              "currencyCode": "GBP",
-              "price": 94.40614
-            },
-            {
-              "currencyCode": "MYR",
-              "price": 520.144966
-            },
-            {
-              "currencyCode": "EUR",
-              "price": 110.340389
-            },
-            {
-              "currencyCode": "PHP",
-              "price": 6261.86379
-            },
-            {
-              "currencyCode": "INR",
-              "price": 9206.864965
-            },
-            {
-              "currencyCode": "THB",
-              "price": 4059.121351
-            },
-            {
-              "currencyCode": "USD",
-              "price": 118.611245
-            },
-            {
-              "currencyCode": "KRW",
-              "price": 147369.246304
-            },
-            {
-              "currencyCode": "TWD",
-              "price": 3464.133701
-            },
-            {
-              "currencyCode": "IDR",
-              "price": 1712495.387751
-            },
-            {
-              "currencyCode": "AED",
-              "price": 435.645163
-            }
-          ]
-        }
-      ],
-      "policyCode": "2CXL",
-      "detailedDescription": {
-        "description": "<p><b>ENJOY THESE WHEN YOU BOOK DIRECT:</b></p>\n<ul>\n<li>Guaranteed savings of S$20 per night compared to other online travel sites</li>\n<li>Free to cancel up to 2 days before your stay date</li>\n<li>High-speed Wi-Fi</li>\n<li>Entry to SkyPark Observation Deck &amp; guaranteed access to the Infinity Pool</li>\n</ul>\n<p><b>MORE PERKS WHEN YOU JOIN SANDS REWARDS MEMBERSHIP FOR FREE!</b></p>\n<ul>\n<li>Earn up to 10% Resort Dollars when you stay, shop and dine</li>\n<li>20% off total bill at RISE Restaurant</li>\n</ul>\n<p><b>BOOKING FOR SUITES INCLUDE:</b></p>\n<ul>\n<li>Complimentary afternoon tea, luxurious amenities, and evening drinks &amp; canapés at Club55</li>\n<li>Breakfast at RISE, Spago or Club55</li>\n</ul>\n",
-        "additionalPrivilegesName": null,
-        "additionalPrivileges": []
+  "code": "0000",
+  "message": "Success",
+  "data": [
+    [
+      {
+        "amenities": [
+          {
+            "name": "35 sqm",
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/18950_1_amenitySmallIcon.png"
+          },
+          {
+            "name": "Glass-enclosed shower",
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/18808_2_amenitySmallIcon.png"
+          },
+          {
+            "name": "Located on L10 to L39, facing gardens",
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/18927_1_amenitySmallIcon.png"
+          }
+        ],
+        "isBaseRoom": true,
+        "occupancyDescription": "Up to 3 guests",
+        "upgradePriceByDefaultCurrency": 30,
+        "name": "Deluxe Room Garden View",
+        "roomCode": "DKG",
+        "rateCode": "TDBOOK",
+        "description": "",
+        "roomType": "Deluxe Room",
+        "roomView": "Garden View",
+        "roomViewDescription": "    Guaranteed savings of $40 SGD per night compared to other online travel sites\n\n\n\n    50% off ArtScience Museum tickets\n\n\n\n    $25 Nett credit per stay at selected outlets\n\n\n\n",
+        "averagePrice": [
+          {
+            "currencyCode": "CNY",
+            "price": 3931.9246
+          },
+          {
+            "currencyCode": "JPY",
+            "price": 78748.0194
+          },
+          {
+            "currencyCode": "SGD",
+            "price": 779
+          },
+          {
+            "currencyCode": "HKD",
+            "price": 4593.2956
+          },
+          {
+            "currencyCode": "VND",
+            "price": 13582238.0631
+          },
+          {
+            "currencyCode": "AUD",
+            "price": 840.4631
+          },
+          {
+            "currencyCode": "NZD",
+            "price": 930.0481
+          },
+          {
+            "currencyCode": "GBP",
+            "price": 480.5651
+          },
+          {
+            "currencyCode": "MYR",
+            "price": 2585.7347
+          },
+          {
+            "currencyCode": "EUR",
+            "price": 560.6463
+          },
+          {
+            "currencyCode": "PHP",
+            "price": 31111.7799
+          },
+          {
+            "currencyCode": "INR",
+            "price": 45652.516
+          },
+          {
+            "currencyCode": "THB",
+            "price": 20427.1717
+          },
+          {
+            "currencyCode": "USD",
+            "price": 585.1069
+          },
+          {
+            "currencyCode": "KRW",
+            "price": 752517.5834
+          },
+          {
+            "currencyCode": "TWD",
+            "price": 17347.0836
+          },
+          {
+            "currencyCode": "IDR",
+            "price": 8589835.2119
+          },
+          {
+            "currencyCode": "AED",
+            "price": 2149.0273
+          }
+        ],
+        "discountedAveragePrice": [
+          {
+            "currencyCode": "CNY",
+            "price": 3830.9766
+          },
+          {
+            "currencyCode": "JPY",
+            "price": 76726.2474
+          },
+          {
+            "currencyCode": "SGD",
+            "price": 759
+          },
+          {
+            "currencyCode": "HKD",
+            "price": 4475.3676
+          },
+          {
+            "currencyCode": "VND",
+            "price": 13233528.4851
+          },
+          {
+            "currencyCode": "AUD",
+            "price": 818.8851
+          },
+          {
+            "currencyCode": "NZD",
+            "price": 906.1701
+          },
+          {
+            "currencyCode": "GBP",
+            "price": 468.2271
+          },
+          {
+            "currencyCode": "MYR",
+            "price": 2519.3487
+          },
+          {
+            "currencyCode": "EUR",
+            "price": 546.2523
+          },
+          {
+            "currencyCode": "PHP",
+            "price": 30313.0179
+          },
+          {
+            "currencyCode": "INR",
+            "price": 44480.436
+          },
+          {
+            "currencyCode": "THB",
+            "price": 19902.7257
+          },
+          {
+            "currencyCode": "USD",
+            "price": 570.0849
+          },
+          {
+            "currencyCode": "KRW",
+            "price": 733197.4914
+          },
+          {
+            "currencyCode": "TWD",
+            "price": 16901.7156
+          },
+          {
+            "currencyCode": "IDR",
+            "price": 8369300.2899
+          },
+          {
+            "currencyCode": "AED",
+            "price": 2093.8533
+          }
+        ],
+        "costOfUpgrade": [
+          {
+            "currencyCode": "CNY",
+            "price": 151.422
+          },
+          {
+            "currencyCode": "JPY",
+            "price": 3032.658
+          },
+          {
+            "currencyCode": "SGD",
+            "price": 30
+          },
+          {
+            "currencyCode": "HKD",
+            "price": 176.892
+          },
+          {
+            "currencyCode": "VND",
+            "price": 523064.367
+          },
+          {
+            "currencyCode": "AUD",
+            "price": 32.367
+          },
+          {
+            "currencyCode": "NZD",
+            "price": 35.817
+          },
+          {
+            "currencyCode": "GBP",
+            "price": 18.507
+          },
+          {
+            "currencyCode": "MYR",
+            "price": 99.579
+          },
+          {
+            "currencyCode": "EUR",
+            "price": 21.591
+          },
+          {
+            "currencyCode": "PHP",
+            "price": 1198.143
+          },
+          {
+            "currencyCode": "INR",
+            "price": 1758.12
+          },
+          {
+            "currencyCode": "THB",
+            "price": 786.669
+          },
+          {
+            "currencyCode": "USD",
+            "price": 22.533
+          },
+          {
+            "currencyCode": "KRW",
+            "price": 28980.138
+          },
+          {
+            "currencyCode": "TWD",
+            "price": 668.052
+          },
+          {
+            "currencyCode": "IDR",
+            "price": 330802.383
+          },
+          {
+            "currencyCode": "AED",
+            "price": 82.761
+          }
+        ],
+        "totalPrice": [
+          {
+            "currencyCode": "CNY",
+            "price": 3830.9766
+          },
+          {
+            "currencyCode": "JPY",
+            "price": 76726.2474
+          },
+          {
+            "currencyCode": "SGD",
+            "price": 759
+          },
+          {
+            "currencyCode": "HKD",
+            "price": 4475.3676
+          },
+          {
+            "currencyCode": "VND",
+            "price": 13233528.4851
+          },
+          {
+            "currencyCode": "AUD",
+            "price": 818.8851
+          },
+          {
+            "currencyCode": "NZD",
+            "price": 906.1701
+          },
+          {
+            "currencyCode": "GBP",
+            "price": 468.2271
+          },
+          {
+            "currencyCode": "MYR",
+            "price": 2519.3487
+          },
+          {
+            "currencyCode": "EUR",
+            "price": 546.2523
+          },
+          {
+            "currencyCode": "PHP",
+            "price": 30313.0179
+          },
+          {
+            "currencyCode": "INR",
+            "price": 44480.436
+          },
+          {
+            "currencyCode": "THB",
+            "price": 19902.7257
+          },
+          {
+            "currencyCode": "USD",
+            "price": 570.0849
+          },
+          {
+            "currencyCode": "KRW",
+            "price": 733197.4914
+          },
+          {
+            "currencyCode": "TWD",
+            "price": 16901.7156
+          },
+          {
+            "currencyCode": "IDR",
+            "price": 8369300.2899
+          },
+          {
+            "currencyCode": "AED",
+            "price": 2093.8533
+          }
+        ],
+        "imageUrls": [
+          {
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41257_14_mbs_thumb_medium.jpg",
+            "largeImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41257_14_mbs_small.jpg",
+            "imageOrder": 1
+          },
+          {
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41463_3_mbs_thumb_medium.jpg",
+            "largeImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41463_3_mbs_small.jpg",
+            "imageOrder": 2
+          },
+          {
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41464_2_mbs_thumb_medium.jpg",
+            "largeImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41464_2_mbs_small.jpg",
+            "imageOrder": 3
+          },
+          {
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41494_3_mbs_thumb_medium.jpg",
+            "largeImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41494_3_mbs_small.jpg",
+            "imageOrder": 4
+          },
+          {
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41495_3_mbs_thumb_medium.jpg",
+            "largeImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41495_3_mbs_small.jpg",
+            "imageOrder": 5
+          },
+          {
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41496_3_mbs_thumb_medium.jpg",
+            "largeImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41496_3_mbs_small.jpg",
+            "imageOrder": 6
+          }
+        ]
+      },
+      {
+        "amenities": [
+          {
+            "name": "39 sqm",
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/18951_1_amenitySmallIcon.png"
+          },
+          {
+            "name": "Glass-enclosed shower",
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/18808_2_amenitySmallIcon.png"
+          },
+          {
+            "name": "Located on L40 and above, facing city",
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/18930_1_amenitySmallIcon.png"
+          }
+        ],
+        "isBaseRoom": true,
+        "occupancyDescription": "Up to 3 guests",
+        "upgradePriceByDefaultCurrency": 150,
+        "name": "Deluxe Room Sky View",
+        "roomCode": "DKS",
+        "rateCode": "TDBOOK",
+        "description": "Deluxe King Sky View",
+        "roomType": "Deluxe Room",
+        "roomView": "Sky View",
+        "roomViewDescription": "    Guaranteed savings of $40 SGD per night compared to other online travel sites\n\n    50% off ArtScience Museum tickets\n\n    $25 Nett credit per stay at selected outlets\n\n",
+        "averagePrice": [
+          {
+            "currencyCode": "CNY",
+            "price": 4537.6126
+          },
+          {
+            "currencyCode": "JPY",
+            "price": 90878.6514
+          },
+          {
+            "currencyCode": "SGD",
+            "price": 899
+          },
+          {
+            "currencyCode": "HKD",
+            "price": 5300.8636
+          },
+          {
+            "currencyCode": "VND",
+            "price": 15674495.5311
+          },
+          {
+            "currencyCode": "AUD",
+            "price": 969.9311
+          },
+          {
+            "currencyCode": "NZD",
+            "price": 1073.3161
+          },
+          {
+            "currencyCode": "GBP",
+            "price": 554.5931
+          },
+          {
+            "currencyCode": "MYR",
+            "price": 2984.0507
+          },
+          {
+            "currencyCode": "EUR",
+            "price": 647.0103
+          },
+          {
+            "currencyCode": "PHP",
+            "price": 35904.3519
+          },
+          {
+            "currencyCode": "INR",
+            "price": 52684.996
+          },
+          {
+            "currencyCode": "THB",
+            "price": 23573.8477
+          },
+          {
+            "currencyCode": "USD",
+            "price": 675.2389
+          },
+          {
+            "currencyCode": "KRW",
+            "price": 868438.1354
+          },
+          {
+            "currencyCode": "TWD",
+            "price": 20019.2916
+          },
+          {
+            "currencyCode": "IDR",
+            "price": 9913044.7439
+          },
+          {
+            "currencyCode": "AED",
+            "price": 2480.0713
+          }
+        ],
+        "discountedAveragePrice": [
+          {
+            "currencyCode": "CNY",
+            "price": 4436.6646
+          },
+          {
+            "currencyCode": "JPY",
+            "price": 88856.8794
+          },
+          {
+            "currencyCode": "SGD",
+            "price": 879
+          },
+          {
+            "currencyCode": "HKD",
+            "price": 5182.9356
+          },
+          {
+            "currencyCode": "VND",
+            "price": 15325785.9531
+          },
+          {
+            "currencyCode": "AUD",
+            "price": 948.3531
+          },
+          {
+            "currencyCode": "NZD",
+            "price": 1049.4381
+          },
+          {
+            "currencyCode": "GBP",
+            "price": 542.2551
+          },
+          {
+            "currencyCode": "MYR",
+            "price": 2917.6647
+          },
+          {
+            "currencyCode": "EUR",
+            "price": 632.6163
+          },
+          {
+            "currencyCode": "PHP",
+            "price": 35105.5899
+          },
+          {
+            "currencyCode": "INR",
+            "price": 51512.916
+          },
+          {
+            "currencyCode": "THB",
+            "price": 23049.4017
+          },
+          {
+            "currencyCode": "USD",
+            "price": 660.2169
+          },
+          {
+            "currencyCode": "KRW",
+            "price": 849118.0434
+          },
+          {
+            "currencyCode": "TWD",
+            "price": 19573.9236
+          },
+          {
+            "currencyCode": "IDR",
+            "price": 9692509.8219
+          },
+          {
+            "currencyCode": "AED",
+            "price": 2424.8973
+          }
+        ],
+        "costOfUpgrade": [
+          {
+            "currencyCode": "CNY",
+            "price": 757.11
+          },
+          {
+            "currencyCode": "JPY",
+            "price": 15163.29
+          },
+          {
+            "currencyCode": "SGD",
+            "price": 150
+          },
+          {
+            "currencyCode": "HKD",
+            "price": 884.46
+          },
+          {
+            "currencyCode": "VND",
+            "price": 2615321.835
+          },
+          {
+            "currencyCode": "AUD",
+            "price": 161.835
+          },
+          {
+            "currencyCode": "NZD",
+            "price": 179.085
+          },
+          {
+            "currencyCode": "GBP",
+            "price": 92.535
+          },
+          {
+            "currencyCode": "MYR",
+            "price": 497.895
+          },
+          {
+            "currencyCode": "EUR",
+            "price": 107.955
+          },
+          {
+            "currencyCode": "PHP",
+            "price": 5990.715
+          },
+          {
+            "currencyCode": "INR",
+            "price": 8790.6
+          },
+          {
+            "currencyCode": "THB",
+            "price": 3933.345
+          },
+          {
+            "currencyCode": "USD",
+            "price": 112.665
+          },
+          {
+            "currencyCode": "KRW",
+            "price": 144900.69
+          },
+          {
+            "currencyCode": "TWD",
+            "price": 3340.26
+          },
+          {
+            "currencyCode": "IDR",
+            "price": 1654011.915
+          },
+          {
+            "currencyCode": "AED",
+            "price": 413.805
+          }
+        ],
+        "totalPrice": [
+          {
+            "currencyCode": "CNY",
+            "price": 4436.6646
+          },
+          {
+            "currencyCode": "JPY",
+            "price": 88856.8794
+          },
+          {
+            "currencyCode": "SGD",
+            "price": 879
+          },
+          {
+            "currencyCode": "HKD",
+            "price": 5182.9356
+          },
+          {
+            "currencyCode": "VND",
+            "price": 15325785.9531
+          },
+          {
+            "currencyCode": "AUD",
+            "price": 948.3531
+          },
+          {
+            "currencyCode": "NZD",
+            "price": 1049.4381
+          },
+          {
+            "currencyCode": "GBP",
+            "price": 542.2551
+          },
+          {
+            "currencyCode": "MYR",
+            "price": 2917.6647
+          },
+          {
+            "currencyCode": "EUR",
+            "price": 632.6163
+          },
+          {
+            "currencyCode": "PHP",
+            "price": 35105.5899
+          },
+          {
+            "currencyCode": "INR",
+            "price": 51512.916
+          },
+          {
+            "currencyCode": "THB",
+            "price": 23049.4017
+          },
+          {
+            "currencyCode": "USD",
+            "price": 660.2169
+          },
+          {
+            "currencyCode": "KRW",
+            "price": 849118.0434
+          },
+          {
+            "currencyCode": "TWD",
+            "price": 19573.9236
+          },
+          {
+            "currencyCode": "IDR",
+            "price": 9692509.8219
+          },
+          {
+            "currencyCode": "AED",
+            "price": 2424.8973
+          }
+        ],
+        "imageUrls": [
+          {
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41385_3_mbs_thumb_medium.jpg",
+            "largeImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41385_3_mbs_small.jpg",
+            "imageOrder": 1
+          },
+          {
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41467_2_mbs_thumb_medium.jpg",
+            "largeImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41467_2_mbs_small.jpg",
+            "imageOrder": 2
+          },
+          {
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41508_2_mbs_thumb_medium.jpg",
+            "largeImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41508_2_mbs_small.jpg",
+            "imageOrder": 3
+          },
+          {
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41509_2_mbs_thumb_medium.jpg",
+            "largeImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41509_2_mbs_small.jpg",
+            "imageOrder": 4
+          },
+          {
+            "thumbnailImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41510_1_mbs_thumb_medium.jpg",
+            "largeImageUrl": "https://d2hrm4dbhsiq8u.cloudfront.net/1194/41510_1_mbs_small.jpg",
+            "imageOrder": 5
+          }
+        ]
       }
-    },
-    {
-      "code": "TDBAR2",
-      "name": "Flexible Rate",
-      "dprCode": null,
-      "description": "<ul><li>Take advantage of our lowest daily flexible rate.</li></ul>",
-      "marketingConsent": "I consent to MBS Authorised Parties (Marina Bay Sands Pte. Ltd. (\"MBS\"), its affiliates and other parties listed in the prevailing MBS Privacy Policy) processing my data (whether in the possession of or as provided from time to time to any MBS Authorised Party) to send me information on promotions, events, news, advertisements, etc. relating to MBS via any means of communication including email, text messaging, MBS devices, MBS applications, MBS websites, and other third party websites that I visit. My data will also be processed to: (1) Understand my preferences and my activities at MBS; (2) Provide me with personalised services and customised marketing content; and (3) Conduct data analytics and profiling.\r\n\r\nPlease visit MBS Data Protection Office for details on how to access or correct your data or to withdraw your consent. For more information on MBS’ processing activities and data transfer, please visit MBS Privacy Policy",
-      "termsAndConditions": "<ul><li>Free cancellation or amendment of booking must be made at least 1 day before your arrival date.</li><li class=\"circle-bullet\">Reservations made over&nbsp;8 – 10 Aug 2022, 27 Sep – 2 Oct 2022, 28 – 31 Dec 2022, 1 – 4 Jan 2023, 8 – 10 Aug 2023, 19 – 24 Sep 2023, 26 Sep – 1 Oct 2023, 28 – 31 Dec 2023 and 1 – 4 Jan 2024 require full pre-payment and are non-cancellable, non-amendable and non-refundable.</li><li class=\"circle-bullet\">Sands Rewards LifeStyle Prestige and Elite tier members discount is not applicable for online bookings. Discount is only applicable to bookings made via phone.</li><li class=\"circle-bullet\">Child breakfast charge is applicable for any child between 6-12 years old. Breakfast for children 5 years and under is free. Child breakfast is chargeable to guest account at walk-in price upon consumption.</li></ul><p><b>You consent to MBS, its related companies, its service providers and your selected payment service provider collecting, using or disclosing your personal data to process your hotel booking form and requests, provide customer service, comply with laws, and the purposes in the prevailing MBS privacy policy. </b><br><br>See this offer’s full <a href=\"/content/singapore/marinabaysands/en/main/index/hotel/terms-and-conditions.html\" target=\"_blank\">Terms &amp; Conditions</a>.<br><br><b>In compliance with the Government’s safe management measures:</b><br></p><ul><li class=\"circle-bullet\">all check in guests must provide health declarations and government mandated information for contact tracing purposes;</li><li class=\"circle-bullet\">the gathering of more than 5 guests and visitors (not from the same household) will not be permitted in any hotel room; and</li><li class=\"circle-bullet\">all guests who feel unwell during their stay will be required to comply with our isolation and other Covid-19 response procedures.</li></ul>",
-      "alipayAlertText": "CNY rates may differ on Alipay payment page.",
-      "mpgsAlertText": "Your payment card will be pre-authorized with S$1.00. Please note that this is not an actual charge on your payment card, and debit/prepaid card is not acceptable for pre-authorization purpose.",
-      "guaranteePercentage": 0,
-      "isPastCancellationDate": true,
-      "noCancellationDate": "",
-      "rateplanComments": [""],
-      "lowestUnitAddOnPrice": [],
-      "addonInfo": [],
-      "rooms": [
-        {
-          "searchTransactionId": "c322a08e-6b8f-4954-88ca-9cbc4ba535fb",
-          "roomCode": "DKN",
-          "roomName": "Deluxe Room-Lower Floor",
-          "roomSeqNo": 1,
-          "bedTypeCode": "KB",
-          "bedTypeName": "King Bed",
-          "bedTypeImageUrl": "/content/dam/booking/bedtype/KB.png",
-          "priceByDefaultCurrency": 900,
-          "discountedAveragePriceByCurrency": [],
-          "averagePriceByCurrency": [
-            {
-              "currencyCode": "CNY",
-              "price": 4564.44
-            },
-            {
-              "currencyCode": "JPY",
-              "price": 89107.83
-            },
-            {
-              "currencyCode": "SGD",
-              "price": 900
-            },
-            {
-              "currencyCode": "HKD",
-              "price": 5376.51
-            },
-            {
-              "currencyCode": "VND",
-              "price": 15890812.65
-            },
-            {
-              "currencyCode": "AUD",
-              "price": 945.18
-            },
-            {
-              "currencyCode": "NZD",
-              "price": 1045.62
-            },
-            {
-              "currencyCode": "GBP",
-              "price": 545.49
-            },
-            {
-              "currencyCode": "MYR",
-              "price": 3005.46
-            },
-            {
-              "currencyCode": "EUR",
-              "price": 637.56
-            },
-            {
-              "currencyCode": "PHP",
-              "price": 36181.8
-            },
-            {
-              "currencyCode": "INR",
-              "price": 53198.37
-            },
-            {
-              "currencyCode": "THB",
-              "price": 23454.09
-            },
-            {
-              "currencyCode": "USD",
-              "price": 685.35
-            },
-            {
-              "currencyCode": "KRW",
-              "price": 851517.18
-            },
-            {
-              "currencyCode": "TWD",
-              "price": 20016.18
-            },
-            {
-              "currencyCode": "IDR",
-              "price": 9895003.74
-            },
-            {
-              "currencyCode": "AED",
-              "price": 2517.21
-            }
-          ],
-          "nightlyPrices": [
-            {
-              "effectiveDate": "2022-06-05",
-              "discountedPriceByCurrency": [
-                {
-                  "currencyCode": "CNY",
-                  "price": 4564.44
-                },
-                {
-                  "currencyCode": "JPY",
-                  "price": 89107.83
-                },
-                {
-                  "currencyCode": "SGD",
-                  "price": 900
-                },
-                {
-                  "currencyCode": "HKD",
-                  "price": 5376.51
-                },
-                {
-                  "currencyCode": "VND",
-                  "price": 15890812.65
-                },
-                {
-                  "currencyCode": "AUD",
-                  "price": 945.18
-                },
-                {
-                  "currencyCode": "NZD",
-                  "price": 1045.62
-                },
-                {
-                  "currencyCode": "GBP",
-                  "price": 545.49
-                },
-                {
-                  "currencyCode": "MYR",
-                  "price": 3005.46
-                },
-                {
-                  "currencyCode": "EUR",
-                  "price": 637.56
-                },
-                {
-                  "currencyCode": "PHP",
-                  "price": 36181.8
-                },
-                {
-                  "currencyCode": "INR",
-                  "price": 53198.37
-                },
-                {
-                  "currencyCode": "THB",
-                  "price": 23454.09
-                },
-                {
-                  "currencyCode": "USD",
-                  "price": 685.35
-                },
-                {
-                  "currencyCode": "KRW",
-                  "price": 851517.18
-                },
-                {
-                  "currencyCode": "TWD",
-                  "price": 20016.18
-                },
-                {
-                  "currencyCode": "IDR",
-                  "price": 9895003.74
-                },
-                {
-                  "currencyCode": "AED",
-                  "price": 2517.21
-                }
-              ],
-              "priceByCurrency": [
-                {
-                  "currencyCode": "CNY",
-                  "price": 4564.44
-                },
-                {
-                  "currencyCode": "JPY",
-                  "price": 89107.83
-                },
-                {
-                  "currencyCode": "SGD",
-                  "price": 900
-                },
-                {
-                  "currencyCode": "HKD",
-                  "price": 5376.51
-                },
-                {
-                  "currencyCode": "VND",
-                  "price": 15890812.65
-                },
-                {
-                  "currencyCode": "AUD",
-                  "price": 945.18
-                },
-                {
-                  "currencyCode": "NZD",
-                  "price": 1045.62
-                },
-                {
-                  "currencyCode": "GBP",
-                  "price": 545.49
-                },
-                {
-                  "currencyCode": "MYR",
-                  "price": 3005.46
-                },
-                {
-                  "currencyCode": "EUR",
-                  "price": 637.56
-                },
-                {
-                  "currencyCode": "PHP",
-                  "price": 36181.8
-                },
-                {
-                  "currencyCode": "INR",
-                  "price": 53198.37
-                },
-                {
-                  "currencyCode": "THB",
-                  "price": 23454.09
-                },
-                {
-                  "currencyCode": "USD",
-                  "price": 685.35
-                },
-                {
-                  "currencyCode": "KRW",
-                  "price": 851517.18
-                },
-                {
-                  "currencyCode": "TWD",
-                  "price": 20016.18
-                },
-                {
-                  "currencyCode": "IDR",
-                  "price": 9895003.74
-                },
-                {
-                  "currencyCode": "AED",
-                  "price": 2517.21
-                }
-              ]
-            }
-          ],
-          "taxesAndServiceChargesByCurrency": [
-            {
-              "currencyCode": "CNY",
-              "price": 807.905915
-            },
-            {
-              "currencyCode": "JPY",
-              "price": 15772.08659
-            },
-            {
-              "currencyCode": "SGD",
-              "price": 159.300007
-            },
-            {
-              "currencyCode": "HKD",
-              "price": 951.642311
-            },
-            {
-              "currencyCode": "VND",
-              "price": 2812673.960287
-            },
-            {
-              "currencyCode": "AUD",
-              "price": 167.296867
-            },
-            {
-              "currencyCode": "NZD",
-              "price": 185.074748
-            },
-            {
-              "currencyCode": "GBP",
-              "price": 96.551734
-            },
-            {
-              "currencyCode": "MYR",
-              "price": 531.966443
-            },
-            {
-              "currencyCode": "EUR",
-              "price": 112.848125
-            },
-            {
-              "currencyCode": "PHP",
-              "price": 6404.178876
-            },
-            {
-              "currencyCode": "INR",
-              "price": 9416.111896
-            },
-            {
-              "currencyCode": "THB",
-              "price": 4151.374109
-            },
-            {
-              "currencyCode": "USD",
-              "price": 121.306955
-            },
-            {
-              "currencyCode": "KRW",
-              "price": 150718.547357
-            },
-            {
-              "currencyCode": "TWD",
-              "price": 3542.864013
-            },
-            {
-              "currencyCode": "IDR",
-              "price": 1751415.737473
-            },
-            {
-              "currencyCode": "AED",
-              "price": 445.546189
-            }
-          ]
-        }
-      ],
-      "policyCode": "1CXL",
-      "detailedDescription": {
-        "description": "<p><b>ENJOY THESE WHEN YOU BOOK THROUGH OUR WEBSITE:</b></p>\n<ul>\n<li>Free to cancel up to 1 day before your stay date</li>\n<li>High-speed Wi-Fi</li>\n<li>Entry to SkyPark Observation Deck &amp; guaranteed access to the Infinity Pool</li>\n</ul>\n<p><b>MORE PERKS WHEN YOU JOIN SANDS REWARDS MEMBERSHIP FOR FREE!</b></p>\n<ul>\n<li>Sands Rewards LifeStyle Prestige and Elite tier members enjoy 10% and 15% off the Flexible Rate respectively</li>\n<li>Earn up to 10% Resort Dollars when you stay, shop and dine</li>\n<li>20% off total bill at RISE Restaurant</li>\n</ul>\n<p><b>BOOKING FOR SUITES INCLUDE:&nbsp;</b></p>\n<ul>\n<li>Complimentary afternoon tea, luxurious amenities, and evening drinks &amp; canapés at Club55</li>\n<li>Breakfast at RISE, Spago or Club55</li>\n</ul>\n",
-        "additionalPrivilegesName": null,
-        "additionalPrivileges": []
-      }
-    }
-  ]
+    ]
+  ],
+  "ttCode": null,
+  "countryCode": "CN"
 }
