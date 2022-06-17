@@ -93,6 +93,7 @@ $(function () {
         updateCalendar();
       });
     });
+    updateAndBindLightbox();
   }
 
   async function handleElSync(textTarget, priceTarget, be) {
@@ -430,5 +431,55 @@ $(function () {
     DYO.waitForElementAsync(".calendar_box_tips span").then(() => {
       $(".calendar_box_tips span").text("Rates are subject to GST and charges");
     });
+  }
+  function updateAndBindLightbox(updatedText) {
+    //bind click
+    $("#upgrade_dialog")
+      .find(".upgrade_body")
+      .on("click", ".upgradeBlock", function (event) {
+        var index = $(this).index();
+        var currency = f_getCurrencyInfo().code;
+        var symbol = f_getCurrencyInfo().symbol;
+        var upgradeRoom = f_getSessionStorage().upgradeRooms[0][index];
+        console.log(upgradeRoom.name);
+        var discountedAveragePrice = upgradeRoom.discountedAveragePrice;
+        var averagePrice = upgradeRoom.averagePrice;
+        var priceWithoutTax = null;
+        var tax = null;
+        if (discountedAveragePrice.length) {
+          priceWithoutTax = discountedAveragePrice.filter((item) => {
+            return currency == item.currencyCode;
+          })[0].price;
+        } else {
+          priceWithoutTax = averagePrice.filter((item) => {
+            return currency == item.currencyCode;
+          })[0].price;
+        }
+        console.log("priceWithoutTax", priceWithoutTax);
+        tax = toMoney(priceWithoutTax * 0.177, true);
+        console.log("tax", tax);
+        $("#upgrade_rcontent_items_tax_tips").text(
+          "+" + symbol + tax + " avg. taxes & fees/night"
+        );
+      });
+    //update when first time triggered
+    const targetNode = document.getElementById("upgrade_dialog");
+    const config = { attributes: true, childList: true, subtree: true };
+    const callback = function (mutationsList, observer) {
+      for (let mutation of mutationsList) {
+        if (
+          mutation.type == "attributes" &&
+          mutation.attributeName == "style" &&
+          mutation.target == targetNode &&
+          $("#upgrade_dialog").css("display") == "block"
+        ) {
+          $("#upgrade_dialog .upgrade_body .upgradeBlock:eq(0)").trigger(
+            "click"
+          );
+        }
+      }
+    };
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
   }
 });

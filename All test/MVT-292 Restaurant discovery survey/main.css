@@ -1,15 +1,33 @@
-.dy-modal-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 3;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
+#dy-restaurant-survey-box {
+  width: 55%;
+  background-image: url(/static/marinabaysands/headlibs/images/bg-pattern-lines.png);
+  padding: 15px;
 }
-.dy-modal-backdrop.fade {
-  opacity: 0;
+#dy-restaurant-survey-box .survey-container {
+  padding: 23px 15px;
+  border: 1px solid #d0af6d;
+  border-radius: 2px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.dy-modal-backdrop.show {
-  opacity: 0.5;
+#dy-restaurant-survey-box .survey-container .text-container p {
+  font-size: 15px;
+}
+.modal-backdrop {
+  background-color: #fff;
+  opacity: 0.95;
+}
+@media (max-width: 768px) {
+  #dy-restaurant-survey-box {
+    width: 100%;
+  }
+  #dy-restaurant-survey-box .survey-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #dy-restaurant-survey-box .survey-container button {
+    margin-top: 10px;
+  }
 }

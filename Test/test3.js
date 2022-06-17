@@ -1,5 +1,5 @@
-f_getSessionStorage().upgradeRooms[0][0].discountedAveragePrice.filter(
-  (item) => {
-    return f_getSessionStorage().currency == item.currencyCode;
-  }
-)[0].price;
+$(".upgrade_view").click(() => {
+  $(document).ajaxComplete(() => {
+    $(".upgradeBlock:eq(1)").trigger("click");
+  });
+});

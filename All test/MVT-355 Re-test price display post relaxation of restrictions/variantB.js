@@ -94,6 +94,7 @@ $(function () {
         updateAndBindCalendar();
       });
     });
+    updateAndBindLightbox(updatedText);
   }
 
   async function handleElSync(textTarget, priceTarget, updatedText, be) {
@@ -498,5 +499,63 @@ $(function () {
       calendar.onscroll = throttle(updateCalendar, 50);
       calendar.onclick = throttle(updateCalendar, 50);
     });
+  }
+  function updateAndBindLightbox(updatedText) {
+    //bind click
+    $("#upgrade_dialog")
+      .find(".upgrade_body")
+      .on("click", ".upgradeBlock", function (event) {
+        var index = $(this).index();
+        var currency = f_getCurrencyInfo().code;
+        var symbol = f_getCurrencyInfo().symbol;
+        var upgradeRoom = f_getSessionStorage().upgradeRooms[0][index];
+        console.log(upgradeRoom.name);
+        var discountedAveragePrice = upgradeRoom.discountedAveragePrice;
+        var averagePrice = upgradeRoom.averagePrice;
+        var priceWithoutTax = null;
+        var priceWithTax = null;
+        if (discountedAveragePrice.length) {
+          priceWithoutTax = discountedAveragePrice.filter((item) => {
+            return currency == item.currencyCode;
+          })[0].price;
+        } else {
+          priceWithoutTax = averagePrice.filter((item) => {
+            return currency == item.currencyCode;
+          })[0].price;
+        }
+        console.log("priceWithoutTax", priceWithoutTax);
+        priceWithTax = toMoney(priceWithoutTax * 1.177, true);
+        console.log("priceWithTax", priceWithTax);
+        //hide() & show() are to reduce flickering
+        $(".upgrade_rcontent_items span b").css("opacity");
+        setTimeout(() => {
+          $(".upgrade_rcontent_items span b").text(symbol + priceWithTax);
+          $(".upgrade_rcontent_items span b").show();
+        }, 10);
+        if (!$("#upgrade_rcontent_items_tax_tips.updated").length) {
+          $("#upgrade_rcontent_items_tax_tips")
+            .text(updatedText)
+            .addClass("updated");
+        }
+      });
+    //update when first time triggered
+    const targetNode = document.getElementById("upgrade_dialog");
+    const config = { attributes: true, childList: true, subtree: true };
+    const callback = function (mutationsList, observer) {
+      for (let mutation of mutationsList) {
+        if (
+          mutation.type == "attributes" &&
+          mutation.attributeName == "style" &&
+          mutation.target == targetNode &&
+          $("#upgrade_dialog").css("display") == "block"
+        ) {
+          $("#upgrade_dialog .upgrade_body .upgradeBlock:eq(0)").trigger(
+            "click"
+          );
+        }
+      }
+    };
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
   }
 });

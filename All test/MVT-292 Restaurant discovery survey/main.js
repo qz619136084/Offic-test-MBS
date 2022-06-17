@@ -1,3 +1,5 @@
-$("body").append(
-  "<div class='dy-modal-backdrop fade show'></div> <div class='dy_survey_container'> <div class='prev_btn'></div> <div class='close_btn'></div> <div class='main_content'> <p class='title'></p> <div class='option_container'> <button class='option'></button><button class='option'></button ><button class='option'></button><button class='option'></button> </div> <button class='next_btn'></button> </div> </div>"
-);
+$(function () {
+  $(".announceComponent").after(
+    '<section class="component-section"> <div class="section-content"> <div class="container"> <div id="dy-restaurant-survey-box"> <div class="survey-container"> <div class="text-container"> <h5>Let us inspire you</h5> <p>It takes only 5-minutes to complete the quiz.</p> </div> <button class="nohover_a btn btn-primary">Take the quiz</button> </div> </div> </div> </div> </section>'
+  );
+});
