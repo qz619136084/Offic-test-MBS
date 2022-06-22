@@ -282,7 +282,7 @@ $(function () {
             //no discount
             priceWithoutTax = f_getSessionStorage()
               .availableRooms.filter((item) => {
-                return item.name === packageTitle;
+                return item.name === roomTitle;
               })[0]
               .averagePriceByCurrency.filter((item) => {
                 return item.currencyCode === currency;
@@ -504,58 +504,141 @@ $(function () {
     //bind click
     $("#upgrade_dialog")
       .find(".upgrade_body")
-      .on("click", ".upgradeBlock", function (event) {
+      .on("click", ".upgradeBlock", function () {
         var index = $(this).index();
-        var currency = f_getCurrencyInfo().code;
-        var symbol = f_getCurrencyInfo().symbol;
-        var upgradeRoom = f_getSessionStorage().upgradeRooms[0][index];
-        console.log(upgradeRoom.name);
-        var discountedAveragePrice = upgradeRoom.discountedAveragePrice;
-        var averagePrice = upgradeRoom.averagePrice;
-        var priceWithoutTax = null;
-        var priceWithTax = null;
-        if (discountedAveragePrice.length) {
-          priceWithoutTax = discountedAveragePrice.filter((item) => {
-            return currency == item.currencyCode;
-          })[0].price;
-        } else {
-          priceWithoutTax = averagePrice.filter((item) => {
-            return currency == item.currencyCode;
-          })[0].price;
-        }
-        console.log("priceWithoutTax", priceWithoutTax);
-        priceWithTax = toMoney(priceWithoutTax * 1.177, true);
-        console.log("priceWithTax", priceWithTax);
+        $("#upgrade_dialog").attr("selectedIndex", index);
+        var symbol = paymentLightboxInfo(index).symbol;
+        var priceWithTax = paymentLightboxInfo(index).priceWithTax;
+        var costOfUpgradeWithTax =
+          paymentLightboxInfo(index).costOfUpgradeWithTax;
         //hide() & show() are to reduce flickering
-        $(".upgrade_rcontent_items span b").css("opacity");
+        $(".upgrade_rcontent_items span b").css("opacity", "0");
+        $(".upgradeCostNum").css("opacity", "0");
         setTimeout(() => {
           $(".upgrade_rcontent_items span b").text(symbol + priceWithTax);
-          $(".upgrade_rcontent_items span b").show();
+          $(".upgrade_rcontent_items span b").css("opacity", "1");
+          $(".upgradeCostNum").text(
+            "+" + symbol + costOfUpgradeWithTax + "/night"
+          );
+          $(".upgradeCostNum").css("opacity", "1");
         }, 10);
         if (!$("#upgrade_rcontent_items_tax_tips.updated").length) {
           $("#upgrade_rcontent_items_tax_tips")
             .text(updatedText)
             .addClass("updated");
         }
+        if (!$(".upgradeCostNum").closest("div").hasClass("updated")) {
+          $(".upgradeCostNum")
+            .closest("span")
+            .after(
+              "<br/><small class='upgrade-tax-tip>+" +
+                updatedText +
+                " avg. taxes & fees/night</small>"
+            );
+          $(".upgradeCostNum")
+            .closest("div")
+            .css({ display: "inline-block", "text-align": "right" });
+        }
       });
     //update when first time triggered
-    const targetNode = document.getElementById("upgrade_dialog");
-    const config = { attributes: true, childList: true, subtree: true };
-    const callback = function (mutationsList, observer) {
+    var targetNode = document.getElementById("upgrade_dialog");
+    var config = { attributes: true, childList: true, subtree: true };
+    var callback = function (mutationsList, observer) {
       for (let mutation of mutationsList) {
         if (
           mutation.type == "attributes" &&
           mutation.attributeName == "style" &&
-          mutation.target == targetNode &&
-          $("#upgrade_dialog").css("display") == "block"
+          mutation.target == targetNode
         ) {
-          $("#upgrade_dialog .upgrade_body .upgradeBlock:eq(0)").trigger(
-            "click"
-          );
+          if ($("#upgrade_dialog").css("display") == "block") {
+            if (!$("#upgrade_dialog").hasClass("showed")) {
+              $("#upgrade_dialog .upgrade_body .upgradeBlock:eq(0)").trigger(
+                "click"
+              );
+              //update content;
+              $(".upgradeBlock").each(function () {
+                var index = $(this).index();
+                var costOfUpgradeWithTax =
+                  paymentLightboxInfo(index).costOfUpgradeWithTax;
+                var symbol = paymentLightboxInfo(index).symbol;
+                $(this)
+                  .find(".col-md-3")
+                  .append("<div><small>" + updatedText + "</small></div>");
+                $(this)
+                  .find(".col-md-3 span:eq(0)")
+                  .text("+" + symbol + costOfUpgradeWithTax);
+              });
+              //bind click on 'upgrade'
+              $("#upgrade").click(() => {
+                console.log("click");
+                updateTipBox(updatedText);
+              });
+              $("#upgrade_dialog").addClass("showed");
+            }
+          } else {
+            $("#upgrade_dialog").removeClass("showed");
+          }
         }
       }
     };
-    const observer = new MutationObserver(callback);
+    var observer = new MutationObserver(callback);
     observer.observe(targetNode, config);
+  }
+  function paymentLightboxInfo(index) {
+    var currency = f_getCurrencyInfo().code;
+    var symbol = f_getCurrencyInfo().symbol;
+    var upgradeRoom = f_getSessionStorage().upgradeRooms[0][index];
+    var costOfUpgradeWithoutTax = upgradeRoom.costOfUpgrade.filter((item) => {
+      return item.currencyCode === currency;
+    })[0].price;
+    var discountedAveragePrice = upgradeRoom.discountedAveragePrice;
+    var averagePrice = upgradeRoom.averagePrice;
+    var priceWithoutTax = null;
+    var priceWithTax = null;
+    if (discountedAveragePrice.length) {
+      priceWithoutTax = discountedAveragePrice.filter((item) => {
+        return currency == item.currencyCode;
+      })[0].price;
+    } else {
+      priceWithoutTax = averagePrice.filter((item) => {
+        return currency == item.currencyCode;
+      })[0].price;
+    }
+    priceWithTax = toMoney(priceWithoutTax * 1.177, true);
+    costOfUpgradeWithTax = toMoney(costOfUpgradeWithoutTax * 1.177, true);
+    return { symbol, priceWithTax, costOfUpgradeWithTax };
+  }
+  function waitTipboxShow() {
+    return new Promise((resolve, reject) => {
+      var check = setInterval(() => {
+        if ($(".upgraded").css("display") != "none") {
+          resolve();
+          clearInterval(check);
+        }
+      }, 100);
+    });
+  }
+  function updateTipBox(updatedText) {
+    delayUpdate()
+      .then(() => {
+        return waitTipboxShow();
+      })
+      .then(() => {
+        //update content;
+        var index = $("#upgrade_dialog").attr("selectedIndex");
+        var symbol = paymentLightboxInfo(index).symbol;
+        var costOfUpgradeWithTax =
+          paymentLightboxInfo(index).costOfUpgradeWithTax;
+        $(".upgradedPrice").text(symbol + costOfUpgradeWithTax);
+        if (!$(".upgradedPrice").closest("p").hasClass("updated")) {
+          $(".upgradedPrice")
+            .closest("p")
+            .css("display", "inline-block")
+            .addClass("updated")
+            .append(
+              "<small style='text-align:right'>" + updatedText + "</small>"
+            );
+        }
+      });
   }
 });

@@ -235,7 +235,7 @@ $(function () {
             //no discount
             priceWithoutTax = f_getSessionStorage()
               .availableRooms.filter((item) => {
-                return item.name === packageTitle;
+                return item.name === roomTitle;
               })[0]
               .averagePriceByCurrency.filter((item) => {
                 return item.currencyCode === currency;
@@ -432,54 +432,137 @@ $(function () {
       $(".calendar_box_tips span").text("Rates are subject to GST and charges");
     });
   }
-  function updateAndBindLightbox(updatedText) {
+  function updateAndBindLightbox() {
     //bind click
     $("#upgrade_dialog")
       .find(".upgrade_body")
-      .on("click", ".upgradeBlock", function (event) {
+      .on("click", ".upgradeBlock", function () {
         var index = $(this).index();
-        var currency = f_getCurrencyInfo().code;
-        var symbol = f_getCurrencyInfo().symbol;
-        var upgradeRoom = f_getSessionStorage().upgradeRooms[0][index];
-        console.log(upgradeRoom.name);
-        var discountedAveragePrice = upgradeRoom.discountedAveragePrice;
-        var averagePrice = upgradeRoom.averagePrice;
-        var priceWithoutTax = null;
-        var tax = null;
-        if (discountedAveragePrice.length) {
-          priceWithoutTax = discountedAveragePrice.filter((item) => {
-            return currency == item.currencyCode;
-          })[0].price;
-        } else {
-          priceWithoutTax = averagePrice.filter((item) => {
-            return currency == item.currencyCode;
-          })[0].price;
-        }
-        console.log("priceWithoutTax", priceWithoutTax);
-        tax = toMoney(priceWithoutTax * 0.177, true);
-        console.log("tax", tax);
+        $("#upgrade_dialog").attr("selectedIndex", index);
+        var symbol = paymentLightboxInfo(index).symbol;
+        var tax = paymentLightboxInfo(index).tax;
+        var taxOfUpgrade = paymentLightboxInfo(index).taxOfUpgrade;
         $("#upgrade_rcontent_items_tax_tips").text(
           "+" + symbol + tax + " avg. taxes & fees/night"
         );
+        if (!$(".upgrade-tax-tip").length) {
+          $(".upgradeCostNum")
+            .closest("span")
+            .after(
+              "<br/><small class='upgrade-tax-tip'>+" +
+                symbol +
+                taxOfUpgrade +
+                " avg. taxes & fees/night</small>"
+            );
+          $(".upgradeCostNum")
+            .closest("div")
+            .css({ display: "inline-block", "text-align": "right" });
+        } else {
+          $(".upgrade-tax-tip").text(
+            "+" + symbol + taxOfUpgrade + " avg. taxes & fees/night"
+          );
+        }
       });
-    //update when first time triggered
-    const targetNode = document.getElementById("upgrade_dialog");
-    const config = { attributes: true, childList: true, subtree: true };
-    const callback = function (mutationsList, observer) {
+    //update when first time triggered13
+    var targetNode = document.getElementById("upgrade_dialog");
+    var config = { attributes: true, childList: true, subtree: true };
+    var callback = function (mutationsList, observer) {
       for (let mutation of mutationsList) {
         if (
           mutation.type == "attributes" &&
           mutation.attributeName == "style" &&
-          mutation.target == targetNode &&
-          $("#upgrade_dialog").css("display") == "block"
+          mutation.target == targetNode
         ) {
-          $("#upgrade_dialog .upgrade_body .upgradeBlock:eq(0)").trigger(
-            "click"
-          );
+          if ($("#upgrade_dialog").css("display") == "block") {
+            if (!$("#upgrade_dialog").hasClass("showed")) {
+              $("#upgrade_dialog .upgrade_body .upgradeBlock:eq(0)").trigger(
+                "click"
+              );
+              //update content;
+              $(".upgradeBlock").each(function () {
+                var index = $(this).index();
+                var taxOfUpgrade = paymentLightboxInfo(index).taxOfUpgrade;
+                var symbol = paymentLightboxInfo(index).symbol;
+                $(this)
+                  .find(".col-md-3")
+                  .append(
+                    "<div><small>+" +
+                      symbol +
+                      taxOfUpgrade +
+                      " avg. taxes & fees/night</small></div>"
+                  );
+              });
+              //bind click on 'upgrade'
+              $("#upgrade").click(() => {
+                updateTipBox();
+              });
+              $("#upgrade_dialog").addClass("showed");
+            }
+          } else {
+            $("#upgrade_dialog").removeClass("showed");
+          }
         }
       }
     };
-    const observer = new MutationObserver(callback);
+    var observer = new MutationObserver(callback);
     observer.observe(targetNode, config);
+  }
+  function paymentLightboxInfo(index) {
+    var currency = f_getCurrencyInfo().code;
+    var symbol = f_getCurrencyInfo().symbol;
+    var upgradeRoom = f_getSessionStorage().upgradeRooms[0][index];
+    var costOfUpgradeWithoutTax = upgradeRoom.costOfUpgrade.filter((item) => {
+      return item.currencyCode === currency;
+    })[0].price;
+    var discountedAveragePrice = upgradeRoom.discountedAveragePrice;
+    var averagePrice = upgradeRoom.averagePrice;
+    var priceWithoutTax = null;
+    var tax = null;
+    if (discountedAveragePrice.length) {
+      priceWithoutTax = discountedAveragePrice.filter((item) => {
+        return currency == item.currencyCode;
+      })[0].price;
+    } else {
+      priceWithoutTax = averagePrice.filter((item) => {
+        return currency == item.currencyCode;
+      })[0].price;
+    }
+    tax = toMoney(priceWithoutTax * 0.177, true);
+    taxOfUpgrade = toMoney(costOfUpgradeWithoutTax * 0.177, true);
+    return { symbol, tax, taxOfUpgrade };
+  }
+  function waitTipboxShow() {
+    return new Promise((resolve, reject) => {
+      var check = setInterval(() => {
+        if ($(".upgraded").css("display") != "none") {
+          resolve();
+          clearInterval(check);
+        }
+      }, 100);
+    });
+  }
+  function updateTipBox() {
+    delayUpdate()
+      .then(() => {
+        return waitTipboxShow();
+      })
+      .then(() => {
+        //update content;
+        var index = $("#upgrade_dialog").attr("selectedIndex");
+        var symbol = paymentLightboxInfo(index).symbol;
+        var taxOfUpgrade = paymentLightboxInfo(index).taxOfUpgrade;
+        if (!$(".upgradedPrice").closest("p").hasClass("updated")) {
+          $(".upgradedPrice")
+            .closest("p")
+            .css("display", "inline-block")
+            .addClass("updated")
+            .append(
+              "<small style='text-align:right'>+" +
+                symbol +
+                taxOfUpgrade +
+                " avg. taxes & fees/night</small>"
+            );
+        }
+      });
   }
 });

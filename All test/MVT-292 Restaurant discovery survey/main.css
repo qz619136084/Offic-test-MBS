@@ -16,9 +16,101 @@
   font-size: 15px;
 }
 .modal-backdrop {
-  background-color: #fff;
-  opacity: 0.95;
+  background-color: #fff !important;
 }
+#dy-survey-lightbox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1051;
+}
+.survey-lightbox-container {
+  width: 80%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6rem;
+  background-image: linear-gradient(-90deg, #fff 45%, #dbdbdb);
+  border-radius: 0;
+  border: 0 none;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 10%);
+  padding: 28px 28px 8rem 28px;
+  font-family: JosefinSans, sans-serif;
+  position: relative;
+}
+.survey-lightbox-container .survey-title {
+  font-size: 30px;
+  font-family: "JosefinSans";
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+.survey-lightbox-container .survey-steps {
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  z-index: 20;
+}
+.survey-lightbox-container .step-no {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ac8c4c;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+}
+.survey-lightbox-container .strike-through-line {
+  height: 10px;
+  width: 130px;
+  position: absolute;
+  border-top: 1px solid #ac8c4c;
+  left: 20px;
+  bottom: 0;
+}
+.survey-lightbox-container h3 {
+  font-size: 20px;
+  letter-spacing: 0.7px;
+}
+.survey-lightbox-container .survey-options-container {
+  display: flex;
+  justify-content: space-between;
+}
+.survey-lightbox-container .each-option {
+  flex: 0 1 23%;
+}
+.survey-lightbox-container .each-option .option-body img {
+  width: 100%;
+}
+.survey-lightbox-container .option-footer {
+  padding: 5px;
+}
+.survey-lightbox-container .option-footer label {
+  font-size: 14px;
+  letter-spacing: 0.45px;
+  padding-right: 0;
+  line-height: 28px;
+}
+.survey-lightbox-container button.btn-primary {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+}
+.survey-lightbox-container a {
+  text-decoration: underline;
+  left: 28px;
+  bottom: 30px;
+  position: absolute;
+  -webkit-transition: color 0.25s ease-out;
+  -moz-transition: color 0.25s ease-out;
+  -ms-transition: color 0.25s ease-out;
+  -o-transition: color 0.25s ease-out;
+  transition: color 0.25s ease-out;
+}
+
 @media (max-width: 768px) {
   #dy-restaurant-survey-box {
     width: 100%;

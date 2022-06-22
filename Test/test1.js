@@ -1,13 +1,9 @@
-//update when first time triggered
-const targetNode = document.getElementById("upgrade_dialog");
-const config = { attributes: true, childList: true, subtree: true };
-const callback = function (mutationsList, observer) {
-  for (let mutation of mutationsList) {
-    if (mutation.type == "attributes" && mutation.attributeName == "style") {
-      console.log(mutation.target);
-      console.log(mutation.target == targetNode);
-    }
-  }
-};
-const observer = new MutationObserver(callback);
-observer.observe(targetNode, config);
+//update content;
+var index = $("#upgrade_dialog").attr("selectedIndex");
+var symbol = paymentLightboxInfo(index).symbol;
+var costOfUpgradeWithTax = paymentLightboxInfo(index).costOfUpgradeWithTax;
+$(".upgradedPrice").text(symbol + costOfUpgradeWithTax);
+$(".upgradedPrice")
+  .closest("p")
+  .css("display", "inline-block")
+  .append("<small style='text-align:right'>" + updatedText + "</small>");
