@@ -1,76 +1,135 @@
 <div id="dy-recommendations-${dyVariationId}">
-    <div class="listing-content-item">
-      ${#Recommendations}
-        <div class="dy-new-layout col-md-6 col-lg-4">
-          <div class="card card-box h-100">
-             <div class="card-label dy-hide" data-label="${label}">${label}</div>
-             <div class="card-image"><img class="card-img-top ls-is-cached lazyloaded" width="600" height="450" src="${image}"></div>
-             <div class="card-body">
-                <h5 class="card-title">${name}</h5>
-                <p>${description}</p>
+   <div class="listing-content-item">
+     ${#Recommendations}
+     <div class="dy-new-layout col-md-6 col-lg-4">
+       <div class="card card-box h-100">
+         <div class="card-label dy-hide" data-label="${label}">${label}</div>
+         <div class="card-image">
+           <img
+             class="card-img-top ls-is-cached lazyloaded"
+             width="600"
+             height="450"
+             src="${image}"
+           />
+         </div>
+         <div class="card-body">
+           <h5 class="card-title">${name}</h5>
+           <p>${description}</p>
+         </div>
+         <div class="card-footer">
+           <p class="card-text">
+             <span class="dy-price-element dy-hide" data-price="${price}">
+               From <br /><span class="big"
+                 ><strong
+                   >S$<span class="dy-price-value">${price}</span></strong
+                 ></span
+               ><small>/night</small> <br />
+             </span>
+             <small
+               class="dy-subject-to-gsm dy-invisible"
+               data-subject-to-gsm="${tax_description}"
+               >Subject to GST and charges</small
+             >
+           </p>
+           <div class="dy-hlLabel"><small>${mobile_label}</small></div>
+           <div class="vwo-icon-part">
+             <div
+               class="icon-content free-cancellation dy-hide"
+               data-free-cancellation="${free_cancellation}"
+             >
+               <img
+                 src="https://cdn-eu.dynamicyield.com/api/9876410/images/257e6d1df32a7__free_cancellation_and_pay_later.svg"
+                 alt="Free cancellation & pay later*"
+               />
+               <div class="tip fade">
+                 <div class="arrow"></div>
+                 <div class="tip-content">Free cancellation & pay later*</div>
+               </div>
              </div>
-             <div class="card-footer">
-                <p class="card-text">
-                  <span class="dy-price-element dy-hide" data-price="${price}">
-                    From <br><span class="big"><strong>S$<span class="dy-price-value">${price}</span></strong></span><small>/night</small> <br>
-                  </span>
-                  <small class="dy-subject-to-gsm dy-invisible" data-subject-to-gsm="${tax_description}">Subject to GST and charges</small></p>
-                <div class="dy-hlLabel"><small>${mobile_label}</small></div>
-                <div class="vwo-icon-part">
-                <div class="icon-content free-cancellation dy-hide" data-free-cancellation="${free_cancellation}">
-                   <img src="https://cdn-eu.dynamicyield.com/api/9876410/images/257e6d1df32a7__free_cancellation_and_pay_later.svg" alt="Free cancellation & pay later*"> 
-                   <div class="tip fade">
-                      <div class="arrow"></div>
-                      <div class="tip-content">Free cancellation & pay later*</div>
-                   </div>
-                </div>
-                <div class="icon-content min-stay dy-hide" data-min-stay="${min_stay}">
-                   <img src="https://cdn-eu.dynamicyield.com/api/9876410/images/dfb7ad49d906__no_minimum_night_stay_required.svg" alt="No minimum stay required"> 
-                   <div class="tip fade">
-                      <div class="arrow"></div>
-                      <div class="tip-content">No minimum stay required</div>
-                   </div>
-                </div>
-                <div class="icon-content free-upgrade dy-hide" data-free-upgrade="${free_upgrade}">
-                   <img src="https://cdn-eu.dynamicyield.com/api/9876410/images/22a1dbb83e535__free_room_upgrade.svg" alt="Free room upgrade"> 
-                   <div class="tip fade">
-                      <div class="arrow"></div>
-                      <div class="tip-content dy-hide">Free room upgrade</div>
-                   </div>
-                </div>
-                <div class="icon-content free-credit dy-hide" data-free-credit="${free_credit}">
-                   <img src="https://cdn-eu.dynamicyield.com/api/9876410/images/2b65eb0e98035__free_credit.svg" alt="Free credit"> 
-                   <div class="tip fade">
-                      <div class="arrow"></div>
-                      <div class="tip-content">Free credit</div>
-                   </div>
-                </div>
-                <div class="icon-content early-check-in dy-hide" data-early-checkin="${early_check_in}">
-                   <img src="https://cdn-eu.dynamicyield.com/api/9876410/images/19d925a4e3b12__early_checkin.svg" alt="Early check-in"> 
-                   <div class="tip fade">
-                      <div class="arrow"></div>
-                      <div class="tip-content">Early check-in</div>
-                   </div>
-                </div>
-                <div class="icon-content free-parking dy-hide" data-free-parking="${free_parking}">
-                   <img src="https://cdn-eu.dynamicyield.com/api/9876410/images/1727e772f0896__free_parking.svg" alt="Free parking"> 
-                   <div class="tip fade">
-                      <div class="arrow"></div>
-                      <div class="tip-content">Free parking</div>
-                   </div>
-                </div>
-                <div class="icon-content free-breakfast dy-hide" data-free-breakfast="${free_breakfast}">
-                   <img src="https://cdn-eu.dynamicyield.com/api/9876410/images/2d14dbbf6eae6__free_breakfast.svg" alt="Free breakfast**"> 
-                   <div class="tip fade">
-                      <div class="arrow"></div>
-                      <div class="tip-content">Free breakfast**</div>
-                   </div>
-                </div>
-                </div><a href="${url}">View details</a>
+             <div
+               class="icon-content min-stay dy-hide"
+               data-min-stay="${min_stay}"
+             >
+               <img
+                 src="https://cdn-eu.dynamicyield.com/api/9876410/images/dfb7ad49d906__no_minimum_night_stay_required.svg"
+                 alt="No minimum stay required"
+               />
+               <div class="tip fade">
+                 <div class="arrow"></div>
+                 <div class="tip-content">No minimum stay required</div>
+               </div>
              </div>
-          </div>
+             <div
+               class="icon-content free-upgrade dy-hide"
+               data-free-upgrade="${free_upgrade}"
+             >
+               <img
+                 src="https://cdn-eu.dynamicyield.com/api/9876410/images/22a1dbb83e535__free_room_upgrade.svg"
+                 alt="Free room upgrade"
+               />
+               <div class="tip fade">
+                 <div class="arrow"></div>
+                 <div class="tip-content dy-hide">Free room upgrade</div>
+               </div>
+             </div>
+             <div
+               class="icon-content free-credit dy-hide"
+               data-free-credit="${free_credit}"
+             >
+               <img
+                 src="https://cdn-eu.dynamicyield.com/api/9876410/images/2b65eb0e98035__free_credit.svg"
+                 alt="Free credit"
+               />
+               <div class="tip fade">
+                 <div class="arrow"></div>
+                 <div class="tip-content">Free credit</div>
+               </div>
+             </div>
+             <div
+               class="icon-content early-check-in dy-hide"
+               data-early-checkin="${early_check_in}"
+             >
+               <img
+                 src="https://cdn-eu.dynamicyield.com/api/9876410/images/19d925a4e3b12__early_checkin.svg"
+                 alt="Early check-in"
+               />
+               <div class="tip fade">
+                 <div class="arrow"></div>
+                 <div class="tip-content">Early check-in</div>
+               </div>
+             </div>
+             <div
+               class="icon-content free-parking dy-hide"
+               data-free-parking="${free_parking}"
+             >
+               <img
+                 src="https://cdn-eu.dynamicyield.com/api/9876410/images/1727e772f0896__free_parking.svg"
+                 alt="Free parking"
+               />
+               <div class="tip fade">
+                 <div class="arrow"></div>
+                 <div class="tip-content">Free parking</div>
+               </div>
+             </div>
+             <div
+               class="icon-content free-breakfast dy-hide"
+               data-free-breakfast="${free_breakfast}"
+             >
+               <img
+                 src="https://cdn-eu.dynamicyield.com/api/9876410/images/2d14dbbf6eae6__free_breakfast.svg"
+                 alt="Free breakfast**"
+               />
+               <div class="tip fade">
+                 <div class="arrow"></div>
+                 <div class="tip-content">Free breakfast**</div>
+               </div>
+             </div>
+           </div>
+           <p><a href="${url}">View details</a></p>
+         </div>
        </div>
-      ${/Recommendations}
-    </div>
-  </div>
-  
+     </div>
+     ${/Recommendations}
+   </div>
+ </div>
+ 
