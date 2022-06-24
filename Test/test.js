@@ -1,3 +1,7 @@
-var a = [1, 2, 3];
-var b = [...a, 4];
-console.log(b)
+$("#room_info .edit_txt").click(() => {
+  DYO.waitForElementAsync("#s_btn_view_rooms").then(() => {
+    $("#s_btn_view_rooms").click(() => {
+      console.log("click");
+    });
+  });
+});

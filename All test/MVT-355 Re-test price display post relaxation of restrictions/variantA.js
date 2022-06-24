@@ -439,9 +439,9 @@ $(function () {
       .on("click", ".upgradeBlock", function () {
         var index = $(this).index();
         $("#upgrade_dialog").attr("selectedIndex", index);
-        var symbol = paymentLightboxInfo(index).symbol;
-        var tax = paymentLightboxInfo(index).tax;
-        var taxOfUpgrade = paymentLightboxInfo(index).taxOfUpgrade;
+        var symbol = paymentUpgradeInfo(index).symbol;
+        var tax = paymentUpgradeInfo(index).tax;
+        var taxOfUpgrade = paymentUpgradeInfo(index).taxOfUpgrade;
         $("#upgrade_rcontent_items_tax_tips").text(
           "+" + symbol + tax + " avg. taxes & fees/night"
         );
@@ -463,7 +463,7 @@ $(function () {
           );
         }
       });
-    //update when first time triggered13
+    //update when first time triggered
     var targetNode = document.getElementById("upgrade_dialog");
     var config = { attributes: true, childList: true, subtree: true };
     var callback = function (mutationsList, observer) {
@@ -481,8 +481,8 @@ $(function () {
               //update content;
               $(".upgradeBlock").each(function () {
                 var index = $(this).index();
-                var taxOfUpgrade = paymentLightboxInfo(index).taxOfUpgrade;
-                var symbol = paymentLightboxInfo(index).symbol;
+                var taxOfUpgrade = paymentUpgradeInfo(index).taxOfUpgrade;
+                var symbol = paymentUpgradeInfo(index).symbol;
                 $(this)
                   .find(".col-md-3")
                   .append(
@@ -493,9 +493,13 @@ $(function () {
                   );
               });
               //bind click on 'upgrade'
-              $("#upgrade").click(() => {
-                updateTipBox();
-              });
+              if (!$("#upgrade").hasClass("binded")) {
+                $("#upgrade")
+                  .addClass("binded")
+                  .click(() => {
+                    updateTipBox();
+                  });
+              }
               $("#upgrade_dialog").addClass("showed");
             }
           } else {
@@ -507,9 +511,9 @@ $(function () {
     var observer = new MutationObserver(callback);
     observer.observe(targetNode, config);
   }
-  function paymentLightboxInfo(index) {
-    var currency = f_getCurrencyInfo().code;
-    var symbol = f_getCurrencyInfo().symbol;
+  function paymentUpgradeInfo(index) {
+    var currency = f_getSessionStorage().currency;
+    var symbol = f_getSessionStorage().symbol;
     var upgradeRoom = f_getSessionStorage().upgradeRooms[0][index];
     var costOfUpgradeWithoutTax = upgradeRoom.costOfUpgrade.filter((item) => {
       return item.currencyCode === currency;
@@ -549,8 +553,8 @@ $(function () {
       .then(() => {
         //update content;
         var index = $("#upgrade_dialog").attr("selectedIndex");
-        var symbol = paymentLightboxInfo(index).symbol;
-        var taxOfUpgrade = paymentLightboxInfo(index).taxOfUpgrade;
+        var symbol = paymentUpgradeInfo(index).symbol;
+        var taxOfUpgrade = paymentUpgradeInfo(index).taxOfUpgrade;
         if (!$(".upgradedPrice").closest("p").hasClass("updated")) {
           $(".upgradedPrice")
             .closest("p")
