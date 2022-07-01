@@ -8,6 +8,12 @@ DYO.waitForElementAsync(
   });
   //Bryant Added;
   bindFilterClick();
+  $(".vwo-icon-part").click((e) => {
+    e.stopPropagation();
+  });
+  $(".listing-content-item:not(.row)").append(
+    "<div style='width: 100%' class='footerAnnotation'> <p><small>*Not applicable during blackout dates</small></p><p><small>**Only available for specific hotel deal and room type</small></p> </div>"
+  );
 });
 
 function setRedirectFunctionality(node) {

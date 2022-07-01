@@ -1,7 +1,9 @@
-$("#room_info .edit_txt").click(() => {
-  DYO.waitForElementAsync("#s_btn_view_rooms").then(() => {
-    $("#s_btn_view_rooms").click(() => {
-      console.log("click");
-    });
+new DYO.Q.Promise((resolve) => {
+  DY.API("callback", () => {
+    const result =
+      DY.itemsData.sort((a, b) => b.price - a.price)[0]?.categories || [];
+    resolve(result);
   });
+}).then((res) => {
+  console.log(res);
 });
