@@ -1,9 +1,6 @@
-new DYO.Q.Promise((resolve) => {
-  DY.API("callback", () => {
-    const result =
-      DY.itemsData.sort((a, b) => b.price - a.price)[0]?.categories || [];
-    resolve(result);
+var a = await new Promise((resolve, reject) => {
+  DYO.recommendationWidgetData(145354, {}, function (error, data) {
+    resolve(data);
   });
-}).then((res) => {
-  console.log(res);
 });
+console.log(a);

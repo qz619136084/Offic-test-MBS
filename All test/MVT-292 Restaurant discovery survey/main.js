@@ -1,10 +1,5 @@
 $(function () {
-  //add survey box
-  /*   
-    Tip: 1. .each-option --> .checked
-         2. .survey-lightbox-container button.btn-primary --> .last-step
-         3. .survey-lightbox-container .step-no --> .selected
-   */
+  var windowWidth = $(window).width();
   var questionData = [
     {
       title: "What's the occasion?",
@@ -90,62 +85,27 @@ $(function () {
       symbol: "importance",
     },
   ];
-  $(".announceComponent").after(
-    '<section class="component-section"> <div class="section-content"> <div class="container"> <div id="dy-restaurant-survey-box"> <div class="survey-container"> <div class="text-container"> <h5>Let us inspire you</h5> <p>It takes only 5-minutes to complete the quiz.</p> </div> <button class="nohover_a btn btn-primary"> Take the quiz </button> </div> </div> </div> </div> </section>'
-  );
+  var restaurantData = null;
   renderLightbox(questionData);
-  var windowWidth = $(window).width();
-  if (windowWidth < 500) {
-    $("#dy-survey-lightbox").addClass("mobile");
-  }
 
-  //function
-  $("#dy-restaurant-survey-box button").click(() => {
-    openLightbox($("#dy-survey-lightbox"));
-  });
-  $("#dy-survey-lightbox .each-option").click(function () {
-    $(".survey-lightbox-container .error-tip").removeClass("show");
-    $(this).siblings().removeClass("checked");
-    $(this).toggleClass("checked");
-    if ($(this).closest("#dy-survey-lightbox").hasClass("mobile")) {
-      $(".survey-footer button.btn-primary").trigger("click");
-    }
-  });
-  $(document).click((e) => {
-    var target = $(e.target);
-    if (
-      target.is($("#dy-survey-lightbox")) ||
-      target.is($(".survey-lightbox-container button.close span")) ||
-      target.is($(".result-footer .btn-secondary")) ||
-      target.is($(".no-result-tip button.close span"))
-    ) {
-      closeLightbox($("#dy-survey-lightbox"));
-    }
-  });
-  $(".survey-footer button.btn-primary").click(function () {
-    changeStatusLayout("next");
-    switchToQuestion();
-  });
-  $(".survey-footer a.prev-step").click((e) => {
-    e.preventDefault();
-    $(".survey-lightbox-container .error-tip").removeClass("show");
-    changeStatusLayout("prev");
-    switchToQuestion();
-  });
-  $("#dy-survey-lightbox .restart-btn").click((e) => {
-    e.preventDefault();
-    resetSurvey();
-  });
-  $(".no-result-tip .btn-secondary").click((e) => {
-    e.preventDefault();
-    resetSurvey();
-  });
-
-  function renderLightbox(questionData) {
+  async function renderLightbox(questionData) {
+    //get restaurant data;
+    restaurantData = await new Promise((resolve, reject) => {
+      DYO.recommendationWidgetData(145354, {}, function (error, data) {
+        resolve(data.slots);
+      });
+    });
+    //render notice box
+    $(".announceComponent").after(
+      '<section class="component-section"> <div class="section-content"> <div class="container"> <div id="dy-restaurant-survey-box"> <div class="survey-container"> <div class="text-container"> <h5>Let us inspire you</h5> <p>It takes only 5-minutes to complete the quiz.</p> </div> <button class="nohover_a btn btn-primary"> Take the quiz </button> </div> </div> </div> </div> </section>'
+    );
     //render common frame
     $("body").append(
       "<div id='dy-survey-lightbox' class='modal fade'> <div class='survey-lightbox-container'> <p class='survey-title'><b>Let us inspire you!</b></p> <div class='survey-steps'> <div class='strike-through-line'></div> </div> <div class='survey-footer'> <div class='main-btn-container'> <div class='error-tip fade'> <span>Choose an option to proceed.</span> </div> <button class='nohover_a btn btn-primary'> <span class='next'>Next Question</span ><span class='submit'>Submit</span> </button> </div> <a class='prev-step' href='#'>Back to Cuisine</a> </div> <div class='result-footer'> <a class='btn btn-secondary' href='#'>View More Restaurants</a> <a class='restart-btn' href='#'>Restart the quiz</a> </div> <button type='button' class='close'><span>×</span></button> </div> <div class='no-result-tip fade'> <div class='tip-content'> <p><b>We couldn’t find any suitable picks for your choices.</b></p> <p>Try changing some options and we’ll find what you need.</p> </div> <div class='button-container'> <a class='btn btn-secondary' href='#'>Restart the quiz</a> </div> <button type='button' class='close'><span>×</span></button> </div> </div>"
     );
+    if (windowWidth < 500) {
+      $("#dy-survey-lightbox").addClass("mobile");
+    }
     var optionNumber = questionData.length;
     //render survey-step
     for (var i = 0; i < optionNumber; i++) {
@@ -221,45 +181,86 @@ $(function () {
         );
       }
     }
+    //bind click function for elements
+    $("#dy-restaurant-survey-box button").click(() => {
+      openLightbox($("#dy-survey-lightbox"));
+    });
+    $("#dy-survey-lightbox .each-option").click(function () {
+      $(".survey-lightbox-container .error-tip").removeClass("show");
+      $(this).siblings().removeClass("checked");
+      $(this).toggleClass("checked");
+      if ($(this).closest("#dy-survey-lightbox").hasClass("mobile")) {
+        $(".survey-footer button.btn-primary").trigger("click");
+      }
+    });
+    $(document).click((e) => {
+      var target = $(e.target);
+      if (
+        target.is($("#dy-survey-lightbox")) ||
+        target.is($(".survey-lightbox-container button.close span")) ||
+        target.is($(".result-footer .btn-secondary")) ||
+        target.is($(".no-result-tip button.close span"))
+      ) {
+        closeLightbox($("#dy-survey-lightbox"));
+      }
+    });
+    $(".survey-footer button.btn-primary").click(function () {
+      changeStatusLayout("next");
+      switchToQuestion();
+    });
+    $(".survey-footer a.prev-step").click((e) => {
+      e.preventDefault();
+      $(".survey-lightbox-container .error-tip").removeClass("show");
+      changeStatusLayout("prev");
+      switchToQuestion();
+    });
+    $("#dy-survey-lightbox .restart-btn").click((e) => {
+      e.preventDefault();
+      resetSurvey();
+    });
+    $(".no-result-tip .btn-secondary").click((e) => {
+      e.preventDefault();
+      resetSurvey();
+    });
   }
   function renderResultCard() {
     var selectedArr = [];
     $(".each-option.checked .option-title b").each(function () {
       selectedArr.push($(this).text().trim());
     });
+    console.log("selectedArr", selectedArr);
     //render title
     $(".survey-options.survey-result h3+p").html(
       "These <b>" +
-        selectedArr[2] +
-        "</b> are perfect for a <b>" +
         selectedArr[0] +
+        "</b> are perfect for a <b>" +
+        selectedArr[2] +
         "</b> with <b>" +
         (selectedArr[1] == "Others" ? "delicious" : selectedArr[1]) +
         "</b> food."
     );
     //render main content role
-    var selectedData = DYO.recommendationWidgetData(
-      145354,
-      {},
-      function (error, data) {
-        var testKeywordArr = ["Italian", "Western", "Rooftop Restaurants"];
-        var selectedData = data.slots.filter((item) => {
-          return (
-            $.inArray(item.survey_cuisine, testKeywordArr) > -1 &&
-            $.inArray(item.survey_importance, testKeywordArr) > -1 &&
-            $.inArray(item.survey_occasion, testKeywordArr) > -1
-          );
-        });
-        return selectedData.slice(0, 3);
-      }
-    );
+    console.log(restaurantData);
+    var selectedData = restaurantData.filter((item) => {
+      console.log([
+        item.item.survey_cuisine,
+        item.item.survey_importance,
+        item.item.survey_occasion,
+      ]);
+      return (
+        $.inArray(item.item.survey_cuisine, selectedArr) > -1 &&
+        $.inArray(item.item.survey_importance, selectedArr) > -1 &&
+        $.inArray(item.item.survey_occasion, selectedArr) > -1
+      );
+    });
     if (selectedData.length) {
+      console.log("selectedData has length");
       for (let i = 0; i < selectedData.length; i++) {
-        var url = selectedData[i].url;
-        var image_url = selectedData[i].image_url;
-        var name = selectedData[i].name;
-        var content = selectedData[i].Cuisine;
-        $(".survey-options-container").append(
+        var url = selectedData[i].item.url;
+        var image_url = selectedData[i].item.image_url;
+        var name = selectedData[i].item.name;
+        var content = selectedData[i].item.Cuisine;
+        $(".survey-options.survey-result .survey-options-container").append(
           "<li class='result-card'> <a class='card bg-transparent h-100-percent' href='" +
             url +
             "' target='_self' > <div class='card-image'> <img src='" +
@@ -276,6 +277,7 @@ $(function () {
         );
       }
     } else {
+      console.log("selectedData has no length");
       toggleNoResult();
     }
   }
@@ -367,6 +369,7 @@ $(function () {
     if ($(".no-result-tip").css("display") == "block") {
       toggleNoResult();
     }
+    $(".survey-options.survey-result .survey-options-container").html("");
   }
   function toggleNoResult() {
     if ($(".survey-lightbox-container").css("display") == "block") {
