@@ -1,7 +1,10 @@
 $(function () {
   var updatedText = "Inclusive of GST and charges";
   var url = window.location.href;
-  if (url.indexOf("deals/rooms.html") > -1) {
+  if (
+    url.indexOf("deals/rooms.html") > -1 ||
+    url.indexOf("offers/rooms.html") > -1
+  ) {
     var textTarget = ".bottomFix .big~br+small";
     var priceTarget = ".bottomFix .big strong";
     handleElSync(textTarget, priceTarget, updatedText);
@@ -15,7 +18,10 @@ $(function () {
         handleElSync(textTarget, priceTarget, updatedText);
       }, 10);
     });
-  } else if (url.indexOf("deals/rooms/") > -1) {
+  } else if (
+    url.indexOf("deals/rooms/") > -1 ||
+    url.indexOf("offers/rooms/") > -1
+  ) {
     var textTarget = ".big~br+small";
     var priceTarget = ".big strong";
     handleElSync(textTarget, priceTarget, updatedText);
@@ -503,6 +509,9 @@ $(function () {
   function updateAndBindCalendar() {
     delayUpdate().then(() => {
       updateCalendar();
+      $(".calendar_box_tips span").text(
+        "Rates shown in S$ inclusive of GST and charges"
+      );
       var calendar = document.querySelectorAll("#calendar")[0];
       calendar.onscroll = throttle(updateCalendar, 50);
       calendar.onclick = throttle(updateCalendar, 50);
@@ -715,6 +724,17 @@ $(function () {
           clearInterval(check);
         }
       }, 100);
+    });
+  }
+  function updateCalendarWidget() {
+    console.log("updating price");
+    $(".day-rate").each(function () {
+      var currency = $(this).text().trim().slice(0, 2);
+      var oldPrice = $(this).text().trim().slice(2);
+      if (oldPrice.length && /[0-9]+/.test($(this).text().trim())) {
+        var newPrice = (oldPrice * 1.177).toFixed();
+        $(this).text(currency + newPrice);
+      }
     });
   }
 });

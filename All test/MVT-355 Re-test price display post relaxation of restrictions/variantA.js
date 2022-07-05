@@ -1,6 +1,9 @@
 $(function () {
   var url = window.location.href;
-  if (url.indexOf("deals/rooms.html") > -1) {
+  if (
+    url.indexOf("deals/rooms.html") > -1 ||
+    url.indexOf("offers/rooms.html") > -1
+  ) {
     var textTarget = ".bottomFix .big~br+small";
     var priceTarget = ".big strong";
     handleElSync(textTarget, priceTarget);
@@ -14,7 +17,10 @@ $(function () {
         handleElSync(textTarget, priceTarget);
       }, 10);
     });
-  } else if (url.indexOf("deals/rooms/") > -1) {
+  } else if (
+    url.indexOf("deals/rooms/") > -1 ||
+    url.indexOf("offers/rooms/") > -1
+  ) {
     var textTarget = ".big~br+small";
     var priceTarget = ".big strong";
     handleElSync(textTarget, priceTarget);
