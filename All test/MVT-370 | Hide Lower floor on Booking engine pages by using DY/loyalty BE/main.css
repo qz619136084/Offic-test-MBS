@@ -1,0 +1,5 @@
+.flicker370 .room_card .room_ImageCenterPanel .txt-black-five,
+.flicker370 #wtListRoomInfo .pl-1.pt-1.bold,
+.flicker370 .room_card .room_ImageCenterPanel .amenitiesDiv {
+  opacity: 0;
+}
