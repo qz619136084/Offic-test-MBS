@@ -1,16 +1,4 @@
-#instant {
-  margin-bottom: 4.5rem;
-}
-@media (min-width: 992px) {
-  #instant {
-    margin-bottom: 8.21429rem;
-  }
-}
-#奖品 {
-  margin-bottom: 4.5rem;
-}
-@media (min-width: 992px) {
-  #奖品 {
-    margin-bottom: 8.21429rem;
-  }
+.flicker370 .room_card .room_ImageCenterPanel .txt-black-five,
+.flicker370 #wtListRoomInfo .pl-1.pt-1.bold {
+  opacity: 0;
 }

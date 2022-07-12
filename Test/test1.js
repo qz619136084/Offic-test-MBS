@@ -1,22 +1,17 @@
-var data = {
-  slots: [
-    {
-      name: "test1",
-      survey_cuisine: "Italian",
-      survey_importance: "Rooftop Restaurants",
-      survey_occasion: "Western",
-    },
-    {
-      name: "test2",
-      survey_cuisine: "Italian",
-      survey_importance: "Rooftop Restaurants",
-      survey_occasion: "Western",
-    },
-    {
-      name: "test3",
-      survey_cuisine: "Italian",
-      survey_importance: "Rooftop Restaurants",
-      survey_occasion: "Eastern",
-    },
-  ],
+var targetNode = document.getElementById("wtListRoomInfo");
+var config = { attributes: true, childList: true, subtree: true };
+var callback = function (mutationsList, observer) {
+  for (let mutation of mutationsList) {
+    if (mutation.type === "childList") {
+      $("body").addClass("flicker370");
+      setTimeout(() => {
+        updateInRoomList();
+        updateInMultiRoomTab();
+        bindFilterClick();
+        bindRoomDetailClick();
+      }, 300);
+    }
+  }
 };
+var observer = new MutationObserver(callback);
+observer.observe(targetNode, config);

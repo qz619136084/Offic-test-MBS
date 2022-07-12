@@ -1,3 +1,7 @@
-body.noFlicker .day-rate {
+body.noFlicker .packagePrice,
+body.noFlicker .multi_number,
+body.noFlicker .room_price,
+body.noFlicker .day-rate,
+body.noFlicker .original_price {
   opacity: 0;
 }

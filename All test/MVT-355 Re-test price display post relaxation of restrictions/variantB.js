@@ -399,6 +399,8 @@ $(function () {
     handleElSync(textTarget, priceTarget, updatedText, true);
   }
   function autoUpdate() {
+    //avoid flickering
+    $("body").addClass("noFlicker");
     delayUpdate().then(() => {
       if ($("#select_room_container").length) {
         updateInSingleRoomCard();
@@ -407,6 +409,7 @@ $(function () {
       } else {
         updateInRoomList();
       }
+      $("body").removeClass("noFlicker");
     });
   }
   function bindBedtypeRadioClick() {
