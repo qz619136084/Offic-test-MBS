@@ -107,6 +107,7 @@ $(function () {
   function observe_multiRoomBanner() {
     var roomsNo = getParaQuery("Rooms");
     if (roomsNo > 1) {
+      updateInMultiRoomTab();
       var targetNode = document.getElementById("multiRoomBanner_outlet");
       var config = { attributes: true, childList: true, subtree: true };
       var callback = function (mutationsList, observer) {
@@ -151,9 +152,9 @@ $(function () {
       $("li[roomview='Lower Floor']").hide();
       //room card
       $(".room_card .room_ImageCenterPanel .txt-black-five").each(function () {
-        $(this).find("span:contains('Lower Floor')").remove();
-        var text = $(this).text().trim();
-        $(this).text(text);
+        $(this).find("span:contains('Lower Floor')").hide();
+        /* var text = $(this).text().trim();
+        $(this).text(text); */
       });
       $("body").removeClass("flicker370");
     });

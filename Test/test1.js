@@ -1,17 +1,18 @@
-var targetNode = document.getElementById("wtListRoomInfo");
-var config = { attributes: true, childList: true, subtree: true };
-var callback = function (mutationsList, observer) {
-  for (let mutation of mutationsList) {
-    if (mutation.type === "childList") {
-      $("body").addClass("flicker370");
-      setTimeout(() => {
-        updateInRoomList();
-        updateInMultiRoomTab();
-        bindFilterClick();
-        bindRoomDetailClick();
-      }, 300);
-    }
-  }
-};
-var observer = new MutationObserver(callback);
-observer.observe(targetNode, config);
+async function test() {
+  var data = await waitSessionStorageData();
+  console.log(data);
+}
+function waitSessionStorageData() {
+  return new Promise((resolve, reject) => {
+    var check = setInterval(() => {
+      if (
+        f_getSessionStorage() != undefined &&
+        Object.keys(f_getSessionStorage()).length != 0
+      ) {
+        resolve(f_getSessionStorage());
+        clearInterval(check);
+      }
+    }, 100);
+  });
+}
+test();

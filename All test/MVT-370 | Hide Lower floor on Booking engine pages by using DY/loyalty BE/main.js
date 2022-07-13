@@ -34,7 +34,7 @@ $(function () {
   function observe_multiRoomBanner() {
     var multi = $("#wtSelectionContainer").css("display");
     if (multi != "none") {
-      console.log("observing");
+      updateInMultiRoomTab();
       var targetNode = document.getElementById("wtSelectionContainer");
       var config = { attributes: true, childList: true, subtree: true };
       var callback = function (mutationsList, observer) {
