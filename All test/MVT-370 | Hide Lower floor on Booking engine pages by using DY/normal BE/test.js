@@ -1,15 +1,16 @@
 $(function () {
   var url = window.location.href;
+  var replaceText = null;
   if (url.indexOf("zh.") > -1) {
     replaceText = "低层";
   } else if (url.indexOf("hk.") > -1) {
-    replaceText = "低層景觀";
+    replaceText = "低層";
   } else if (url.indexOf("jp.") > -1) {
-    replaceText = "低層景觀";
+    replaceText = "低層階";
   } else if (url.indexOf("ko.") > -1) {
-    replaceText = "低層景觀";
+    replaceText = "저층";
   } else if (url.indexOf("id.") > -1) {
-    replaceText = "低層景觀";
+    replaceText = "Lower Floor";
   } else {
     replaceText = "Lower Floor";
   }
@@ -276,6 +277,7 @@ $(function () {
             }
           } else {
             $("#upgrade_dialog").removeClass("showed");
+            updatePaymentSidebar();
             //bind undo button
             $(".undo_upgrade").click(() => {
               updatePaymentSidebar();

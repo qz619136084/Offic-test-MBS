@@ -65,13 +65,15 @@ $(function () {
       }
     }, 100);
   } else if (url.indexOf("/booking/multirooms.html") > -1) {
-    DYO.waitForElementAsync(".mulroom_card_right .vb+strong").then(() => {
-      $(".mulroom_card_right .vb+strong:contains('Lower Floor')").each(
-        function () {
-          var text = $(this).text().replace("-Lower Floor", "");
-          $(this).text(text);
-        }
-      );
+    waitPriceUpdate().then(() => {
+      DYO.waitForElementAsync(".mulroom_card_right .vb+strong").then(() => {
+        $(".mulroom_card_right .vb+strong:contains('Lower Floor')").each(
+          function () {
+            var text = $(this).text().replace("-Lower Floor", "");
+            $(this).text(text);
+          }
+        );
+      });
     });
   } else if (url.indexOf("/booking/payment.html") > -1) {
     DYO.waitForElementAsync("#room_info .edit_txt").then(() => {
@@ -323,6 +325,16 @@ $(function () {
           .replace("Lower Floor", "")
           .trim()
       );
+    });
+  }
+  function waitPriceUpdate() {
+    return new Promise((resolve, reject) => {
+      var check = setInterval(() => {
+        if ($("body").hasClass("updatedPrice")) {
+          resolve();
+          clearInterval(check);
+        }
+      }, 100);
     });
   }
 });

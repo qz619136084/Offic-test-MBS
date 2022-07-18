@@ -343,6 +343,7 @@ $(function () {
       _this.text(currencySymbol + priceWithTax);
     });
     $("body").removeClass("noFlicker");
+    $("body").addClass("updatedPrice");
   }
   function toMoney(str, be = false, toFixed, removeChracter) {
     var value = str;

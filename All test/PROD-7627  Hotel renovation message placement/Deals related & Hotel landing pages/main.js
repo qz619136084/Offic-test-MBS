@@ -28,7 +28,7 @@ $(function () {
     );
     title = "Hotel Refurbishment Notice:";
     content =
-      "<p>Marina Bay Sands has embarked on a reinvestment programme to provide unparalleled new experiences for our guests. Renovation works are being carried out at Hotel Towers 1 and 2, with higher noise levels and periodic fire alarm testing during these times: 11am – 5.30pm (weekdays) and 1pm – 5.30pm (weekends and public holidays). We are making every effort to minimise potential service delays and noise disruptions, and apologise in advance for any inconvenience caused.</p>";
+      "<p> Marina Bay Sands has embarked on a reinvestment programme to provide unparalleled new experiences for our guests. Renovation works are being carried out at Hotel Towers 1 and 2, with higher noise levels and periodic fire alarm testing during these times: </p> <ul> <li>Monday – Friday: 10am – 12pm and 2pm – 6.30pm</li> <li>Weekends and public holidays: 2pm – 6pm</li> </ul> <p> We are making every effort to minimise potential service delays and noise disruptions, and apologise in advance for any inconvenience caused. </p>";
   }
   $(".notice-announce-box").before(
     "<div class='notice-announce-box' style='margin-bottom: -2rem'> <p class='announcement-title'> <img src='/content/dam/revamp/hotel/digital-concierge/maintenance-logo.svg' width='25' height='25' class='mr-1' /> <strong>" +

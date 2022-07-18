@@ -258,6 +258,7 @@ $(function () {
     textEl.forEach((v, i) => {
       $(v).text("+" + taxArr[i] + " avg. taxes & fees/night");
     });
+    $("body").addClass("updatedPrice");
   }
   function toMoney(str, be = false, toFixed, removeChracter) {
     var value = str;
