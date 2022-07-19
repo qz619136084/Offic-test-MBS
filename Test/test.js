@@ -1,152 +1,340 @@
-async function handleElSync(textTarget, priceTarget, be) {
-  var [textEl, priceEl, sessionData] = await Promise.all([
-    DYO.waitForElementAsync(textTarget),
-    DYO.waitForElementAsync(priceTarget),
-    waitSessionStorageData(),
-  ]);
-  var taxArr = [];
-  //price target;
-  priceEl.forEach(function (v, i) {
-    var tax = null;
-    var currencySymbol = null;
-    var priceWithoutTax = null;
-    var _this = $(v);
-    if (!be) {
-      //For Non-BE
-      //"+" is in order to change String to Number;
-      currencySymbol = _this.text().slice(0, 2);
-      priceWithoutTax = +_this.text().slice(2).replace(/,/g, "");
-      tax = toMoney(priceWithoutTax * 0.177);
-    } else {
-      //For BE
-      if ($("#select_room_container").length) {
-        console.log("single room card");
-        //in single room card
-        var packageTitle = _this
-          .closest(".packageList_item")
-          .find(".packageList_item_title")
-          .text()
-          .trim();
-        var currency = f_getCurrencyInfo().code;
-        var discountedAveragePriceByCurrency =
-          curr_availableRateplans.offerList.filter((item) => {
-            return item.name === packageTitle;
-          })[0].rooms[0].discountedAveragePriceByCurrency;
-        currencySymbol = f_getCurrencyInfo().symbol;
-        if (discountedAveragePriceByCurrency.length) {
-          //have discount
-          priceWithoutTax = discountedAveragePriceByCurrency.filter((item) => {
-            return item.currencyCode === currency;
-          })[0].price;
-          tax = toMoney(priceWithoutTax * 0.177, true);
-        } else {
-          //no discount
-          priceWithoutTax = curr_availableRateplans.offerList
-            .filter((item) => {
-              return item.name === packageTitle;
-            })[0]
-            .rooms[0].averagePriceByCurrency.filter((item) => {
-              return item.currencyCode === currency;
-            })[0].price;
-          tax = toMoney(priceWithoutTax * 0.177, true);
-        }
-      } else if ($("#multiroom_list").length) {
-        console.log("multi room card");
-        //in multiroom card
-        //record price;
-        if (_this.is($(".rate_cal_counter .multi_number"))) {
-          var totalPrice = 0;
-          _this
-            .closest(".room_card")
-            .find(".multi_number[price-data]")
-            .each(function () {
-              totalPrice += +$(this).attr("price-data");
-            });
-          currencySymbol = f_getCurrencyInfo().symbol;
-          tax = toMoney(totalPrice * 0.177, true);
-        } else {
-          var packageTitle = _this
-            .closest(".room_card.card")
-            .find(".card_title")
-            .text()
-            .trim();
-          var roomType = _this
-            .closest(".row")
-            .find(".col-md-5 strong")
-            .text()
-            .trim();
-          var currency = f_getCurrencyInfo().code;
-          var discountedAveragePriceByCurrency = curr_availableRateplans
-            .filter((item) => {
-              return item.name === packageTitle;
-            })[0]
-            .rooms.filter((item) => {
-              return item.roomName === roomType;
-            })[0].discountedAveragePriceByCurrency;
-          currencySymbol = f_getCurrencyInfo().symbol;
-          if (discountedAveragePriceByCurrency.length) {
-            //have discount
-            priceWithoutTax = discountedAveragePriceByCurrency.filter(
-              (item) => {
-                return item.currencyCode === currency;
+$(function () {
+  var url = window.location.href;
+  if (url.indexOf("/booking/rooms.html") > -1) {
+    var waitComponentShow = setInterval(() => {
+      var stepSelected = $(".inner_circle_step.shapeborder_selected_in");
+      if (stepSelected.length == 2) {
+        var getData = setInterval(() => {
+          if (
+            f_getSessionStorage() != undefined &&
+            $("#loading").css("display") == "none"
+          ) {
+            updateInRoomList();
+            bindFilterClick();
+            observe_multiRoomBanner();
+            bindRoomDetailClick();
+            var bindEditClick1717 = setInterval(() => {
+              if ($("#booking_information_edit").length) {
+                $("#booking_information_edit").click(() => {
+                  var currentDate = f_getSessionStorage().checkindate;
+                  var currentLos = f_getSessionStorage().los;
+                  var currentRooms = f_getSessionStorage().rooms;
+                  var bindSelectClick = setInterval(() => {
+                    if ($("#s_btn_view_rooms").length) {
+                      $("#s_btn_view_rooms").click(() => {
+                        var waitUpdatedSession = setInterval(() => {
+                          if (
+                            f_getSessionStorage() != undefined &&
+                            $("#loading").css("display") == "none"
+                          ) {
+                            var calendarDate = $(".calendar_date_select")
+                              .eq(0)
+                              .attr("data-daydata");
+                            var calendarLos =
+                              $(".calendar_date_select_range").length + 1;
+                            var calendarRooms = $(
+                              "#rate_container_box .rate_item"
+                            ).length;
+                            if (
+                              !(
+                                currentDate == calendarDate &&
+                                currentLos == calendarLos &&
+                                currentRooms == calendarRooms
+                              )
+                            ) {
+                              updateInRoomList();
+                              bindFilterClick();
+                              observe_multiRoomBanner();
+                              bindRoomDetailClick();
+                            }
+                            clearInterval(waitUpdatedSession);
+                          }
+                        }, 100);
+                      });
+                      clearInterval(bindSelectClick);
+                    }
+                  }, 100);
+                });
+                clearInterval(bindEditClick1717);
               }
-            )[0].price;
-            tax = toMoney(priceWithoutTax * 0.177, true);
-          } else {
-            //no discount
-            priceWithoutTax = curr_availableRateplans
-              .filter((item) => {
-                return item.name === packageTitle;
-              })[0]
-              .rooms.filter((item) => {
-                return item.roomName === roomType;
-              })[0]
-              .averagePriceByCurrency.filter((item) => {
-                return item.currencyCode === currency;
-              })[0].price;
-            tax = toMoney(priceWithoutTax * 0.177, true);
+            }, 100);
+            clearInterval(getData);
           }
-          _this.attr("price-data", priceWithoutTax);
+        }, 100);
+        clearInterval(waitComponentShow);
+      }
+    }, 100);
+  } else if (url.indexOf("/booking/multirooms.html") > -1) {
+    waitPriceUpdate().then(() => {
+      DYO.waitForElementAsync(".mulroom_card_right .vb+strong").then(() => {
+        $(".mulroom_card_right .vb+strong:contains('Lower Floor')").each(
+          function () {
+            var text = $(this).text().replace("-Lower Floor", "");
+            $(this).text(text);
+          }
+        );
+      });
+    });
+  } else if (url.indexOf("/booking/payment.html") > -1) {
+    DYO.waitForElementAsync("#room_info .edit_txt").then(() => {
+      $("#room_info .edit_txt").click(() => {
+        DYO.waitForElementAsync("#s_btn_view_rooms").then(() => {
+          $("#s_btn_view_rooms").click(() => {
+            delayUpdate().then(() => {
+              updatePaymentSidebar();
+            });
+          });
+        });
+      });
+    });
+    updatePayment();
+  } else if (url.indexOf("/booking/confirmation.html") > -1) {
+    DYO.waitForElementAsync(".data-card .txt-lg-lr").then(() => {
+      $(".data-card .txt-lg-lr:contains('Lower Floor')").each(function () {
+        var text = $(this).text().replace(" - Lower Floor", "");
+        $(this).text(text);
+      });
+    });
+  }
+  function delayUpdate() {
+    return new Promise((resolve, reject) => {
+      var check = setInterval(() => {
+        if ($("#loading").css("display") == "none") {
+          resolve();
+          clearInterval(check);
         }
-      } else {
-        console.log("room list");
-        //in Room List
-        var roomTitle = _this
-          .closest(".room_card.card")
-          .find(".txt-black-five")
-          .text()
-          .replace(" - ", "")
-          .trim();
-        var currency = f_getCurrencyInfo().code;
-        //if "discountedAveragePriceByCurrency" is an array with no value, then it means that no discount and "price" will be placed in "avaragePriceByCurrency"
-        var discountedAveragePriceByCurrency =
-          sessionData.availableRooms.filter((item) => {
-            return item.name === roomTitle;
-          })[0].discountedAveragePriceByCurrency;
-        currencySymbol = f_getCurrencyInfo().symbol;
-        if (discountedAveragePriceByCurrency.length) {
-          //have discount
-          priceWithoutTax = discountedAveragePriceByCurrency.filter((item) => {
-            return item.currencyCode === currency;
-          })[0].price;
-          tax = toMoney(priceWithoutTax * 0.177, true);
-        } else {
-          //no discount
-          priceWithoutTax = sessionData
-            .availableRooms.filter((item) => {
-              return item.name === roomTitle;
-            })[0]
-            .averagePriceByCurrency.filter((item) => {
-              return item.currencyCode === currency;
-            })[0].price;
-          tax = toMoney(priceWithoutTax * 0.177, true);
+      }, 100);
+    });
+  }
+  function observe_multiRoomBanner() {
+    var roomsNo = getParaQuery("Rooms");
+    if (roomsNo > 1) {
+      updateInMultiRoomTab();
+      var targetNode = document.getElementById("multiRoomBanner_outlet");
+      var config = { attributes: true, childList: true, subtree: true };
+      var callback = function (mutationsList, observer) {
+        for (let mutation of mutationsList) {
+          if (mutation.type === "childList") {
+            var addedNodes = mutation.addedNodes;
+            var removedNodes = mutation.removedNodes;
+            if (
+              $.inArray($(".banner_card_outlet")[0], addedNodes) > -1 ||
+              $.inArray($(".banner_card_outlet")[0], removedNodes) > -1
+            ) {
+              $("body").addClass("flicker370");
+              setTimeout(() => {
+                updateInRoomList();
+                updateInMultiRoomTab();
+                bindFilterClick();
+                bindRoomDetailClick();
+              }, 300);
+            }
+          }
         }
+      };
+      var observer = new MutationObserver(callback);
+      observer.observe(targetNode, config);
+    }
+  }
+  function getParaQuery(para) {
+    var paraString = window.location.search.substring(1);
+    var paraArr = paraString.split("&");
+    for (i = 0; i < paraArr.length; i++) {
+      var name = paraArr[i].split("=")[0];
+      var value = paraArr[i].split("=")[1];
+      if (para == name) {
+        return value;
       }
     }
-    taxArr.push(currencySymbol + tax);
-  });
-  console.log("taxArr:", taxArr);
-  textEl.forEach((v, i) => {
-    $(v).text("+" + taxArr[i] + " avg. taxes & fees/night");
-  });
-}
+  }
+  function updateInRoomList() {
+    $("body").addClass("flicker370");
+    delayUpdate().then(() => {
+      //filter
+      $("li[roomview='Lower Floor']").hide();
+      //room card
+      $(".room_card .room_ImageCenterPanel .txt-black-five").each(function () {
+        $(this).find("span:contains('Lower Floor')").hide();
+        /* var text = $(this).text().trim();
+        $(this).text(text); */
+      });
+      $("body").removeClass("flicker370");
+    });
+  }
+  function updateInMultiRoomTab() {
+    $("body").addClass("flicker370");
+    delayUpdate().then(() => {
+      //multi room tab
+      $(".banner_card_title b:contains('Lower Floor')").each(function () {
+        var text = $(this).text().replace(" - Lower Floor", "");
+        $(this).text(text);
+      });
+      $("body").removeClass("flicker370");
+    });
+  }
+  function bindFilterClick() {
+    $(".room_filters_dropdown:not(.dy-bath-filter) a+ul li").unbind(
+      "click.hideLower"
+    );
+    $(".room_filters_dropdown.dy-bath-filter a+ul li input").unbind(
+      "click.hideLower"
+    );
+    $(".currency_dropdown a+ul li").unbind("click.hideLower");
+    $("#sort_by").unbind("click.hideLower");
+    DYO.waitForElementAsync(
+      ".room_filters_dropdown:not(.dy-bath-filter) a+ul li"
+    ).then(() => {
+      $(".room_filters_dropdown:not(.dy-bath-filter) a+ul li").bind(
+        "click.hideLower",
+        () => {
+          updateInRoomList();
+          bindRoomDetailClick();
+        }
+      );
+    });
+    DYO.waitForElementAsync(
+      ".room_filters_dropdown.dy-bath-filter a+ul li input"
+    ).then(() => {
+      $(".room_filters_dropdown.dy-bath-filter a+ul li input").bind(
+        "click.hideLower",
+        () => {
+          updateInRoomList();
+          bindRoomDetailClick();
+        }
+      );
+    });
+    DYO.waitForElementAsync(".currency_dropdown a+ul li").then(() => {
+      $(".currency_dropdown a+ul li").bind("click.hideLower", () => {
+        updateInRoomList();
+        bindRoomDetailClick();
+      });
+    });
+    DYO.waitForElementAsync("#sort_by").then(() => {
+      $("#sort_by").bind("click.hideLower", () => {
+        updateInRoomList();
+        bindRoomDetailClick();
+      });
+    });
+  }
+  function updatePayment() {
+    updatePaymentSidebar();
+    //update when first time triggered
+    var targetNode = document.getElementById("upgrade_dialog");
+    var config = { attributes: true, childList: true, subtree: true };
+    var callback = function (mutationsList, observer) {
+      for (let mutation of mutationsList) {
+        if (
+          mutation.type == "attributes" &&
+          mutation.attributeName == "style" &&
+          mutation.target == targetNode
+        ) {
+          if ($("#upgrade_dialog").css("display") == "block") {
+            if (!$("#upgrade_dialog").hasClass("showed")) {
+              //update text
+              $(".currentRoomName:contains('Lower Floor')").text(
+                $(".currentRoomName:contains('Lower Floor')")
+                  .text()
+                  .replace(" - Lower Floor", "")
+              );
+              $(".roomName:contains('Lower Floor')").text(
+                $(".roomName:contains('Lower Floor')")
+                  .text()
+                  .replace(" - Lower Floor", "")
+              );
+              //bind click on 'upgrade'
+              if (!$("#upgrade").hasClass("binded")) {
+                $("#upgrade")
+                  .addClass("binded")
+                  .click(() => {
+                    updateUpgradeBox();
+                  });
+              }
+              $("#upgrade_dialog").addClass("showed");
+            }
+          } else {
+            $("#upgrade_dialog").removeClass("showed");
+            //bind undo button
+            $(".undo_upgrade").click(() => {
+              updatePaymentSidebar();
+            });
+          }
+        }
+      }
+    };
+    var observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
+  }
+  function waitUpgradeBox() {
+    return new Promise((resolve, reject) => {
+      var check = setInterval(() => {
+        if ($(".upgraded").css("display") != "none") {
+          resolve();
+          clearInterval(check);
+        }
+      }, 100);
+    });
+  }
+  function updateUpgradeBox() {
+    delayUpdate()
+      .then(() => {
+        return waitUpgradeBox();
+      })
+      .then(() => {
+        $(".undo_title b:contains('Lower Floor')").text(
+          $(".undo_title b:contains('Lower Floor')")
+            .text()
+            .replace(" - Lower Floor", "")
+        );
+      });
+  }
+  function updatePaymentSidebar() {
+    DYO.waitForElementAsync(
+      ".roomInfoBlock .panel_txt:not(.roomBlockTitle)"
+    ).then(() => {
+      $(
+        ".roomInfoBlock .panel_txt:not(.roomBlockTitle):contains('Lower Floor')"
+      ).each(function () {
+        var text = $(this).text().replace(" - Lower Floor", "");
+        $(this).text(text);
+      });
+    });
+  }
+  function bindRoomDetailClick() {
+    delayUpdate().then(() => {
+      $(".view_room_details_link").unbind("click.hideLower");
+      $(".room_ImagePanel div").unbind("click.hideLower");
+      $(".view_room_details_link").bind("click.hideLower", () => {
+        console.log("link clicking");
+        updateRoomDetailBanner();
+      });
+      $(".room_ImagePanel").each(function () {
+        $(this)
+          .children("div:eq(0)")
+          .bind("click.hideLower", () => {
+            console.log("image clicking");
+            updateRoomDetailBanner();
+          });
+      });
+    });
+  }
+  function updateRoomDetailBanner() {
+    delayUpdate().then(() => {
+      $("#view_room_details .modal_title:contains(Lower Floor)").text(
+        $("#view_room_details .modal_title:contains(Lower Floor)")
+          .text()
+          .replace("Lower Floor", "")
+          .trim()
+      );
+    });
+  }
+  function waitPriceUpdate() {
+    return new Promise((resolve, reject) => {
+      var check = setInterval(() => {
+        if ($("body").hasClass("updatedPrice")) {
+          resolve();
+          clearInterval(check);
+        }
+      }, 100);
+    });
+  }
+});

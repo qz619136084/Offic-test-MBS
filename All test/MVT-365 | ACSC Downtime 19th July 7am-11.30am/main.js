@@ -146,5 +146,10 @@ $(function () {
           .css("position", "relative");
       });
     }
+    if (url.indexOf("/ticket/payment.html") > -1) {
+      DYO.waitForElementAsync("#loyalty_birth_box").then(() => {
+        $("#loyalty_birth_box").hide();
+      });
+    }
   }
 });

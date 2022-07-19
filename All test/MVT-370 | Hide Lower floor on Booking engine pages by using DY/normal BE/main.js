@@ -1,5 +1,19 @@
 $(function () {
   var url = window.location.href;
+  var replaceText = null;
+  if (url.indexOf("zh.") > -1) {
+    replaceText = "低层";
+  } else if (url.indexOf("hk.") > -1) {
+    replaceText = "低層";
+  } else if (url.indexOf("jp.") > -1) {
+    replaceText = "低層階";
+  } else if (url.indexOf("ko.") > -1) {
+    replaceText = "저층";
+  } else if (url.indexOf("id.") > -1) {
+    replaceText = "Lower Floor";
+  } else {
+    replaceText = "Lower Floor";
+  }
   if (url.indexOf("/booking/rooms.html") > -1) {
     var waitComponentShow = setInterval(() => {
       var stepSelected = $(".inner_circle_step.shapeborder_selected_in");
@@ -65,16 +79,18 @@ $(function () {
       }
     }, 100);
   } else if (url.indexOf("/booking/multirooms.html") > -1) {
-    waitPriceUpdate().then(() => {
-      DYO.waitForElementAsync(".mulroom_card_right .vb+strong").then(() => {
-        $(".mulroom_card_right .vb+strong:contains('Lower Floor')").each(
-          function () {
-            var text = $(this).text().replace("-Lower Floor", "");
-            $(this).text(text);
-          }
-        );
-      });
+    // waitPriceUpdate().then(() => {
+    DYO.waitForElementAsync(".mulroom_card_right .vb+strong").then(() => {
+      $(".mulroom_card_right .vb+strong:contains('" + replaceText + "')").each(
+        function () {
+          var text = $(this)
+            .text()
+            .replace("-" + replaceText, "");
+          $(this).text(text);
+        }
+      );
     });
+    // });
   } else if (url.indexOf("/booking/payment.html") > -1) {
     DYO.waitForElementAsync("#room_info .edit_txt").then(() => {
       $("#room_info .edit_txt").click(() => {
@@ -90,10 +106,14 @@ $(function () {
     updatePayment();
   } else if (url.indexOf("/booking/confirmation.html") > -1) {
     DYO.waitForElementAsync(".data-card .txt-lg-lr").then(() => {
-      $(".data-card .txt-lg-lr:contains('Lower Floor')").each(function () {
-        var text = $(this).text().replace(" - Lower Floor", "");
-        $(this).text(text);
-      });
+      $(".data-card .txt-lg-lr:contains('" + replaceText + "')").each(
+        function () {
+          var text = $(this)
+            .text()
+            .replace(" - " + replaceText, "");
+          $(this).text(text);
+        }
+      );
     });
   }
   function delayUpdate() {
@@ -151,12 +171,14 @@ $(function () {
     $("body").addClass("flicker370");
     delayUpdate().then(() => {
       //filter
-      $("li[roomview='Lower Floor']").hide();
+      $("li[roomview='" + replaceText + "']").hide();
       //room card
       $(".room_card .room_ImageCenterPanel .txt-black-five").each(function () {
-        $(this).find("span:contains('Lower Floor')").hide();
+        $(this)
+          .find("span:contains('" + replaceText + "')")
+          .hide();
         /* var text = $(this).text().trim();
-        $(this).text(text); */
+          $(this).text(text); */
       });
       $("body").removeClass("flicker370");
     });
@@ -165,10 +187,14 @@ $(function () {
     $("body").addClass("flicker370");
     delayUpdate().then(() => {
       //multi room tab
-      $(".banner_card_title b:contains('Lower Floor')").each(function () {
-        var text = $(this).text().replace(" - Lower Floor", "");
-        $(this).text(text);
-      });
+      $(".banner_card_title b:contains('" + replaceText + "')").each(
+        function () {
+          var text = $(this)
+            .text()
+            .replace(" - " + replaceText, "");
+          $(this).text(text);
+        }
+      );
       $("body").removeClass("flicker370");
     });
   }
@@ -231,15 +257,15 @@ $(function () {
           if ($("#upgrade_dialog").css("display") == "block") {
             if (!$("#upgrade_dialog").hasClass("showed")) {
               //update text
-              $(".currentRoomName:contains('Lower Floor')").text(
-                $(".currentRoomName:contains('Lower Floor')")
+              $(".currentRoomName:contains('" + replaceText + "')").text(
+                $(".currentRoomName:contains('" + replaceText + "')")
                   .text()
-                  .replace(" - Lower Floor", "")
+                  .replace(" - " + replaceText, "")
               );
-              $(".roomName:contains('Lower Floor')").text(
-                $(".roomName:contains('Lower Floor')")
+              $(".roomName:contains('" + replaceText + "')").text(
+                $(".roomName:contains('" + replaceText + "')")
                   .text()
-                  .replace(" - Lower Floor", "")
+                  .replace(" - " + replaceText, "")
               );
               //bind click on 'upgrade'
               if (!$("#upgrade").hasClass("binded")) {
@@ -253,6 +279,7 @@ $(function () {
             }
           } else {
             $("#upgrade_dialog").removeClass("showed");
+            updatePaymentSidebar();
             //bind undo button
             $(".undo_upgrade").click(() => {
               updatePaymentSidebar();
@@ -280,10 +307,10 @@ $(function () {
         return waitUpgradeBox();
       })
       .then(() => {
-        $(".undo_title b:contains('Lower Floor')").text(
-          $(".undo_title b:contains('Lower Floor')")
+        $(".undo_title b:contains('" + replaceText + "')").text(
+          $(".undo_title b:contains('" + replaceText + "')")
             .text()
-            .replace(" - Lower Floor", "")
+            .replace(" - " + replaceText, "")
         );
       });
   }
@@ -292,9 +319,13 @@ $(function () {
       ".roomInfoBlock .panel_txt:not(.roomBlockTitle)"
     ).then(() => {
       $(
-        ".roomInfoBlock .panel_txt:not(.roomBlockTitle):contains('Lower Floor')"
+        ".roomInfoBlock .panel_txt:not(.roomBlockTitle):contains('" +
+          replaceText +
+          "')"
       ).each(function () {
-        var text = $(this).text().replace(" - Lower Floor", "");
+        var text = $(this)
+          .text()
+          .replace(" - " + replaceText, "");
         $(this).text(text);
       });
     });
@@ -319,10 +350,10 @@ $(function () {
   }
   function updateRoomDetailBanner() {
     delayUpdate().then(() => {
-      $("#view_room_details .modal_title:contains(Lower Floor)").text(
-        $("#view_room_details .modal_title:contains(Lower Floor)")
+      $("#view_room_details .modal_title:contains('" + replaceText + "')").text(
+        $("#view_room_details .modal_title:contains('" + replaceText + "')")
           .text()
-          .replace("Lower Floor", "")
+          .replace("" + replaceText, "")
           .trim()
       );
     });
