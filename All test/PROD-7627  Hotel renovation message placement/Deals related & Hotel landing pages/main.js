@@ -5,23 +5,23 @@ $(function () {
   if (url.indexOf("zh.") > -1) {
     title = "酒店翻新公告：";
     content =
-      "<p>滨海湾金沙已开展装修翻新工程，将为宾客打造出无与伦比的全新体验。酒店1 号及 2 号 塔楼目前正常施工中，在此期间，工作日的上午 11:00 至下午 5:30、以及周末和公共节假日的下午 1:00 至 5:30 将存在噪音和间歇性的消防警报。我们将竭尽所能，采取相应措施，减少服务延迟，降低噪音影响，因此给您带来不便，我们深表歉意。</p>";
+      "<p> 滨海湾金沙已开展装修翻新工程，将为宾客打造出无与伦比的全新体验。酒店 1 号和 2 号塔楼目前正在施工，以下时段或会有噪音和间歇性消防警报测试： </p> <ul> <li>周一至周五：上午 10:00 至中午 12:00 和下午 2:00 至晚上 6:30</li> <li>周末和公共节假日：下午 2:00 至 6:00</li> </ul> <p> 我们将竭尽所能，采取相应措施，减少服务延迟，降低噪音影响，因此给您带来不便，我们深表歉意。 </p>";
   } else if (url.indexOf("hk.") > -1) {
     title = "酒店翻新公告：";
     content =
-      "<p>濱海灣金沙已啟動再投資計劃，為賓客打造無與倫比的全新體驗。酒店 2 號塔樓部分樓層的房間已率先開展翻新工程。翻新過後的房間將引領奢華新時代。更多資訊請持續關注！在此期間，我們會盡一切努力避免服務延遲，將噪音影響降至最低。對您造成不便，我們深表歉意。</p>";
+      "<p> 濱海灣金沙已開展裝修翻新工程，將為賓客打造出無與倫比的全新體驗。酒店 1 號和 2 號塔樓目前正在施工，以下時段或會有噪音和間歇性火警警報測試： </p> <ul> <li>週一至週五：上午 10:00 至中午 12:00 和下午 2:00 至晚上 6:30</li> <li>週末和公衆假期：下午 2:00 至 6:00</li> </ul> <p> 我們會盡一切努力避免服務延遲，將噪音影響降至最低。對您造成不便，我們深表歉意。 </p>";
   } else if (url.indexOf("jp.") > -1) {
     title = "ホテル改修工事のお知らせ:";
     content =
-      "<p>マリーナベイ・サンズでは、お客様にこれまでにない新たなエクスペリエンスの提供を目指す再投資プログラムを始動いたしました。現在、ホテルタワー2の一部のフロアで客室の改修工事を実施しております。完工後は、新時代のラグジュアリーをお楽しみいただける予定です。詳細は順を追ってお知らせいたします。改修期間中は、サービスへの影響や騒音を最小限に抑えるよう、最善の配慮をもって取り組んでまいります。</p>";
+      "<p> マリーナベイ・サンズでは、お客様にこれまでにない新たなエクスペリエンスの提供を目指す再投資プログラムを始動いたしました。現在、ホテルタワー1と2では改修工事が行われており、下記の時間帯は騒音が大きくなり、定期的に火災報知器のテストが行われます。 </p> <ul> <li>月～金:午前10時から正午、午後2時から午後6時30分</li> <li>週末、祝日:午後2時から午後6時</li> </ul> <p> サービスへの影響や騒音を最小限に抑えるよう、最善の配慮をもって取り組んでまいります。 </p>";
   } else if (url.indexOf("ko.") > -1) {
     title = "호텔 리노베이션 안내:";
     content =
-      "<p>마리나 베이 샌즈는 비교할 수 없는 새로운 경험을 고객에게 제공하기 위해 재투자 프로그램을 시작했습니다. 호텔 타워 2 일부 층의 객실부터 리노베이션 공사에 착수했습니다. 새단장이 완료되면 럭셔리의 새로운 시대를 보여드리게 될 것입니다. 자세한 세부 사항은 추후 안내할 예정이니 기대해 주세요! 이 기간 동안 잠재적인 서비스 지연과 소음을 최소화하기 위해 노력하고 있으며, 이로 인한 불편에 사전에 양해를 부탁드립니다.</p>";
+      "<p> 마리나 베이 샌즈는 비교할 수 없는 새로운 경험을 고객에게 제공하기 위해 재투자 프로그램을 시작했습니다. 호텔 타워 1과 타워 2에서 리노베이션 공사가 시작되었습니다. 아래 시간에는 큰 소음이 발생할 수 있으며, 화재 경보 테스트를 진행할 예정입니다. </p> <ul> <li>월요일 – 금요일: 오전 10:00 – 정오 및 오후 2:00-오후 6:30</li> <li>주말 및 공휴일: 오후 2:00-오후 6:00</li> </ul> <p> 잠재적인 서비스 지연과 소음을 최소화하기 위해 노력하고 있으며, 이로 인한 불편에 사전 양해를 부탁드립니다. </p>";
   } else if (url.indexOf("id.") > -1) {
     title = "Pemberitahuan renovasi hotel:";
     content =
-      "<p>Marina Bay Sands telah memulai program investasi ulang untuk memberikan pengalaman baru yang tak tertandingi bagi tamu kami. Pekerjaan renovasi telah dimulai di Hotel, dimulai dengan kamar di beberapa lantai Tower 2. Setelah selesai, perbaikan tersebut akan membawa Anda ke era kemewahan baru. Nantikan informasi selengkapnya pada tanggal berikutnya! Selama periode ini, kami melakukan upaya untuk meminimalkan kemungkinan penundaan layanan dan gangguan suara, dan kami memohon maaf sebelumnya atas ketidaknyamanan yang ditimbulkan.</p>";
+      "<p> Marina Bay Sands telah memulai program investasi ulang demi menghadirkan pengalaman baru yang tiada duanya bagi tamu kami. Pekerjaan renovasi dilaksanakan di Hotel Tower 1 dan 2, dengan tingkat kebisingan yang lebih tinggi dan uji coba alarm kebakaran secara berkala selama waktu-waktu berikut: </p> <ul> <li>Senin – Jumat: 10.00 – 12.00 dan 14.00 hingga 18.30</li> <li>Akhir pekan dan hari libur nasional: pukul 14.00 hingga 18.00</li> </ul> <p> Kami melakukan segala upaya untuk meminimalkan kemungkinan penundaan layanan dan gangguan suara, dan kami memohon maaf sebelumnya atas ketidaknyamanan yang ditimbulkan. </p>";
   } else {
     $(".notice-announce-box .announcement-title strong").text(
       "COVID-19 Notice:"
