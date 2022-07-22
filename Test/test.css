@@ -1,4 +1,3 @@
-.flicker370 .room_card .room_ImageCenterPanel .txt-black-five,
-.flicker370 #wtListRoomInfo .pl-1.pt-1.bold {
-  opacity: 0;
+.contact-box .space-between:last-child{
+  display: none !important;
 }

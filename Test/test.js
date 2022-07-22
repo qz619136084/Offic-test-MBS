@@ -1,12 +1,5 @@
-var data = [];
-$(".card").each(function () {
-  var card = $(this);
-  var proCard = card.find(".promotion-card");
-  if (proCard.length) {
-    var name = card.find(".card-title").text().trim();
-    var url = card.attr("href");
-    var eachObject = { name, url };
-    data.push(eachObject);
-  }
+$(function () {
+  DYO.waitForElementAsync(".contact-note").then(() => {
+    $(".space-between:has(.contact-note)").hide();
+  });
 });
-console.table(data)
