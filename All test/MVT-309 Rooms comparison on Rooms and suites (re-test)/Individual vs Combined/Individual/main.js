@@ -3,17 +3,17 @@ $(function () {
   var roomList = [
     "Deluxe Room",
     "Premier Room",
-    "Family Room",
-    /* "Club Room",
-          "Grand Club Room", */
+    // "Family Room",
+    // "Club Room",
+    // "Grand Club Room",
   ];
   var suiteList = [
     "Orchid Suite",
-    /* "Bay Suite", */
+    //"Bay Suite",
     "Sands Suite",
-    "Marina Suite",
+    //"Marina Suite",
     "Merlion Suite",
-    "Straits Suite",
+    //"Straits Suite",
     "Presidential Suite",
     "Chairman Suite",
   ];
