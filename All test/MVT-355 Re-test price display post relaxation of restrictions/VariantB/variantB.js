@@ -566,7 +566,10 @@ $(function () {
         $("#upgrade_dialog").attr("selected-data-index", index);
         $("#upgrade_dialog").attr("selected-data-room", roomIndex);
         var symbol = paymentUpgradeInfo(index, roomIndex).symbol;
-        var priceWithTax = paymentUpgradeInfo(index, roomIndex).priceWithTax;
+        var totalPriceWithTax = paymentUpgradeInfo(
+          index,
+          roomIndex
+        ).totalPriceWithTax;
         var costOfUpgradeWithTax = paymentUpgradeInfo(
           index,
           roomIndex
@@ -575,7 +578,7 @@ $(function () {
         $(".upgrade_rcontent_items span b").css("opacity", "0");
         $(".upgradeCostNum").css("opacity", "0");
         setTimeout(() => {
-          $(".upgrade_rcontent_items span b").text(symbol + priceWithTax);
+          $(".upgrade_rcontent_items span b").text(symbol + totalPriceWithTax);
           $(".upgrade_rcontent_items span b").css("opacity", "1");
           $(".upgradeCostNum").text(
             "+" + symbol + costOfUpgradeWithTax + "/night"
@@ -606,6 +609,7 @@ $(function () {
         ) {
           if ($("#upgrade_dialog").css("display") == "block") {
             if (!$("#upgrade_dialog").hasClass("showed")) {
+              updateNoupgradeBox();
               $("#upgrade_dialog .upgrade_body .upgradeBlock:eq(0)").trigger(
                 "click"
               );
@@ -627,6 +631,7 @@ $(function () {
               });
               //bind click on 'upgrade'
               if (!$("#upgrade").hasClass("binded")) {
+                console.log("bind upgrade button clicking");
                 $("#upgrade")
                   .addClass("binded")
                   .click(() => {
@@ -661,6 +666,8 @@ $(function () {
     var averagePrice = upgradeRoom.averagePrice;
     var priceWithoutTax = null;
     var priceWithTax = null;
+    var costOfUpgradeWithTax = null;
+    var defaultUpgradePriceWithTax = null;
     if (discountedAveragePrice.length) {
       priceWithoutTax = discountedAveragePrice.filter((item) => {
         return currency == item.currencyCode;
@@ -670,10 +677,21 @@ $(function () {
         return currency == item.currencyCode;
       })[0].price;
     }
+    //calculate total price
+    var los = f_getSessionStorage().los;
+    var totalPriceWithoutTax = los * priceWithoutTax;
+    var totalCostOfUpgradeWithoutTax = los * costOfUpgradeWithoutTax;
+    var totalPriceWithTax = null;
+    var totalCostOfUpgradeWithTax = null;
     priceWithTax = toMoney(priceWithoutTax * 1.177, true);
     costOfUpgradeWithTax = toMoney(costOfUpgradeWithoutTax * 1.177, true);
     defaultUpgradePriceWithTax = toMoney(
       defaultUpgradePriceWithoutTax * 1.177,
+      true
+    );
+    totalPriceWithTax = toMoney(totalPriceWithoutTax * 1.177, true);
+    totalCostOfUpgradeWithTax = toMoney(
+      totalCostOfUpgradeWithoutTax * 1.177,
       true
     );
     return {
@@ -681,12 +699,14 @@ $(function () {
       priceWithTax,
       costOfUpgradeWithTax,
       defaultUpgradePriceWithTax,
+      totalPriceWithTax,
+      totalCostOfUpgradeWithTax,
     };
   }
-  function waitUpgradeBox() {
+  function waitUpgradeBox(roomIndex) {
     return new Promise((resolve, reject) => {
       var check = setInterval(() => {
-        if ($(".upgraded").css("display") != "none") {
+        if ($(".upgraded").eq(roomIndex).css("display") != "none") {
           resolve();
           clearInterval(check);
         }
@@ -694,22 +714,22 @@ $(function () {
     });
   }
   function updateUpgradeBox(updatedText) {
+    var roomIndex = $("#upgrade_dialog").attr("selected-data-room");
     delayUpdate()
       .then(() => {
-        return waitUpgradeBox();
+        return waitUpgradeBox(roomIndex);
       })
       .then(() => {
         //update content;
         var index = $("#upgrade_dialog").attr("selected-data-index");
-        var roomIndex = $("#upgrade_dialog").attr("selected-data-room");
         var symbol = paymentUpgradeInfo(index, roomIndex).symbol;
-        var costOfUpgradeWithTax = paymentUpgradeInfo(
+        var totalCostOfUpgradeWithTax = paymentUpgradeInfo(
           index,
           roomIndex
-        ).costOfUpgradeWithTax;
+        ).totalCostOfUpgradeWithTax;
         $(".upgradedPrice")
           .eq(roomIndex)
-          .text(symbol + costOfUpgradeWithTax);
+          .text(symbol + totalCostOfUpgradeWithTax);
         if (
           !$(".upgradedPrice").eq(roomIndex).closest("p").hasClass("updated")
         ) {
@@ -740,11 +760,26 @@ $(function () {
               roomIndex
             ).defaultUpgradePriceWithTax;
             $(this)
-              .text(symbol + defaultUpgradePriceWithTax + "++")
+              .text(symbol + defaultUpgradePriceWithTax)
               .addClass("updated");
           }
         });
+        $("body").removeClass("noFlicker");
       });
+    //hide price on no_upgrade box when clicking to avoid flicker;
+    DYO.waitForElementAsync(".upgrade_view").then(() => {
+      $(".upgrade_view").unbind("click");
+      $(".upgrade_view").click(function () {
+        $(".no_upgrade b").addClass("new");
+        var originalNo = $(".no_upgrade b.new").length;
+        var check = setInterval(() => {
+          if ($(".no_upgrade b.new").length < originalNo) {
+            $("body").addClass("noFlicker");
+            clearInterval(check);
+          }
+        }, 5);
+      });
+    });
   }
   function waitSessionStorageData() {
     return new Promise((resolve, reject) => {

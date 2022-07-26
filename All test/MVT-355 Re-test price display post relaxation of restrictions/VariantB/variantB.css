@@ -2,6 +2,7 @@ body.noFlicker .packagePrice,
 body.noFlicker .multi_number,
 body.noFlicker .room_price,
 body.noFlicker .day-rate,
-body.noFlicker .original_price {
+body.noFlicker .original_price,
+body.noFlicker .no_upgrade b {
   opacity: 0;
 }

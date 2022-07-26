@@ -451,10 +451,13 @@ $(function () {
         $("#upgrade_dialog").attr("selected-data-index", index);
         $("#upgrade_dialog").attr("selected-data-room", roomIndex);
         var symbol = paymentUpgradeInfo(index, roomIndex).symbol;
-        var tax = paymentUpgradeInfo(index, roomIndex).tax;
         var taxOfUpgrade = paymentUpgradeInfo(index, roomIndex).taxOfUpgrade;
+        var totalTaxOfUpgrade = paymentUpgradeInfo(
+          index,
+          roomIndex
+        ).totalTaxOfUpgrade;
         $("#upgrade_rcontent_items_tax_tips").text(
-          "+" + symbol + tax + " avg. taxes & fees/night"
+          "+" + symbol + totalTaxOfUpgrade + " taxes & fees"
         );
         if (!$(".upgrade-tax-tip").length) {
           $(".upgradeCostNum")
@@ -537,6 +540,7 @@ $(function () {
     var averagePrice = upgradeRoom.averagePrice;
     var priceWithoutTax = null;
     var tax = null;
+    var taxOfUpgrade = null;
     if (discountedAveragePrice.length) {
       priceWithoutTax = discountedAveragePrice.filter((item) => {
         return currency == item.currencyCode;
@@ -546,14 +550,19 @@ $(function () {
         return currency == item.currencyCode;
       })[0].price;
     }
+    //Caculate total cost of upgrade
+    var los = f_getSessionStorage().los;
+    var totalCostOfUpgradeWithoutTax = los * costOfUpgradeWithoutTax;
+    var totalTaxOfUpgrade = null;
     tax = toMoney(priceWithoutTax * 0.177, true);
     taxOfUpgrade = toMoney(costOfUpgradeWithoutTax * 0.177, true);
-    return { symbol, tax, taxOfUpgrade };
+    totalTaxOfUpgrade = toMoney(totalCostOfUpgradeWithoutTax * 0.177, true);
+    return { symbol, tax, taxOfUpgrade, totalTaxOfUpgrade };
   }
-  function waitTipboxShow() {
+  function waitUpgradeBox(roomIndex) {
     return new Promise((resolve, reject) => {
       var check = setInterval(() => {
-        if ($(".upgraded").css("display") != "none") {
+        if ($(".upgraded").eq(roomIndex).css("display") != "none") {
           resolve();
           clearInterval(check);
         }
@@ -561,16 +570,19 @@ $(function () {
     });
   }
   function updateUpgradeBox() {
+    var roomIndex = $("#upgrade_dialog").attr("selected-data-room");
     delayUpdate()
       .then(() => {
-        return waitTipboxShow();
+        return waitUpgradeBox(roomIndex);
       })
       .then(() => {
         //update content;
         var index = $("#upgrade_dialog").attr("selected-data-index");
-        var roomIndex = $("#upgrade_dialog").attr("selected-data-room");
         var symbol = paymentUpgradeInfo(index, roomIndex).symbol;
-        var taxOfUpgrade = paymentUpgradeInfo(index, roomIndex).taxOfUpgrade;
+        var totalTaxOfUpgrade = paymentUpgradeInfo(
+          index,
+          roomIndex
+        ).totalTaxOfUpgrade;
         if (
           !$(".upgradedPrice").eq(roomIndex).closest("p").hasClass("updated")
         ) {
@@ -582,8 +594,8 @@ $(function () {
             .append(
               "<small style='text-align:right'>+" +
                 symbol +
-                taxOfUpgrade +
-                " avg. taxes & fees/night</small>"
+                totalTaxOfUpgrade +
+                " taxes & fees</small>"
             );
         }
       });
