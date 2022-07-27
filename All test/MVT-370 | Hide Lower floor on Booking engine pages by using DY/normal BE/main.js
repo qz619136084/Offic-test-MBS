@@ -255,7 +255,7 @@ $(function () {
           mutation.target == targetNode
         ) {
           if ($("#upgrade_dialog").css("display") == "block") {
-            if (!$("#upgrade_dialog").hasClass("showed")) {
+            if (!$("#upgrade_dialog").hasClass("370showed")) {
               //update text
               $(".currentRoomName:contains('" + replaceText + "')").text(
                 $(".currentRoomName:contains('" + replaceText + "')")
@@ -268,17 +268,17 @@ $(function () {
                   .replace(" - " + replaceText, "")
               );
               //bind click on 'upgrade'
-              if (!$("#upgrade").hasClass("binded")) {
+              if (!$("#upgrade").hasClass("370binded")) {
                 $("#upgrade")
-                  .addClass("binded")
+                  .addClass("370binded")
                   .click(() => {
                     updateUpgradeBox();
                   });
               }
-              $("#upgrade_dialog").addClass("showed");
+              $("#upgrade_dialog").addClass("370showed");
             }
           } else {
-            $("#upgrade_dialog").removeClass("showed");
+            $("#upgrade_dialog").removeClass("370showed");
             updatePaymentSidebar();
             //bind undo button
             $(".undo_upgrade").click(() => {
