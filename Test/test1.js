@@ -1,3 +1,3 @@
-setInterval(() => {
-  console.log("1");
-}, 1000);
+setTimeout(() => {
+  document.cookie = "Purchase = false; path = /";
+}, 1500);

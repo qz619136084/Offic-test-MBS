@@ -1,27 +1,13 @@
-console.log("checking test running");
-var addToCartCookie = getCookie("AddToCart");
+var addToCartCookie = getCookie("Purchase");
 if (addToCartCookie == "true") {
-  console.log("cookie exist");
-  DYO.Q(DYO.CoreUtils.safeEval(DYO.oevals[5319].code)).then(function (result) {
-    if (result == "cskypark2018") {
-      DY.API("event", {
-        name: "Events checking: A2C - SkyPark",
-        properties: {},
-      });
-    } else if (result == "dlc2020") {
-      DY.API("event", {
-        name: "Events checking: A2C - DLC",
-        properties: {},
-      });
-    } else if (result == "sampan2019") {
-      DY.API("event", {
-        name: "Events checking: A2C - Sampan Ride",
-        properties: {},
-      });
-    }
+  DY.API("event", {
+    name: "Events checking: Purchase - SkyPark",
+    properties: {},
   });
 }
-document.cookie = "AddToCart = false; path = /";
+setTimeout(() => {
+  document.cookie = "Purchase = false; path = /";
+}, 1500);
 function getCookie(c_name) {
   var cookieArr = document.cookie.split("; ");
   for (i = 0; i < cookieArr.length; i++) {
