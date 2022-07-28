@@ -111,6 +111,7 @@ $(function () {
     ]);
     var taxArr = [];
     //price target;
+    console.log("curr_availableRateplans:", curr_availableRateplans);
     priceEl.forEach(function (v, i) {
       var tax = null;
       var currencySymbol = null;
@@ -182,6 +183,7 @@ $(function () {
               .find(".col-md-5 strong")
               .text()
               .trim();
+            console.log(roomType);
             var currency = f_getCurrencyInfo().code;
             var discountedAveragePriceByCurrency = curr_availableRateplans
               .filter((item) => {
@@ -452,12 +454,9 @@ $(function () {
         $("#upgrade_dialog").attr("selected-data-room", roomIndex);
         var symbol = paymentUpgradeInfo(index, roomIndex).symbol;
         var taxOfUpgrade = paymentUpgradeInfo(index, roomIndex).taxOfUpgrade;
-        var totalTaxOfUpgrade = paymentUpgradeInfo(
-          index,
-          roomIndex
-        ).totalTaxOfUpgrade;
+        var totalTax = paymentUpgradeInfo(index, roomIndex).totalTax;
         $("#upgrade_rcontent_items_tax_tips").text(
-          "+" + symbol + totalTaxOfUpgrade + " taxes & fees"
+          "+" + symbol + totalTax + " taxes & fees"
         );
         if (!$(".upgrade-tax-tip").length) {
           $(".upgradeCostNum")
@@ -553,11 +552,14 @@ $(function () {
     //Caculate total cost of upgrade
     var los = f_getSessionStorage().los;
     var totalCostOfUpgradeWithoutTax = los * costOfUpgradeWithoutTax;
+    var totalPriceWithoutTax = los * priceWithoutTax;
     var totalTaxOfUpgrade = null;
+    var totalTax = null;
     tax = toMoney(priceWithoutTax * 0.177, true);
+    totalTax = toMoney(totalPriceWithoutTax * 0.177, true);
     taxOfUpgrade = toMoney(costOfUpgradeWithoutTax * 0.177, true);
     totalTaxOfUpgrade = toMoney(totalCostOfUpgradeWithoutTax * 0.177, true);
-    return { symbol, tax, taxOfUpgrade, totalTaxOfUpgrade };
+    return { symbol, tax, taxOfUpgrade, totalTaxOfUpgrade, totalTax };
   }
   function waitUpgradeBox(roomIndex) {
     return new Promise((resolve, reject) => {

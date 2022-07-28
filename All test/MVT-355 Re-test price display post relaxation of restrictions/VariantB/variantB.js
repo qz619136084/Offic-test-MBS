@@ -145,6 +145,7 @@ $(function () {
     ]);
     $(textEl).text(updatedText);
     //price target;
+    console.log("curr_availableRateplans:", curr_availableRateplans);
     priceEl.forEach(function (v, i) {
       var priceWithTax = null;
       var currencySymbol = null;
@@ -238,6 +239,7 @@ $(function () {
               .find(".col-md-5 strong")
               .text()
               .trim();
+            console.log(roomType);
             var currency = f_getCurrencyInfo().code;
             var discountedAveragePriceByCurrency = curr_availableRateplans
               .filter((item) => {
